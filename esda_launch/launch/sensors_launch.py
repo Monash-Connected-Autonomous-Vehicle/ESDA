@@ -22,10 +22,16 @@ def generate_launch_description():
       )
 
 
-    # todo Z Cam launch
+   zed_wrapper_launch = IncludeLaunchDescription(
+      PythonLaunchDescriptionSource([os.path.join(
+         get_package_share_directory('zed_wrapper'), 'launch'),
+         '/zed_camera.launch.py']),
+      launch_arguments={'camera_model': 'zed2'}.items(),
+   )
     
 
    return LaunchDescription([
       swiftnav_launch,
-      velodyne_launch
+      velodyne_launch,
+      zed_wrapper_launch
    ])

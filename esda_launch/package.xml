@@ -13,8 +13,10 @@
   <test_depend>python3-pytest</test_depend>
   
   <build_depend>velodyne_driver</build_depend>
-  
   <exec_depend>velodyne_driver</exec_depend>
+  
+  <build_depend>zed_wrapper</build_depend>
+  <exec_depend>zed_wrapper</exec_depend>
 
   <export>
     <build_type>ament_python</build_type>
