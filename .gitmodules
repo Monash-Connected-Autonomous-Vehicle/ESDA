@@ -1,0 +1,3 @@
+[submodule "swiftnav-ros2"]
+	path = swiftnav-ros2
+	url = https://github.com/Monash-Connected-Autonomous-Vehicle/swiftnav-ros2.git
