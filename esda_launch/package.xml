@@ -15,6 +15,12 @@
   <build_depend>velodyne_driver</build_depend>
   <exec_depend>velodyne_driver</exec_depend>
   
+  <build_depend>velodyne_pointcloud</build_depend>
+  <exec_depend>velodyne_pointcloud</exec_depend>
+  
+  <build_depend>velodyne_laserscan</build_depend>
+  <exec_depend>velodyne_laserscan</exec_depend>
+  
 <!--   <build_depend>zed_wrapper</build_depend>
   <exec_depend>zed_wrapper</exec_depend> -->
 
