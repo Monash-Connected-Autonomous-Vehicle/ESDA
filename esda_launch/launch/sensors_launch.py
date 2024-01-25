@@ -15,8 +15,17 @@ def generate_launch_description():
          '/start.py'])
       )
 
-    # todo add velodyne driver launch
+   velodyne_launch = IncludeLaunchDescription(
+      PythonLaunchDescriptionSource([os.path.join(
+         get_package_share_directory('velodyne_driver'), 'launch'),
+         '/velodyne_driver_node-VLP16-launch.py'])
+      )
+
+
+    # todo Z Cam launch
+    
 
    return LaunchDescription([
-      swiftnav_launch
+      swiftnav_launch,
+      velodyne_launch
    ])
