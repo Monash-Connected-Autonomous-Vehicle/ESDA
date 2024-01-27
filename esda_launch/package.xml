@@ -11,18 +11,6 @@
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>
   <test_depend>python3-pytest</test_depend>
-  
-  <build_depend>velodyne_driver</build_depend>
-  <exec_depend>velodyne_driver</exec_depend>
-  
-  <build_depend>velodyne_pointcloud</build_depend>
-  <exec_depend>velodyne_pointcloud</exec_depend>
-  
-  <build_depend>velodyne_laserscan</build_depend>
-  <exec_depend>velodyne_laserscan</exec_depend>
-  
-<!--   <build_depend>zed_wrapper</build_depend>
-  <exec_depend>zed_wrapper</exec_depend> -->
 
   <export>
     <build_type>ament_python</build_type>

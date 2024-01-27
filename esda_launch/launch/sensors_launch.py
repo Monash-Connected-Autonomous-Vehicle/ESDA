@@ -40,7 +40,6 @@ def generate_launch_description():
          '/zed_camera.launch.py']),
       launch_arguments={'camera_model': 'zed2'}.items(),
    )
-    
 
    return LaunchDescription([
       swiftnav_launch,
