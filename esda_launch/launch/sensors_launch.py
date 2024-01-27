@@ -34,18 +34,18 @@ def generate_launch_description():
       )
 
 
-   # zed_wrapper_launch = IncludeLaunchDescription(
-   #    PythonLaunchDescriptionSource([os.path.join(
-   #       get_package_share_directory('zed_wrapper'), 'launch'),
-   #       '/zed_camera.launch.py']),
-   #    launch_arguments={'camera_model': 'zed2'}.items(),
-   # )
+   zed_wrapper_launch = IncludeLaunchDescription(
+      PythonLaunchDescriptionSource([os.path.join(
+         get_package_share_directory('zed_wrapper'), 'launch'),
+         '/zed_camera.launch.py']),
+      launch_arguments={'camera_model': 'zed2'}.items(),
+   )
     
 
    return LaunchDescription([
       swiftnav_launch,
       velodyne_driver_launch,
       velodyne_pcl_launch,
-      velodyne_scan_launch
-      # zed_wrapper_launch
+      velodyne_scan_launch,
+      zed_wrapper_launch
    ])
