@@ -2,10 +2,16 @@ import rclpy
 from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
-# TODO: Check/change these to the correct message types
-# TODO: Fill in message types
 from msg import MotorCommand
 from msg import ServoPosition
+
+import math
+
+'''
+Are the message contents correct?
+Is the limit for wheel angle 46 in both directions or combined?
+Assuming that for travelling in a straight line, servo position is 2000 (middle of 0 to 4000)
+'''
 
 class ParallelogramSteeringController(Node):
     def __init__(self):
@@ -25,10 +31,10 @@ class ParallelogramSteeringController(Node):
     '''
     def listener_callback(self, msg):
         linear = msg.linear.x
-        self.publish_motor_command(linear)
-
         angular = msg.angular.z
-        self.publish_servo_position(angular)
+
+        self.publish_motor_command(linear)
+        self.publish_servo_position(linear, angular)
     
     '''
     Publishes MotorCommand message to /target_motor_cmd for back wheels
@@ -36,31 +42,32 @@ class ParallelogramSteeringController(Node):
     Publish units in m/s
     '''
     def publish_motor_command(self, linear):
-        # TODO: Check for linear limits
-        # limit the linear velocities
-        max_vel = 10
-        min_vel = -10
-        if linear > max_vel:
-            linear = max_vel        
-        elif linear < min_vel:
-            linear = min_vel
-        
+        # No limit check is needed
         motor_command = MotorCommand()
-        # TODO: Change message variables depending on the message contents
-        motor_command.motor_left = linear
-        motor_command.motor_right = linear
+        motor_command.left_wheel = linear
+        motor_command.right_wheel = linear
         self.publisher.publish(motor_command)
 
     '''
-    Publishes ServoPosition message to /target_servo_pos for front wheels - Ackermann steering
+    Publishes ServoPosition message to /target_servo_pos for front wheels
     '''
-    def publish_servo_position(self, angular):
-        # TODO: Not sure how servo commands work
-        # TODO: Check if any limits for angular are required
-
+    def publish_servo_position(self, linear, angular):
         servo_position = ServoPosition()
-        # TODO: Change message variables depending on the message contents
-        servo_position.servo_position = angular
+
+        # If angular = 0, it is going in a straight line
+        if angular == 0:
+            servo_position.servo_position = 2000
+        else:
+            radius = linear / angular
+            # TODO: Might want to get this from a parameter so that it can be changed
+            wheel_base_length = 0.5
+            turn_degree = math.atan(wheel_base_length / radius) * 180 / math.pi
+
+            turn_degree = max(min(turn_degree, 46), -46)
+            
+            # convert degrees to pwm
+            servo_position.servo_position = turn_degree * 4000 / 360 + 2000
+
         self.publisher.publish(servo_position)
 
 def main(args=None):
