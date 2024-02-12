@@ -3,15 +3,9 @@ from rclpy.node import Node
 
 from geometry_msgs.msg import Twist
 from msg import MotorCommand
-from msg import ServoPosition
+from dynamixel_sdk_custom_interfaces.msg import SetPosition
 
 import math
-
-'''
-Are the message contents correct?
-Is the limit for wheel angle 46 in both directions or combined?
-Assuming that for travelling in a straight line, servo position is 2000 (middle of 0 to 4000)
-'''
 
 class ParallelogramSteeringController(Node):
     def __init__(self):
@@ -21,10 +15,10 @@ class ParallelogramSteeringController(Node):
         self.subscription = self.create_subscription(Twist, '/cmd_vel', self.listener_callback, 10)
 
         # /target_motor_cmd publisher (not sure if MotorCommand is the right message type)
-        self.publisher = self.create_publisher(MotorCommand, '/target_motor_cmd', 10)
+        self.motor_publisher = self.create_publisher(MotorCommand, '/target_motor_cmd', 10)
 
-        # /target_servo_pos publisher (not sure if ServoPosition is the right message type)
-        self.publisher = self.create_publisher(ServoPosition, '/target_servo_pos', 10)
+        # /set_position publisher for dynamixelsdk servo
+        self.servo_publisher = self.create_publisher(ServoPosition, '/set_position', 10)
     
     '''
     Gets message from /cmd_vel, gets required data and calls relevant publishers
@@ -37,38 +31,44 @@ class ParallelogramSteeringController(Node):
         self.publish_servo_position(linear, angular)
     
     '''
-    Publishes MotorCommand message to /target_motor_cmd for back wheels
-    Subscribe units not sure
-    Publish units in m/s
+    Publishes MotorCommand message to /target_motor_cmd for mcu chip
     '''
     def publish_motor_command(self, linear):
         # No limit check is needed
         motor_command = MotorCommand()
-        motor_command.left_wheel = linear
-        motor_command.right_wheel = linear
-        self.publisher.publish(motor_command)
+        motor_command.linear_velocity = linear
+        self.motor_publisher.publish(motor_command)
 
     '''
-    Publishes ServoPosition message to /target_servo_pos for front wheels
+    Publishes SetPosition message to /set_position for servo
     '''
     def publish_servo_position(self, linear, angular):
-        servo_position = ServoPosition()
+        servo_position = SetPosition()
+        # only one servo is used
+        servo_position.id = 1
 
-        # If angular = 0, it is going in a straight line
-        if angular == 0:
-            servo_position.servo_position = 2000
-        else:
+        steering_angle = 0
+        min_pwm = 45
+        max_pwm = min_pwm + 511
+
+        if angular != 0:
             radius = linear / angular
             # TODO: Might want to get this from a parameter so that it can be changed
             wheel_base_length = 0.5
-            turn_degree = math.atan(wheel_base_length / radius) * 180 / math.pi
+            steering_angle = math.atan(wheel_base_length / radius) * 180 / math.pi
 
-            turn_degree = max(min(turn_degree, 46), -46)
-            
-            # convert degrees to pwm
-            servo_position.servo_position = turn_degree * 4000 / 360 + 2000
+        # convert degrees to pwm
+        pwm = round(turn_degree * 4000 / 360) + min_pwm
 
-        self.publisher.publish(servo_position)
+        # limit pwm
+        if pwm < min_pwm:
+            pwm = min_pwm
+        elif pwm > max_pwm:
+            pwm = max_pwm
+        
+        servo_position.position = pwm
+
+        self.servo_publisher.publish(servo_position)
 
 def main(args=None):
     rclpy.init(args=args)
