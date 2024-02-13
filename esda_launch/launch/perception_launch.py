@@ -15,8 +15,6 @@ def generate_launch_description():
          '/online_async_launch.py'])
       )
 
-  # robot_localization_launch 
-
   # lane_detection_launch
 
   # pothole_detection_launch
