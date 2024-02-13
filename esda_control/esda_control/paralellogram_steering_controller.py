@@ -14,7 +14,13 @@ class ParallelogramSteeringController(Node):
         self.subscription = self.create_subscription(Twist, '/cmd_vel', self.publish_servo_position, 10)
 
         # /set_position publisher for dynamixelsdk servo
-        self.servo_publisher = self.create_publisher(ServoPosition, '/set_position', 10)
+        self.servo_publisher = self.create_publisher(SetPosition, '/set_position', 10)
+    
+    '''
+    This below is just a debug line to make sure the node is receiving the twist message properly
+    '''
+    #def listener_callback(self,msg):
+    #    self.get_logger().info('Received Twist message: Linear.x=%f, Angular.z=%f' % (msg.linear.x, msg.angular.z))
 
     '''
     Publishes SetPosition message to /set_position for servo
@@ -38,7 +44,7 @@ class ParallelogramSteeringController(Node):
             steering_angle = math.atan(wheel_base_length / radius) * 180 / math.pi
 
         # convert degrees to pwm
-        pwm = round(turn_degree * 4000 / 360) + min_pwm
+        pwm = round(steering_angle * 4000 / 360) + min_pwm
 
         # limit pwm
         if pwm < min_pwm:
