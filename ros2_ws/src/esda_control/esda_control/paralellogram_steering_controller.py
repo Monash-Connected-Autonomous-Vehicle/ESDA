@@ -33,8 +33,8 @@ class ParallelogramSteeringController(Node):
 
         if angular != 0:
             radius = linear / angular
-            # Wheel_base_length parameter for distance between the width of the car (the length is the longer part of it)
-            wheel_base_length = 0.932
+            # TODO: Might want to get this from a parameter so that it can be changed
+            wheel_base_length = 0.5
             steering_angle = math.atan(wheel_base_length / radius) * 180 / math.pi
 
         # convert degrees to pwm

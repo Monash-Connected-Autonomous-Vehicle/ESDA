@@ -1,0 +1,38 @@
+[0.767s] Invoking command in '/home/jokua/ESDA/ESDA/ros2_ws/src/esda_control': PYTHONPATH=/home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/prefix_override:/home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/esda_control build --build-base /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build install --record /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/install.log --single-version-externally-managed
+[0.962s] running egg_info
+[0.963s] creating ../../build/esda_control/esda_control.egg-info
+[0.963s] writing ../../build/esda_control/esda_control.egg-info/PKG-INFO
+[0.963s] writing dependency_links to ../../build/esda_control/esda_control.egg-info/dependency_links.txt
+[0.963s] writing entry points to ../../build/esda_control/esda_control.egg-info/entry_points.txt
+[0.963s] writing requirements to ../../build/esda_control/esda_control.egg-info/requires.txt
+[0.964s] writing top-level names to ../../build/esda_control/esda_control.egg-info/top_level.txt
+[0.964s] writing manifest file '../../build/esda_control/esda_control.egg-info/SOURCES.txt'
+[0.965s] reading manifest file '../../build/esda_control/esda_control.egg-info/SOURCES.txt'
+[0.965s] writing manifest file '../../build/esda_control/esda_control.egg-info/SOURCES.txt'
+[0.965s] running build
+[0.965s] running build_py
+[0.966s] creating /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build
+[0.966s] creating /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib
+[0.966s] creating /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib/esda_control
+[0.966s] copying esda_control/__init__.py -> /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib/esda_control
+[0.966s] copying esda_control/paralellogram_steering_controller.py -> /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib/esda_control
+[0.966s] running install
+[0.967s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.967s]   warnings.warn(
+[0.967s] running install_lib
+[0.968s] creating /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control
+[0.968s] copying /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib/esda_control/__init__.py -> /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control
+[0.968s] copying /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build/lib/esda_control/paralellogram_steering_controller.py -> /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control
+[0.968s] byte-compiling /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control/__init__.py to __init__.cpython-310.pyc
+[0.969s] byte-compiling /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control/paralellogram_steering_controller.py to paralellogram_steering_controller.cpython-310.pyc
+[0.969s] running install_data
+[0.969s] creating /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/share/ament_index
+[0.969s] creating /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/share/ament_index/resource_index
+[0.969s] creating /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/share/ament_index/resource_index/packages
+[0.969s] copying resource/esda_control -> /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/share/ament_index/resource_index/packages
+[0.970s] copying package.xml -> /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/share/esda_control
+[0.970s] running install_egg_info
+[0.971s] Copying ../../build/esda_control/esda_control.egg-info to /home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages/esda_control-0.0.0-py3.10.egg-info
+[0.971s] running install_scripts
+[0.986s] writing list of installed files to '/home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/install.log'
+[1.004s] Invoked command in '/home/jokua/ESDA/ESDA/ros2_ws/src/esda_control' returned '0': PYTHONPATH=/home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/prefix_override:/home/jokua/ESDA/ESDA/ros2_ws/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/esda_control build --build-base /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/build install --record /home/jokua/ESDA/ESDA/ros2_ws/build/esda_control/install.log --single-version-externally-managed
