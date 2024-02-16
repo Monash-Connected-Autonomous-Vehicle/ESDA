@@ -10,6 +10,7 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
+        ('share/' + package_name + '/launch', ['launch/parallelogram_steering_controller.launch.py'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -20,6 +21,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'parallelogram_steering_controller = esda_control.parallelogram_steering_controller:main',
+            'dynamixel_sdk_node = dynamixel_sdk_examples.read_write_mode:main'
         ],
+        'launch.frontend.launch_extension': ['launch_ros = launch_ros']
     },
 )
