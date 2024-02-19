@@ -16,17 +16,16 @@ def generate_launch_description():
             name='parallelogram_steering_controller',
             output='screen'
         ),
-        Node(
+        
+    mcu_interface = Node(
             package='esda_control',
             executable='mcu_interface', 
             name='mcu_interface',
             output='screen'
         )
-        
-    # todo mcu_interface
-    
 
     return LaunchDescription([
         servo_interface,
-        steering_controller
+        steering_controller,
+        mcu_interface
     ])
