@@ -1,27 +1,26 @@
 import rclpy
+import math
 from rclpy.node import Node
-
 from geometry_msgs.msg import Twist
 
-import math
 
 class MCU_Interface(Node):
     def __init__(self):
         super().__init__('mcu_interface')
+        self.subscription = self.create_subscription(Twist, '/cmd_vel', self.send_can_msg, 10)
 
-        # /cmd_vel subscriber
-        self.subscription = self.create_subscription(Twist, '/cmd_vel', self.listener_callback, 10)
+        # todo: connection to usb-to-can device
 
-        #TODO CAN message publisher here
-
-    def listener_callback(self,msg):
+    def send_can_msg(self,msg):
+        # get the linear velocity
+        linear_vel = msg.linear.x
         self.get_logger().info("Received Twist message: Linear.x=%f" %(msg.linear.x))
 
-    """
-    Publishes the /cmd_vel's linear.x value to the MCU chip
-    """
-    # def publish_CAN_message(self,msg):
-    #     linear = msg.linear.x
+        # todo: convert the linear velocity to a CAN frame
+
+        # todo: send the CAN frame to the device we connected to in __init__ line 13
+        # note: we send 1 linear cmd to left wheel and 1 to right wheel so 2 CAN frames are sent
+
 
 def main(args=None):
     rclpy.init(args=args)
