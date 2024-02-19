@@ -10,13 +10,13 @@ setup(
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
-        ('share/' + package_name + '/launch', ['launch/parallelogram_steering_controller.launch.py'])
+        ('share/' + package_name + '/launch', ['launch/control_launch.py'])
     ],
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='jiawei',
     maintainer_email='jiaweiliao01@gmail.com',
-    description='TODO: Package description',
+    description='Handles interfacting of ESDA with actuators',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
