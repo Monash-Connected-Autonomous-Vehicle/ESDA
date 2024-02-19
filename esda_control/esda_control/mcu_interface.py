@@ -8,8 +8,10 @@ class MCU_Interface(Node):
     def __init__(self):
         super().__init__('mcu_interface')
         self.subscription = self.create_subscription(Twist, '/cmd_vel', self.send_can_msg, 10)
+        self.connect_to_usb_to_can_device()
 
-        # todo: connection to usb-to-can device
+    def connect_to_usb_to_can_device(self):
+        # todo: connection to usb-to-can device implemented here
 
     def send_can_msg(self,msg):
         # get the linear velocity
