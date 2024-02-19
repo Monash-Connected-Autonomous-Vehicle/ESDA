@@ -22,7 +22,8 @@ setup(
     entry_points={
         'console_scripts': [
             'parallelogram_steering_controller = esda_control.parallelogram_steering_controller:main',
-            'dynamixel_sdk_node = dynamixel_sdk_examples.read_write_mode:main'
+            'dynamixel_sdk_node = dynamixel_sdk_examples.read_write_mode:main',
+            'mcu_interface = esda_control.mcu_interface:main'
         ],
         'launch.frontend.launch_extension': ['launch_ros = launch_ros']
     },
