@@ -22,6 +22,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'datum_setter_node = esda_launch.initial_datum_setter:main'
         ],
     },
 )
