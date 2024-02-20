@@ -37,6 +37,5 @@ def generate_launch_description():
    
    return LaunchDescription([
       sensors_launch,
-      datum_setter,
       localization_launch
    ])

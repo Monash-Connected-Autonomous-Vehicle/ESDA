@@ -30,6 +30,8 @@ class InitialDatumSetter(Node):
         
         # determine validity of GNSS reading before setting datum
         if (navsatfix_msg is not None and navsatfix_msg.status.status >= 0):
+            print("DATUM SETTER SETTING: [" + str(navsatfix_msg.latitude) + str(navsatfix_msg.longitude) + str(navsatfix_msg.altitude) + "]")
+        
             self.set_datum_req.position.latitude = navsatfix_msg.latitude
             self.set_datum_req.position.longitude = navsatfix_msg.longitude
             self.set_datum_req.position.altitude = navsatfix_msg.altitude
