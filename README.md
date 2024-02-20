@@ -31,6 +31,12 @@ The following can be used to launch the ESDA (once implemented)
 
 `ros2 launch esda_launch esda_launch.py`
 
+Note that as of now, until a working URDF is implemented, the following static transforms should be run
+
+`ros2 run tf2_ros static_transform_publisher 2 3 1 0 0 0 swiftnav-gnss base_link`
+
+`ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link base_footprint`
+
 # Contributors
 
 TODO
