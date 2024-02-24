@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <!-- ROOT LINK -->
+    <!-- continue from here https://youtu.be/BcjHyhV0kIs?list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&t=366 -->
+    <link name="base_link"></link>
+
+</robot>
