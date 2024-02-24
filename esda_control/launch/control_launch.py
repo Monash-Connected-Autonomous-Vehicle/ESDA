@@ -15,7 +15,7 @@ def generate_launch_description():
             executable='parallelogram_steering_controller', 
             name='parallelogram_steering_controller',
             output='screen'
-        ),
+        )
         
     mcu_interface = Node(
             package='esda_control',
