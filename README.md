@@ -12,11 +12,13 @@ In the future, instructions will be written as part of this README
 
 ### Building and sourcing
 
-Assuming this repo has been cloned into the root of a ROS2 workspace and that the root of the workspace
-is the current working directory, run the following commands to build and source the workspace once all 
+Run the following commands to create, build and source the workspace once all 
 other dependencies have been met
 
 ```
+mkdir esda_ws;
+cd esda_ws;
+git clone https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
 cd ESDA;
 git submodule update --init --recursive;
 cd ../;
