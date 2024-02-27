@@ -1,8 +1,23 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
 
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+    
+    <material name="blue">
+        <color rgba="0.2 0.2 1 1"/>
+    </material>
+    
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1"/>
+    </material>
+    
+    
     <!-- ROOT LINK -->
     <!-- continue from here https://youtu.be/BcjHyhV0kIs?list=PLunhqkrRNRhYAffV8JDiFOatQXuU-NnxT&t=366 -->
     <link name="base_link"></link>
+    
+
 
 </robot>

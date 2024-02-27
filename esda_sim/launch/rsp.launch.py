@@ -1,5 +1,3 @@
-# obtained from https://github.com/joshnewans/articubot_one/tree/humble
-
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -19,7 +17,7 @@ def generate_launch_description():
 
     # Process the URDF file into a single xacro
     pkg_path = os.path.join(get_package_share_directory('esda_sim'))
-    xacro_file = os.path.join(pkg_path,'description','robot.urdf.xacro')
+    xacro_file = os.path.join(pkg_path,'description','esda.urdf.xacro')
     robot_description_config = xacro.process_file(xacro_file)
     
     # Create a robot_state_publisher node
