@@ -1,7 +1,6 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
-from can_msgs.msg import Frame
 import struct
 import serial
 
@@ -13,16 +12,16 @@ class MCU_Interface(Node):
 
     def connect_to_usb_to_can_device(self):
         # TODO: might need to adjust values
-        serial_port = '/dev/ttyUSB0'
+        '''serial_port = '/dev/ttyUSB0'
         baud_rate = 2000000
-        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1)
+        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1)'''
 
     def send_can_msg(self,msg):
         # get the linear velocity
         linear_vel = msg.linear.x
         self.get_logger().info("Received Twist message: Linear.x=%f" %(msg.linear.x))
 
-        can_frame = Frame()
+        '''can_frame = Frame()
         # TODO: not sure what id is
         can_frame.id = 0x123
         can_frame.is_rtr = False
@@ -34,7 +33,7 @@ class MCU_Interface(Node):
 
         # convert the CAN frame to binary data so that it can be sent over the serial port
         binary_data = struct.pack('B', can_frame.id, can_frame.is_rtr, can_frame.is_extended, can_frame.is_error, can_frame.dlc, *can_frame.data)
-        self.serial_connection.write(binary_data)
+        self.serial_connection.write(binary_data)'''
 
 
 def main(args=None):
