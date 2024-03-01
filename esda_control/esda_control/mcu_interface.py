@@ -1,7 +1,6 @@
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
-from can_msgs.msg import Frame
 import struct
 import serial
 
@@ -22,19 +21,19 @@ class MCU_Interface(Node):
         linear_vel = msg.linear.x
         self.get_logger().info("Received Twist message: Linear.x=%f" %(msg.linear.x))
 
-        can_frame = Frame()
-        # TODO: not sure what id is
-        can_frame.id = 0x123
-        can_frame.is_rtr = False
-        can_frame.is_extended = False
-        can_frame.is_error = False
-        can_frame.dlc = 8
-        # convert the linear velocity to 8 bytes of data
-        can_frame.data = list(struct.pack('!d', linear_vel))
+        binary_linear_vel = struct.pack('>f', linear_vel)
+        binary_linear_vel = binary_linear_vel[0:7]
 
-        # convert the CAN frame to binary data so that it can be sent over the serial port
-        binary_data = struct.pack('B', can_frame.id, can_frame.is_rtr, can_frame.is_extended, can_frame.is_error, can_frame.dlc, *can_frame.data)
-        self.serial_connection.write(binary_data)
+        # 01 000001 prefix for float and outgoing velocity
+        prefix = bytes([0b01000001])
+
+        binary_data = prefix + binary_linear_vel
+
+        print("writing: " + binary_data)
+        try:
+            self.serial_connection.write(binary_data)
+        except serial.SerialException as e:
+            self.get_logger().error(f"Error writing to serial connection: {e}")
 
 
 def main(args=None):
