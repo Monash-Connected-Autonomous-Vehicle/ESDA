@@ -12,9 +12,9 @@ class MCU_Interface(Node):
 
     def connect_to_usb_to_can_device(self):
         # TODO: might need to adjust values
-        '''serial_port = '/dev/ttyUSB0'
+        serial_port = '/dev/ttyUSB0'
         baud_rate = 2000000
-        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1)'''
+        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1)
 
     def send_can_msg(self,msg):
         # get the linear velocity
