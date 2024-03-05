@@ -25,7 +25,7 @@
     <joint name="velodyne_joint" type="fixed">
         <parent link="base_link"/>
         <child link="velodyne"/>
-        <origin xyz="1 0 0.5" rpy="0 0 0"/>
+        <origin xyz="0.7 0 0.5" rpy="0 0 0"/>
     </joint>
     
     <gazebo reference="velodyne">
@@ -33,7 +33,7 @@
 
         <sensor name="laser" type="ray">
             <pose> 0 0 0 0 0 0 </pose>
-            <visualize>true</visualize>
+            <visualize>false</visualize>
             <update_rate>10</update_rate>
 
             <ray>
@@ -44,14 +44,14 @@
                         <max_angle>3.14</max_angle>
                     </horizontal>
                     <vertical>
-                        <samples>20</samples>
-                        <min_angle>-0.3</min_angle>
-                        <max_angle>0.3</max_angle>
+                        <samples>10</samples>
+                        <min_angle>-0.2</min_angle>
+                        <max_angle>0</max_angle>
                     </vertical>
                 </scan>
                 <range>
                     <min>0.3</min>
-                    <max>12</max>
+                    <max>4.5</max>
                 </range>
             </ray>
             
