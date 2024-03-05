@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+
+    <link name="velodyne">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.1"/>
+            </geometry>
+            <material name="orange"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="orange"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    
+    </link>
+    
+    <joint name="velodyne_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="velodyne"/>
+        <origin xyz="1 0 0.5" rpy="0 0 0"/>
+    </joint>
+    
+    <gazebo reference="velodyne">
+        <material>Gazebo/Grey</material>
+
+        <sensor name="laser" type="ray">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>true</visualize>
+            <update_rate>10</update_rate>
+
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                    <vertical>
+                        <samples>20</samples>
+                        <min_angle>-0.3</min_angle>
+                        <max_angle>0.3</max_angle>
+                    </vertical>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                </range>
+            </ray>
+            
+            <plugin name="laser_controller" filename="libgazebo_ros_ray_sensor.so">
+                <ros>
+                    <argument>~/out:=velodyne_points</argument>
+                </ros>
+                <output_type>sensor_msgs/PointCloud2</output_type>
+                <frame_name>velodyne</frame_name>
+            </plugin>
+        </sensor>
+    </gazebo>
+ 
+</robot>

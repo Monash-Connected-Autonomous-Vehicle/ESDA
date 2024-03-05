@@ -136,7 +136,7 @@
             <material name="black"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -164,7 +164,7 @@
             <material name="black"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -193,9 +193,9 @@
             <material name="light_grey"/>
         </collision>
         
-        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_box> 
+        </xacro:inertial_cylinder>
     </link>
     
     <joint name="left_steering_wheel_joint" type="continuous">
@@ -221,9 +221,9 @@
             <material name="light_grey"/>
         </collision>
         
-        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
             <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_box> 
+        </xacro:inertial_cylinder>
     </link>
     
     <joint name="right_steering_wheel_joint" type="continuous">
