@@ -25,7 +25,7 @@ class MCU_Interface(Node):
         binary_linear_vel = binary_linear_vel[0:7]
 
         # 01 000001 prefix for float and outgoing velocity
-        prefix = bytes([0b01000001])
+        prefix = 0b01000001
 
         binary_data = prefix + binary_linear_vel
 
