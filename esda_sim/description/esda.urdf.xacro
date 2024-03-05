@@ -40,6 +40,13 @@
             </geometry>
             <material name="white"/>
         </visual>
+        
+        <collision>
+            <geometry>
+                <box size="0.505 0.57 0.275" />
+            </geometry>
+            <material name="white"/>
+        </collision>   
     </link>
     
     <joint name="drive_box_joint" type="fixed">
@@ -56,6 +63,13 @@
             </geometry>
             <material name="light_grey"/>
         </visual>
+        
+        <collision>
+            <geometry>
+                <box size="0.81 0.57 0.275" />
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
     </link>
     
     <joint name="middle_box_joint" type="fixed">
@@ -72,6 +86,13 @@
             </geometry>
             <material name="white"/>
         </visual>
+        
+        <collision>
+            <geometry>
+                <box size="0.505 0.57 0.275" />
+            </geometry>
+            <material name="white"/>
+        </collision>        
     </link>
     
     <joint name="steering_box_joint" type="fixed">
@@ -85,14 +106,21 @@
          the vehicle. Note due to complexity of CAD, wheels are
          parallel and upright as they don't need accurate modelling
     -->
-    <!-- DRIVE WHEELS -->
+    <!-- LEFT DRIVE WHEEL -->
     <link name="left_drive_wheel">
         <visual>
             <geometry>
                 <cylinder radius="0.1325" length="0.07"/>
             </geometry>
-            <material name="light_grey"/>
+            <material name="black"/>
         </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link>
     
     <joint name="left_drive_wheel_joint" type="continuous">
@@ -102,13 +130,21 @@
         <axis xyz="0 0 1"/>
     </joint>
     
+    <!-- RIGHT DRIVE WHEEL -->    
     <link name="right_drive_wheel">
         <visual>
             <geometry>
                 <cylinder radius="0.1325" length="0.07"/>
             </geometry>
-            <material name="light_grey"/>
+            <material name="black"/>
         </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
     </link>
     
     <joint name="right_drive_wheel_joint" type="continuous">
@@ -119,6 +155,52 @@
     </joint>
  
     
-    <!-- STEERING WHEELS -->
+   <!-- LEFT STEERING WHEEL -->
+    <link name="left_steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+    </link>
+    
+    <joint name="left_steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_steering_wheel"/>
+        <origin xyz="1.149 -0.51 -0.139" rpy="${pi/2} 0 0 "/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <!-- RIGHT STEERING WHEEL -->    
+    <link name="right_steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="0.1325" length="0.07"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+    </link>
+    
+    <joint name="right_steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_steering_wheel"/>
+        <origin xyz="1.149 0.51 -0.139" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 0 -1"/>
+    </joint>
 
 </robot>
