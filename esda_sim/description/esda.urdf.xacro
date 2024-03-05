@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+    <!-- IMPORTS -->
+    <xacro:include filename="inertial_macros.xacro"/>
+    
     <!-- RANDOM COLOURS FOR DEBUG PURPOSES -->
     <material name="white">
         <color rgba="1 1 1 0.3"/>
@@ -20,8 +23,7 @@
     <material name="orange">
         <color rgba="1 0.3 0.1 1"/>
     </material>
-    
-    
+   
     <!-- ROOT LINK 
          the datum point/point of reference and point that
          everything ultimately connects to
@@ -47,6 +49,10 @@
             </geometry>
             <material name="white"/>
         </collision>   
+        
+        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
     
     <joint name="drive_box_joint" type="fixed">
@@ -70,6 +76,10 @@
             </geometry>
             <material name="light_grey"/>
         </collision>
+        
+        <xacro:inertial_box mass="5" x="0.81" y="0.57" z="0.275">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
     </link>
     
     <joint name="middle_box_joint" type="fixed">
@@ -92,7 +102,11 @@
                 <box size="0.505 0.57 0.275" />
             </geometry>
             <material name="white"/>
-        </collision>        
+        </collision>       
+        
+        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box> 
     </link>
     
     <joint name="steering_box_joint" type="fixed">
@@ -121,6 +135,10 @@
             </geometry>
             <material name="black"/>
         </collision>
+        
+        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
     
     <joint name="left_drive_wheel_joint" type="continuous">
@@ -145,6 +163,10 @@
             </geometry>
             <material name="black"/>
         </collision>
+        
+        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
     </link>
     
     <joint name="right_drive_wheel_joint" type="continuous">
@@ -170,6 +192,10 @@
             </geometry>
             <material name="light_grey"/>
         </collision>
+        
+        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box> 
     </link>
     
     <joint name="left_steering_wheel_joint" type="continuous">
@@ -194,6 +220,10 @@
             </geometry>
             <material name="light_grey"/>
         </collision>
+        
+        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box> 
     </link>
     
     <joint name="right_steering_wheel_joint" type="continuous">
