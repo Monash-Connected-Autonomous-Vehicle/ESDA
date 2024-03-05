@@ -27,8 +27,18 @@
     <!-- ROOT LINK 
          the datum point/point of reference and point that
          everything ultimately connects to
+         
+         base_footprint is a child but has the same position
+         needed for SLAM toolbox
     -->
     <link name="base_link"></link>
+    
+    <link name="base_footprint"></link>
+    <joint name="base_footprint_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="base_foot_print"/>
+        <origin xyz="0 0 0"/>
+    </joint>
     
     <!-- BODY LINKS 
          these define the body of the ESDA which is simplified
