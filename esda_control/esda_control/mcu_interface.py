@@ -3,6 +3,7 @@ from rclpy.node import Node
 from geometry_msgs.msg import Twist
 import struct
 import serial
+import numpy as np
 
 class MCU_Interface(Node):
     def __init__(self):
@@ -23,17 +24,17 @@ class MCU_Interface(Node):
 
         packet = bytearray()
 
-        prefix = 1
-        packet.append(prefix)
+        prefix = struct.pack('i', 1)
+        packet.extend(prefix)
 
-        # Might be able to use struct.pack to make binary - Later issue
-        # binary_linear_vel = struct.pack('>f', linear_vel)
-        # binary_linear_vel = binary_linear_vel[0:7]
+        data = struct.pack('d', linear_vel)
+        packet.extend(data)
 
-        data = round(abs(linear_vel))
-        packet.append(data)
+        # Use this to unpack bytes data on the MCU side
+        unpacked_prefix = struct.unpack('i', packet[:4])[0]
+        unpacked_data = struct.unpack('d', packet[4:])[0]
+        print("Prefix: " + str(unpacked_prefix) + ", data: " + str(unpacked_data))
 
-        print("writing: id=" + str(prefix) + ", data=" + str(data))
         try:
             self.serial_connection.write(packet)
         except serial.SerialException as e:
