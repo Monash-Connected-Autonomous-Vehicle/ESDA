@@ -13,25 +13,29 @@ class MCU_Interface(Node):
     def connect_to_usb_to_can_device(self):
         # TODO: might need to adjust values
         serial_port = '/dev/ttyUSB0'
-        baud_rate = 2000000
-        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1)
+        baud_rate = 115200
+        self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1, bytesize=8)
 
     def send_can_msg(self,msg):
         # get the linear velocity
         linear_vel = msg.linear.x
         self.get_logger().info("Received Twist message: Linear.x=%f" %(msg.linear.x))
 
-        binary_linear_vel = struct.pack('>f', linear_vel)
-        binary_linear_vel = binary_linear_vel[0:7]
+        packet = bytearray()
 
-        # 01 000001 prefix for float and outgoing velocity
-        prefix = 0b01000001
+        prefix = 1
+        packet.append(prefix)
 
-        binary_data = prefix + binary_linear_vel
+        # Might be able to use struct.pack to make binary - Later issue
+        # binary_linear_vel = struct.pack('>f', linear_vel)
+        # binary_linear_vel = binary_linear_vel[0:7]
 
-        print("writing: " + binary_data)
+        data = round(abs(linear_vel))
+        packet.append(data)
+
+        print("writing: id=" + str(prefix) + ", data=" + str(data))
         try:
-            self.serial_connection.write(binary_data)
+            self.serial_connection.write(packet)
         except serial.SerialException as e:
             self.get_logger().error(f"Error writing to serial connection: {e}")
 
