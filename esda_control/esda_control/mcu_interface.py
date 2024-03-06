@@ -24,16 +24,11 @@ class MCU_Interface(Node):
 
         packet = bytearray()
 
-        prefix = struct.pack('i', 1)
-        packet.extend(prefix)
+        # Packet ID
+        packet.append(21)
 
-        data = struct.pack('d', linear_vel)
-        packet.extend(data)
-
-        # Use this to unpack bytes data on the MCU side
-        unpacked_prefix = struct.unpack('i', packet[:4])[0]
-        unpacked_data = struct.unpack('d', packet[4:])[0]
-        print("Prefix: " + str(unpacked_prefix) + ", data: " + str(unpacked_data))
+        # Packet Data
+        packet.extend(bytearray(struct.pack('f', linear_vel)))
 
         try:
             self.serial_connection.write(packet)
