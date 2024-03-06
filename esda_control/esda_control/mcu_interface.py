@@ -28,7 +28,7 @@ class MCU_Interface(Node):
         packet.append(21)
 
         # Packet Data
-        packet.extend(bytearray(struct.pack('f', linear_vel)))
+        packet.extend(bytearray(struct.pack('d', linear_vel)))
 
         try:
             self.serial_connection.write(packet)
