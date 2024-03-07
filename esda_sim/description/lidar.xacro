@@ -1,22 +1,25 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:property name="lidar_rad" value="0.0515"/>
+    <xacro:property name="lidar_len" value="0.072"/>
+    
     <link name="velodyne">
         <visual>
             <geometry>
-                <cylinder radius="0.1" length="0.1"/>
+                <cylinder radius="${lidar_rad}" length="${lidar_len}"/>
             </geometry>
             <material name="orange"/>
         </visual>
         
         <collision>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${lidar_rad}" length="${lidar_len}"/>
             </geometry>
             <material name="orange"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="1" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="1" radius="${lidar_rad}" length="${lidar_len}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     

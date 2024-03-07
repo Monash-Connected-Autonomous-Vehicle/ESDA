@@ -131,23 +131,27 @@
          the vehicle. Note due to complexity of CAD, wheels are
          parallel and upright as they don't need accurate modelling
     -->
+    
+    <xacro:property name="wheel_rad" value="0.1325"/>
+    <xacro:property name="wheel_len" value="0.07"/>
+    
     <!-- LEFT DRIVE WHEEL -->
     <link name="left_drive_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="black"/>
         </visual>
         
         <collision>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="black"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="${wheel_len}" radius="${wheel_rad}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -163,19 +167,19 @@
     <link name="right_drive_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="black"/>
         </visual>
         
         <collision>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="black"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="${wheel_len}" radius="${wheel_rad}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -187,24 +191,23 @@
         <axis xyz="0 0 -1"/>
     </joint>
  
-    
    <!-- LEFT STEERING WHEEL -->
     <link name="left_steering_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="light_grey"/>
         </visual>
         
         <collision>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="light_grey"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="${wheel_len}" radius="${wheel_rad}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
@@ -220,19 +223,19 @@
     <link name="right_steering_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="light_grey"/>
         </visual>
         
         <collision>
             <geometry>
-                <cylinder radius="0.1325" length="0.07"/>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
             </geometry>
             <material name="light_grey"/>
         </collision>
         
-        <xacro:inertial_cylinder mass="2" length="0.07" radius="0.1325">
+        <xacro:inertial_cylinder mass="2" length="${wheel_len}" radius="${wheel_rad}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_cylinder>
     </link>
