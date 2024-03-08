@@ -46,22 +46,27 @@
          as a series of boxes
     -->
     <!-- DRIVE BOX LINK -->
+    <xacro:property name="drive_box_x" value="0.5725"/>
+    <xacro:property name="drive_box_y" value="0.575"/>
+    <xacro:property name="drive_box_z" value="0.276"/>
+    <xacro:property name="drive_box_m" value="5"/>
+    
     <link name="drive_box">
         <visual>
             <geometry>
-                <box size="0.505 0.57 0.275" />
+                <box size="${drive_box_x} ${drive_box_y} ${drive_box_z}" />
             </geometry>
             <material name="white"/>
         </visual>
         
         <collision>
             <geometry>
-                <box size="0.505 0.57 0.275" />
+                <box size="${drive_box_x} ${drive_box_y} ${drive_box_z}" />
             </geometry>
             <material name="white"/>
         </collision>   
         
-        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+        <xacro:inertial_box mass="${drive_box_m}" x="${drive_box_x}" y="${drive_box_y}" z="${drive_box_z}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box>
     </link>
@@ -69,53 +74,31 @@
     <joint name="drive_box_joint" type="fixed">
         <parent link="base_link"/>
         <child link="drive_box"/>
-        <origin xyz="-0.2525 0 0"/>
-    </joint>
-    
-    <!-- MIDDLE BOX LINK -->
-    <link name="middle_box">
-        <visual>
-            <geometry>
-                <box size="0.81 0.57 0.275" />
-            </geometry>
-            <material name="light_grey"/>
-        </visual>
-        
-        <collision>
-            <geometry>
-                <box size="0.81 0.57 0.275" />
-            </geometry>
-            <material name="light_grey"/>
-        </collision>
-        
-        <xacro:inertial_box mass="5" x="0.81" y="0.57" z="0.275">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_box>
-    </link>
-    
-    <joint name="middle_box_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="middle_box"/>
-        <origin xyz="0.405 0 0"/>
+        <origin xyz="-0.28625 0 0"/>
     </joint>
     
     <!-- STEERING BOX LINK -->
+    <xacro:property name="steer_box_x" value="0.378"/>
+    <xacro:property name="steer_box_y" value="0.575"/>
+    <xacro:property name="steer_box_z" value="0.146"/>
+    <xacro:property name="steer_box_m" value="5"/>
+    
     <link name="steering_box">
         <visual>
             <geometry>
-                <box size="0.505 0.57 0.275" />
+                <box size="${steer_box_x} ${steer_box_y} ${steer_box_z}" />
             </geometry>
             <material name="white"/>
         </visual>
         
         <collision>
             <geometry>
-                <box size="0.505 0.57 0.275" />
+                <box size="${steer_box_x} ${steer_box_y} ${steer_box_z}" />
             </geometry>
             <material name="white"/>
         </collision>       
         
-        <xacro:inertial_box mass="5" x="0.505" y="0.57" z="0.275">
+        <xacro:inertial_box mass="${steer_box_m}" x="${steer_box_x}" y="${steer_box_y}" z="${steer_box_z}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_box> 
     </link>
@@ -123,7 +106,7 @@
     <joint name="steering_box_joint" type="fixed">
         <parent link="base_link"/>
         <child link="steering_box"/>
-        <origin xyz="1.0625 0 0"/>
+        <origin xyz="0.189 0 -0.065"/>
     </joint>
     
     <!-- WHEEL LINKS
