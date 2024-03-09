@@ -1,6 +1,6 @@
 {
   "projectName": "ESDA",
-  "projectOwner": "Anthony Oon",
+  "projectOwner": "MOnash-Connected-Autonomous-Vehicle",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -62,7 +62,7 @@
         "code",
         "design"
       ]
-    },
+    }
   ],
   "contributorsPerLine": 7,
   "linkToUsage": false
