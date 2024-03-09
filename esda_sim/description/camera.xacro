@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
+    <xacro:arg name="camera_name"   default="zed2" />
+    <xacro:arg name="camera_model"  default="zed2" />
+    
+    <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro"/>
+    <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)"/>
+
+    <joint name="$(arg camera_name)_joint" type="fixed">
+        <parent link="$(arg camera_name)_camera_link"/>
+        <child link="base_link"/>
+        <origin xyz="-1 0.0 -0.35" py="0 -0.5 0" />
+    </joint>
+    
+</robot>
