@@ -1,0 +1,70 @@
+{
+  "projectName": "ESDA",
+  "projectOwner": "MOnash-Connected-Autonomous-Vehicle",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "AnthonyZhOon",
+      "name": "Anthony Oon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/126740410?v=4",
+      "profile": "https://github.com/AnthonyZhOon",
+      "contributions": [
+        "code",
+        "ideas",
+        "projectManagement",
+        "question",
+        "design"
+      ]
+    },
+    {
+      "login": "dylan-gonzalez",
+      "name": "Dylan Gonzales",
+      "avatar_url": "https://avatars.githubusercontent.com/u/45161987?v=4",
+      "profile": "https://github.com/dylan-gonzalez",
+      "contributions": [
+        "design",
+        "ideas",
+        "mentoring",
+        "question"
+      ]
+    },
+    {
+      "login": "Jokua",
+      "name": "William Tioe",
+      "avatar_url": "https://avatars.githubusercontent.com/u/47382093?v=4",
+      "profile": "https://github.com/Jokua",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "Jiawei-Liao",
+      "name": "Jiawei",
+      "avatar_url": "https://avatars.githubusercontent.com/u/105030837?v=4",
+      "profile": "https://github.com/Jiawei-Liao",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "AbBaSaMo",
+      "name": "Baaset",
+      "avatar_url": "https://avatars.githubusercontent.com/u/95030427?v=4",
+      "profile": "https://github.com/AbBaSaMo",
+      "contributions": [
+        "code",
+        "design",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "linkToUsage": false
+}
