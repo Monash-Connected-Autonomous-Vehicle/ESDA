@@ -1,0 +1,14 @@
+{
+  "name": "esda",
+  "version": "1.0.0",
+  "description": "src for the MCAV entry for IGVC 2024",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "all-contributors-cli": "^6.26.1"
+  }
+}

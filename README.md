@@ -2,7 +2,7 @@
 
 This repository holds the software stack for the Monash-Connected-Autonomous-Vehicle's IGVC 2024 entry, the ESDA (Electric Self Driving Automobile).
 
-# Setup and launch
+## Setup and launch
 
 ### Dependencies
 
@@ -39,6 +39,15 @@ Note that as of now, until a working URDF is implemented, the following static t
 
 `ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 base_link base_footprint`
 
-# Contributors
+## Contributors ✨
 
-TODO
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
