@@ -22,7 +22,8 @@ git clone https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
 cd ESDA;
 git submodule update --init --recursive;
 cd ../;
-rosdep install --from-path ESDA --ignore-src -yr
+sudo apt-get update;
+rosdep install --from-path ESDA --ignore-src -yr;
 colcon build;
 source install/setup.bash
 ```
