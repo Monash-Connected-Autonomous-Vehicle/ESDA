@@ -18,11 +18,19 @@ other dependencies have been met
 ```
 mkdir esda_ws;
 cd esda_ws;
-git clone https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
-cd ESDA;
-git submodule update --init --recursive;
-cd ../;
-rosdep install --from-path ESDA --ignore-src -yr
+git clone -b esda_sim https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
+
+# import dependencies that cannot be rosdep installed or apt installed
+vcs import ESDA < ESDA/esda.repos; 
+
+# zed-ros2-wrapper utilizes a submodule that must be initialised
+cd ESDA/zed-ros-2-wrapper;
+git submodule update --init;
+cd ../../
+
+# install remaining dependencies, build and source
+sudo apt-get update; 
+rosdep install --from-path ESDA --ignore-src -yr;
 colcon build;
 source install/setup.bash
 ```

@@ -204,7 +204,7 @@
     
     <joint name="right_steering_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="left_steering_wheel"/>
+        <child link="right_steering_wheel"/>
         <origin xyz="${steer_wheel_x_off} -${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="${pi/2} 0 0 "/>
         <axis xyz="0 0 1"/>
     </joint>
@@ -231,10 +231,69 @@
     
     <joint name="left_steering_wheel_joint" type="continuous">
         <parent link="base_link"/>
-        <child link="right_steering_wheel"/>
+        <child link="left_steering_wheel"/>
         <origin xyz="${steer_wheel_x_off} ${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
         <axis xyz="0 0 -1"/>
     </joint>
+    
+    <link name="mid_steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <joint name="mid_steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="mid_steering_wheel"/>
+        <origin xyz="${steer_wheel_x_off} 0 -${steer_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+    
+    <!-- SERVO -->
+    <xacro:property name="servo_x" value="0.05475"/>
+    <xacro:property name="servo_y" value="0.15"/>
+    
+    <link name="servo">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <joint name="servo_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="servo"/>
+        <origin xyz="${servo_x} ${servo_y} -${steer_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+    
 
     <!-- Adding colours to wheels for gazebo -->
     <gazebo reference="left_drive_wheel">

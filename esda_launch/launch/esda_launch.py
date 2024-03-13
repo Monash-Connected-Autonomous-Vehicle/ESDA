@@ -25,8 +25,8 @@ def generate_launch_description():
    
    localization_launch = IncludeLaunchDescription(
       PythonLaunchDescriptionSource([os.path.join(
-         get_package_share_directory('robot_localization'), 'launch'),
-         '/dual_ekf_navsat_example.launch.py'])
+         get_package_share_directory('esda_launch'), 'launch'),
+         '/localization_launch.py'])
       )
    
    # perception launch = ...
