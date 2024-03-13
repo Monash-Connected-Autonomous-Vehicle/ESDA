@@ -3,3 +3,5 @@ node_modules/
 */install/
 */log/
 */__pycache__/
+swiftnav_ros2/
+zed-ros-2-wrapper/

@@ -19,10 +19,8 @@ other dependencies have been met
 mkdir esda_ws;
 cd esda_ws;
 git clone https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
-cd ESDA;
-git submodule update --init --recursive;
-cd ../;
-sudo apt-get update;
+vcs import ESDA < ESDA/esda.repos # import dependencies that cannot be rosdep installed or apt installed
+sudo apt-get update; 
 rosdep install --from-path ESDA --ignore-src -yr;
 colcon build;
 source install/setup.bash
