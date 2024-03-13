@@ -9,18 +9,16 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 def generate_launch_description():
    
-    # TODO pass custom config into swiftnav
     swiftnav_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('swiftnav_ros2_driver'), 'launch'),
-           '/start.py'])
+            get_package_share_directory('esda_launch'), 'launch'),
+           '/piksi_launch.py'])
         )
 
-    # TODO pass custom config into driver
     velodyne_driver_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
-            get_package_share_directory('velodyne_driver'), 'launch'),
-            '/velodyne_driver_node-VLP16-launch.py'])
+            get_package_share_directory('esda_launch'), 'launch'),
+            '/lidar_launch.py'])
         )
 
     velodyne_pcl_launch = IncludeLaunchDescription(

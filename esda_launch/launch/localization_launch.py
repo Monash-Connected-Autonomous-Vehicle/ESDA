@@ -23,10 +23,8 @@ from ament_index_python.packages import get_package_share_directory
 
 def generate_launch_description():
 
-    robot_localization_dir = get_package_share_directory('robot_localization')
-    # TODO test launch with new config location
-    robot_localization_dir = get_package_share_directory('esda_launch')
-    parameters_file_dir = os.path.join(robot_localization_dir, 'config')
+    esda_launch_dir = get_package_share_directory('esda_launch')
+    parameters_file_dir = os.path.join(esda_launch_dir, 'config')
     parameters_file_path = os.path.join(parameters_file_dir, 'robot_loc_dual_efk_config.yaml')
     os.environ['FILE_PATH'] = str(parameters_file_dir)
     
