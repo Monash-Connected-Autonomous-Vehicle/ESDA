@@ -63,6 +63,7 @@
         "design",
         "ideas",
         "doc"
+      ]
     },
     {
       "login": "Akul-Saigal",
@@ -81,8 +82,8 @@
       "contributions": [
         "projectManagement"
       ]
-    }
+    }    
   ],
-  "contributorsPerLine": 7,
+  "contributorsPerLine": 5,
   "linkToUsage": false
 }
