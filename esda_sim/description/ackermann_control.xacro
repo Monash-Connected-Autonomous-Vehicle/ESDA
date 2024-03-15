@@ -19,8 +19,8 @@
           <!-- Must point to the front turning wheel joints that implement
                axle rotation
           -->
-          <front_left_joint>left_steering_wheel_axle_joint</front_left_joint>
-          <front_right_joint>right_steering_wheel_axle_joint</front_right_joint>   
+          <front_left_joint>left_wheel_axle_joint</front_left_joint>
+          <front_right_joint>right_wheel_axle_joint</front_right_joint>   
                 
           <!-- Arbitrary steering wheel to fulfil the API -->
           <steering_wheel_joint>steering_wheel_joint</steering_wheel_joint>
