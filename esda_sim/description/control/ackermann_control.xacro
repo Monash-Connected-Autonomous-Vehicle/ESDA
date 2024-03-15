@@ -13,8 +13,8 @@
           <!-- Must point to the front turning wheel joints that implement 
                turning motion 
           -->
-          <left_steering_joint>left_steering_wheel_joint</left_steering_joint>
-          <right_steering_joint>right_steering_wheel_joint</right_steering_joint>
+          <left_steering_joint>left_wheel_axle_joint</left_steering_joint>
+          <right_steering_joint>right_wheel_axle_joint</right_steering_joint>
           
           <!-- Must point to the front turning wheel joints that implement
                axle rotation
