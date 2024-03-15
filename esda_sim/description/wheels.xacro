@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <!-- WHEEL LINKS
+         these define the 4 wheels and their attachment to 
+         the vehicle. Note due to complexity of CAD, wheels are
+         parallel and upright as they don't need accurate modelling
+    -->
+    <xacro:property name="wheel_rad" value="0.1325"/>
+    <xacro:property name="wheel_len" value="0.07"/>
+    <xacro:property name="wheel_mass" value="2"/>
+
+    <xacro:include filename="drive_wheels.xacro"/>
+    
+    <xacro:include filename="steering_wheels.xacro"/>
+    
+    <!-- Adding colours to wheels for gazebo -->
+    <gazebo reference="left_drive_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="right_drive_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="left_steering_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+    <gazebo reference="right_steering_wheel">
+        <material>Gazebo/Black</material>
+    </gazebo>
+
+</robot>

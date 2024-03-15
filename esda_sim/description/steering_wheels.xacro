@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- STEERING WHEELS 
+         Define the 2 front steering wheels that will turn the ESDA.
+    -->
+    <xacro:property name="steer_wheel_x_off" value="0.235"/>
+    <xacro:property name="steer_wheel_y_off" value="0.52297"/>
+    <xacro:property name="steer_wheel_z_off" value="0.208"/>
+    
+    <!-- Define the wheels themselves -->
+    <link name="right_steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <link name="left_steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <!-- Note that in the following joint definitions, when defining the wheels
+         axis of rotation, it refers to the wheel links axis, not base_link as
+         the wheels have been rotated 90deg for correct positioning.
+         
+         The comments below however, are in reference to the base_link axis.
+    -->
+    <!-- Define the wheels rotation around the x axis so they can roll forward -->
+    <joint name="right_steering_wheel_axle_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_steering_wheel"/>
+        <origin xyz="${steer_wheel_x_off} -${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="${pi/2} 0 0 "/>
+        <axis xyz="0 0 1"/>
+    </joint>
+    
+    <joint name="left_steering_wheel_axle_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_steering_wheel"/>
+        <origin xyz="${steer_wheel_x_off} ${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+    
+    <!-- Define the wheels rotation around the z-axis so they can turn sideways -->
+    <joint name="right_steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_steering_wheel"/>
+        <origin xyz="${steer_wheel_x_off} -${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="${pi/2} 0 0 "/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <joint name="left_steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_steering_wheel"/>
+        <origin xyz="${steer_wheel_x_off} ${steer_wheel_y_off} -${steer_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 1 0"/>
+    </joint>
+    
+    <!-- Define an arbitrary steering wheel as it's required for the AckermannControl plugin to work -->
+    <link name="steering_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <joint name="steering_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="steering_wheel"/>
+        <origin xyz="1 0 2" rpy="${pi/2} 0 ${pi/2}"/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+</robot>
