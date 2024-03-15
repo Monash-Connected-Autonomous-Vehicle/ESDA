@@ -50,8 +50,7 @@ that publish them.
 |------|----|---------|-----------------|
 |||||
 
-### C
-ontrol
+### Control
 ## esda_control
 |Topic|Type|Objective|Nodes interacting|
 |------|----|---------|-----------------|

@@ -61,7 +61,26 @@
       "contributions": [
         "code",
         "design",
-        "ideas"
+        "ideas",
+        "doc"
+      ]
+    },
+    {
+      "login": "Akul-Saigal",
+      "name": "Akul Saigal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108743138?v=4",
+      "profile": "https://github.com/Akul-Saigal",
+      "contributions": [
+        "projectManagement"
+      ]
+    },
+    {
+      "login": "Christina1508",
+      "name": "Christina Prakash",
+      "avatar_url": "https://avatars.githubusercontent.com/u/108743138?v=4",
+      "profile": "https://github.com/Christina1508",
+      "contributions": [
+        "projectManagement"
       ]
     }
   ],
