@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
     <gazebo>
-        <plugin name="gazebo_ros_ackermann_drive" filename="libgazebo_ros_ackermann_drive.so">
+        <plugin name="ackermann_drive" filename="libgazebo_ros_ackermann_drive.so">
             <ros>
                 <namespace>demo</namespace>
                 <remapping>cmd_vel:=cmd_demo</remapping>
