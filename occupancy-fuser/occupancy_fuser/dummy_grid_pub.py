@@ -37,6 +37,7 @@ class OccupancyPub(Node):
         grid.header.frame_id = "base_link"
         grid.header.stamp = self.get_clock().now().to_msg()
         grid.info = info or MapMetaData()
+        grid.info.resolution = 1.0
         grid.info.width = data.shape[0]
         grid.info.height = data.shape[1]
 

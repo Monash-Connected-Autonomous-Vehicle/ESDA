@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = 'occupancy-fuser'
+package_name = 'occupancy_fuser'
 
 setup(
     name=package_name,
@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'occupancy-fuser = occupancy-fuser.occupancy-fuser:main'
+            'occupancy_fuser = occupancy_fuser.occupancy_fuser_node:main',
+            'dummy_grid = occupancy_fuser.dummy_grid_pub:main'
         ],
     },
 )
