@@ -15,7 +15,7 @@ In the future, instructions will be written as part of this README
 Run the following commands to create, build and source the workspace once all 
 other dependencies have been met
 
-```
+```bash
 mkdir esda_ws;
 cd esda_ws;
 git clone -b esda_sim https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
