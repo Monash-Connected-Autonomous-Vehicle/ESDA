@@ -1,19 +1,21 @@
 from array import array as Array
-import scipy as sp
+from scipy.signal import convolve2d
 from nav_msgs.msg import OccupancyGrid, MapMetaData
+from geometry_msgs.msg import Pose
 import rclpy
 from rclpy.node import Node
 import numpy as np
 
+
 class OccupancyFuser(Node):
     def __init__(self):
         super().__init__('occupancy_fuser')
-        self.grid1_sub= self.create_subscription(
+        self.grid1_sub = self.create_subscription(
             OccupancyGrid,
             "grid1",
             self._update_callback, 1)
-        
-        ## The different occupancy grids may of different sizes but are assumed to be local centred???
+
+        # The different occupancy grids may of different sizes but are assumed to be local centred???
         self.grid2_sub = self.create_subscription(
             OccupancyGrid,
             "grid2",
@@ -28,11 +30,11 @@ class OccupancyFuser(Node):
 
     def _update_callback(self, msg: OccupancyGrid):
         metadata: MapMetaData = msg.info
-        if not (metadata.height % 2 == 1 and metadata.width % 2 ==1):
+        if not (metadata.height % 2 == 1 and metadata.width % 2 == 1):
             self.get_logger().warn(f"Occupancy grid from {msg.header.frame_id} has no centre, ignoring")
 
         self.get_logger().info(f"Updating grid from frame {msg.header.frame_id}")
-        self.recent_grids[msg.header.frame_id] = msg 
+        self.recent_grids[msg.header.frame_id] = msg
 
     def timer_callback(self):
         if len(self.recent_grids) == 0:
@@ -44,24 +46,27 @@ class OccupancyFuser(Node):
         grid.header.stamp = self.get_clock().now().to_msg()
 
         width = max(self.recent_grids.values(), key=lambda x: x.info.width).info.width
-        height = max(self.recent_grids.values(), key=lambda x:x.info.height).info.height
-        data = np.zeros((width, height))
+        height = max(self.recent_grids.values(), key=lambda x: x.info.height).info.height
+        size = max(width, height)
+        data = np.zeros((size, size))
         # Create a kernel which has a single island in the centre, use this to splat all submaps into main map
-        centre_kernel = np.zeros(data.shape)
-        centre_kernel[width//2+1, height//2+1] = 1
+        centre_kernel = np.zeros((size, size))
+        centre_kernel[size//2, size//2] = 1
         for map in self.recent_grids.values():
             if self.get_clock().now().seconds_nanoseconds()[0] - map.header.stamp.sec > 1:
                 self.get_logger().info(f"Discarding old map data from frame {map.header.frame_id}")
                 continue
             map_data = np.array(map.data)
-            map_data.shape = (map.info.width, map.info.height)
-            data += sp.signal.convolve2d(centre_kernel, map_data, mode='same')
-        grid.data = Array('b', map_data.ravel().astype(np.int8))
+            map_data.shape = (map.info.height, map.info.width)
+            data += convolve2d(centre_kernel, map_data, mode='same')
+        grid.data = Array('b', data.ravel().astype(np.int8))
         grid.info = MapMetaData()
-        grid.info.height = height
-        grid.info.width = width
+        grid.info.resolution = 1.0
+        grid.info.height = grid.info.width = size
+        origin = Pose()
+        origin.position.x = origin.position.y = -size/2
+        grid.info.origin = origin  # Origin is the centre, facing straight ahead
         self.pub.publish(grid)
-        
 
 
 def main(args=None):
@@ -80,4 +85,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
