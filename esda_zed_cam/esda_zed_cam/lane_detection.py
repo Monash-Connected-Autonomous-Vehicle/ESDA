@@ -1,5 +1,4 @@
 import numpy as np
-# import pandas as pd
 import cv2
 from array import array as Array
 
@@ -14,11 +13,9 @@ from cv_bridge import CvBridge
 import time
 
 def frame_processor(input_image):
-	image = input_image
-	# Remove noise
-	grayscale = input_image
+	cv2.imwrite("input_image.png", input_image)
 	kernel_size = 5
-	blur = cv2.GaussianBlur(grayscale, (kernel_size, kernel_size), 0)
+	blur = cv2.GaussianBlur(input_image, (kernel_size, kernel_size), 0)
 	# Thresholds for the hysteresis procedure
 	low_t = 50
 	high_t = 150
@@ -31,9 +28,11 @@ def frame_processor(input_image):
 
 	# Apply hough transform to get straight lines
 	hough = hough_transform(region_image)
+	if hough is None:
+		return input_image, np.zeros((1000, 2500)), np.zeros((1000, 2500))
 
 	# Draw lines for visualization
-	image_with_lines, line_image = draw_lane_lines(image, lane_lines(image, hough))
+	image_with_lines, line_image = draw_lane_lines(input_image, lane_lines(input_image, hough))
 	cv2.imwrite("test.png", line_image)
 	image_with_lines_birdseye = create_birdseye_view(image_with_lines, region)
 	line_image_birdseye = create_birdseye_view(line_image, region)
@@ -87,25 +86,24 @@ def average_slope_intercept(lines):
 	left_weights = [] #(length)
 	right_lines = [] #(slope, intercept)
 	right_weights = [] #(length)
-	
-	if lines is not None and len(lines):
-		for line in lines:
-			for x1, y1, x2, y2 in line:
-				if x1 == x2:
-					continue
 
-				slope = (y2 - y1) / (x2 - x1)
-				intercept = y1 - (slope * x1)
-				length = np.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2))
-				# Slope of left lane is negative and for right lane slope is positive
-				if abs(slope) < 0.2:
-					continue
-				if slope < 0:
-					left_lines.append((slope, intercept))
-					left_weights.append((length))
-				else:
-					right_lines.append((slope, intercept))
-					right_weights.append((length))
+	for line in lines:
+		for x1, y1, x2, y2 in line:
+			if x1 == x2:
+				continue
+
+			slope = (y2 - y1) / (x2 - x1)
+			intercept = y1 - (slope * x1)
+			length = np.sqrt(((y2 - y1) ** 2) + ((x2 - x1) ** 2))
+			# Slope of left lane is negative and for right lane slope is positive
+			if abs(slope) < 0.2:
+				continue
+			if slope < 0:
+				left_lines.append((slope, intercept))
+				left_weights.append((length))
+			else:
+				right_lines.append((slope, intercept))
+				right_weights.append((length))
 	
 	left_lane = np.dot(left_weights, left_lines) / np.sum(left_weights) if len(left_weights) > 0 else None
 	right_lane = np.dot(right_weights, right_lines) / np.sum(right_weights) if len(right_weights) > 0 else None
@@ -114,7 +112,7 @@ def average_slope_intercept(lines):
 def pixel_points(y1, y2, line):
 	# Converts the slope and intercept of each line into pixel points.
 	if line is None:
-		return ()
+		return None
 	slope, intercept = line
 	x1 = int((y1 - intercept)/slope)
 	x2 = int((y2 - intercept)/slope)
@@ -192,6 +190,7 @@ class OccupancyGridPublisher(Node):
 			durability = QoSDurabilityPolicy.VOLATILE
 		)
 		self.subscription = self.create_subscription(Image, '/zed/zed_node/left/image_rect_color', self.publish_grid, qos_profile=video_qos)
+	
 	def publish_grid(self, data):
 		image = self.br.imgmsg_to_cv2(data)
 		image_with_lines, image_with_lines_birdseye, line_image_birdseye = frame_processor(image)
