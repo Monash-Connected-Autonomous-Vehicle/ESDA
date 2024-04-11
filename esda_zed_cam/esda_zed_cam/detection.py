@@ -46,9 +46,14 @@ class OccupancyGridPublisher(Node):
 
         lower_road_colour = np.array([0, 0, 0])
         upper_road_colour = np.array([179, 255, 100])
+        lower_ramp_green_colour = np.array([40, 40, 40])
+        upper_ramp_green_colour = np.array([80, 255, 255])
 
-        mask = cv2.inRange(hsv, lower_road_colour, upper_road_colour)
-        mask = cv2.bitwise_and(image, image, mask = mask)
+        mask_road = cv2.inRange(hsv, lower_road_colour, upper_road_colour)
+        mask_ramp = cv2.inRange(hsv, lower_ramp_green_colour, upper_ramp_green_colour)
+
+        combined_mask = cv2.bitwise_or(mask_road, mask_ramp)
+        mask = cv2.bitwise_and(image, image, mask = combined_mask)
 
         # Convert black and white image to birds eye view 
         rows, cols = image.shape[:2]
@@ -66,7 +71,7 @@ class OccupancyGridPublisher(Node):
 
         matrix = cv2.getPerspectiveTransform(src, dst)
 
-        birdseye_view = cv2.warpPerspective(image, matrix, (LENGTH, WIDTH))
+        birdseye_view = cv2.warpPerspective(mask, matrix, (LENGTH, WIDTH))
 
         # Create occupancy grid from black and white birds eye view
         OCCUPANCY_WIDTH = 10
