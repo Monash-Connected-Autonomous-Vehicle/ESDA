@@ -44,16 +44,13 @@ class OccupancyGridPublisher(Node):
         image = self.br.imgmsg_to_cv2(data)
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
-        lower_road_colour = np.array([0, 0, 0])
-        upper_road_colour = np.array([179, 255, 100])
-        lower_ramp_green_colour = np.array([40, 40, 40])
-        upper_ramp_green_colour = np.array([80, 255, 255])
+        lower_white = np.array([0, 0, 200])
+        upper_white = np.array([179, 30, 255]) 
 
-        mask_road = cv2.inRange(hsv, lower_road_colour, upper_road_colour)
-        mask_ramp = cv2.inRange(hsv, lower_ramp_green_colour, upper_ramp_green_colour)
+        mask_white = cv2.inRange(hsv, lower_white, upper_white)
 
-        combined_mask = cv2.bitwise_or(mask_road, mask_ramp)
-        mask = cv2.bitwise_and(image, image, mask = combined_mask)
+        mask_non_white = cv2.bitwise_not(mask_white)
+        mask = cv2.bitwise_and(image, image, mask = mask_non_white)
 
         # Convert black and white image to birds eye view 
         rows, cols = image.shape[:2]
