@@ -32,10 +32,11 @@ class OccupancyGridPublisher(Node):
         msg = OccupancyGrid()
         msg.header.stamp = self.get_clock().now().to_msg()
         msg.header.frame_id = 'map'
-        msg.info.resolution = 1 # Grid size (meters)
+        msg.info.resolution = 1.0 # Grid size (meters)
         msg.info.width = occupancy_grid.shape[1]
         msg.info.height = occupancy_grid.shape[0]
         msg.data = Array('b', occupancy_grid.ravel().astype(np.int8))
+        msg.info.origin.position.x = -5.0
         self.occupancy_grid_publisher.publish(msg)
 
 
@@ -44,13 +45,15 @@ class OccupancyGridPublisher(Node):
         image = self.br.imgmsg_to_cv2(data)
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
 
-        lower_white = np.array([0, 0, 200])
-        upper_white = np.array([179, 30, 255]) 
+        lower_white = np.array([0, 0, 150])
+        upper_white = np.array([180, 30, 255]) 
 
         mask_white = cv2.inRange(hsv, lower_white, upper_white)
 
-        mask_non_white = cv2.bitwise_not(mask_white)
-        mask = cv2.bitwise_and(image, image, mask = mask_non_white)
+        mask = cv2.bitwise_and(image, image, mask = mask_white)
+
+        masked_image = np.zeros_like(image)
+        masked_image[mask_white != 0] = [255, 255, 255]
 
         # Convert black and white image to birds eye view 
         rows, cols = image.shape[:2]
@@ -68,11 +71,11 @@ class OccupancyGridPublisher(Node):
 
         matrix = cv2.getPerspectiveTransform(src, dst)
 
-        birdseye_view = cv2.warpPerspective(mask, matrix, (LENGTH, WIDTH))
+        birdseye_view = cv2.warpPerspective(masked_image, matrix, (LENGTH, WIDTH))
 
         # Create occupancy grid from black and white birds eye view
-        OCCUPANCY_WIDTH = 10
-        OCCUPANCY_HEIGHT = 10
+        OCCUPANCY_WIDTH = 11
+        OCCUPANCY_HEIGHT = 11
 
         grid_width = image.shape[1] // OCCUPANCY_WIDTH
         grid_height = image.shape[0] // OCCUPANCY_HEIGHT
@@ -83,7 +86,7 @@ class OccupancyGridPublisher(Node):
             for j in range(OCCUPANCY_WIDTH):
                 roi = birdseye_view[i * grid_height: (i + 1) * grid_height,
                                     j * grid_width: (j + 1) * grid_width]
-                
+                # White represents obstacle
                 if np.any(roi == 255):
                     occupancy_grid[i, j] = 1
 
