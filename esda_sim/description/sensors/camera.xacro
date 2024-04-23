@@ -9,7 +9,7 @@
     <joint name="$(arg camera_name)_joint" type="fixed">
         <parent link="base_link"/>
         <child link="$(arg camera_name)_camera_link"/>
-        <origin xyz="-1 0.0 -0.35" py="0 -0.5 0" />
+        <origin xyz="1 0.0 0.35" py="0 -0.5 0" />
     </joint>
     
 </robot>
