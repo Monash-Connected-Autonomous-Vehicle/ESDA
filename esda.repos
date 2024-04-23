@@ -6,4 +6,4 @@ repositories:
   zed-ros-2-wrapper:
     type: git
     url: https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper.git
-    verson: esda
+    version: esda
