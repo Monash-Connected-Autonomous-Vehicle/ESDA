@@ -13,8 +13,13 @@ Refer to the following links for further instructions on setting up these depend
 
 [Zed ROS2 wrapper dependencies](https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper/tree/esda?tab=readme-ov-file#installation)
 
-And finally, install the following tool
-'sudo apt install python3-vcstool'
+And finally, run the following
+
+```bash
+sudo apt-get update
+sudo apt install python3-vcstool
+sudo apt-get install libserialport-dev
+```
 
 ### Building and sourcing
 
