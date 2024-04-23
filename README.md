@@ -7,8 +7,14 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 ### Dependencies
 
 This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
-Refer to the respective repositories of these submodules for further information on such dependencies.
-In the future, instructions will be written as part of this README
+Refer to the following links for further instructions on setting up these dependencies:
+
+[Swiftnav piksi driver dependencies](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
+
+[Zed ROS2 wrapper dependencies](https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper/tree/esda?tab=readme-ov-file#installation)
+
+And finally, install the following tool
+'sudo apt install python3-vcstool'
 
 ### Building and sourcing
 
