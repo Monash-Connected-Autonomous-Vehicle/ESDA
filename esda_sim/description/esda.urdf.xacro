@@ -9,13 +9,12 @@
     
     <xacro:include filename="wheels.xacro"/>
 
-    <!--<xacro:include filename="sensors/lidar.xacro"/>-->
-    
+    <xacro:include filename="sensors/lidar.xacro"/>
+
     <xacro:include filename="sensors/piksi.xacro"/>
     
-    <!--<xacro:include filename="sensors/camera.xacro"/>-->
+    <xacro:include filename="sensors/camera.xacro"/>
     
     <xacro:include filename="control/ackermann_control.xacro"/> 
 
-    
 </robot>

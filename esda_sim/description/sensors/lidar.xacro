@@ -1,36 +1,84 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
-
-    <xacro:property name="lidar_rad" value="0.0515"/>
-    <xacro:property name="lidar_len" value="0.072"/>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="VLP-16">
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:property name="name" value="velodyne" />
+    <xacro:property name="parent" value="base_link" />
     
-    <link name="velodyne">
+    <xacro:property name="radius" value="0.0516" /> <!-- measured 50.5mm -->
+    <xacro:property name="height" value="0.0717" /> <!-- measured 72.8mm | top 14mm, mid 38.8mm, bottom 19mm-->    
+    <xacro:property name="x" value="-0.149" />
+    <xacro:property name="y" value="0" />
+    <xacro:property name="z" value="0.5707" />
+    
+    <joint name="${name}_base_mount_joint" type="fixed">
+        <origin xyz="${x} ${y} ${z}" rpy="0 0 0" />
+        <parent link="${parent}"/>
+        <child link="${name}_base_link"/>
+    </joint>
+
+    <link name="${name}_base_link">
+        <inertial>
+        <mass value="0.83"/>
+        <origin xyz="0 0 0.03585"/>
+        <inertia 
+            ixx="${(0.83 * (3.0*0.0516*0.0516 + 0.0717*0.0717)) / 12.0}" ixy="0" ixz="0"
+            iyy="${(0.83 * (3.0*0.0516*0.0516 + 0.0717*0.0717)) / 12.0}" iyz="0"
+            izz="${0.5 * 0.83 * (0.0516*0.0516)}"/>
+        </inertial>
+        
+        <!--
         <visual>
             <geometry>
-                <cylinder radius="${lidar_rad}" length="${lidar_len}"/>
+                <mesh filename="package://velodyne_description/meshes/VLP16_base_1.dae" />
             </geometry>
-            <material name="orange"/>
+        </visual>
+        
+        <visual>
+            <geometry>
+                <mesh filename="package://velodyne_description/meshes/VLP16_base_2.dae" />
+            </geometry>
+        </visual>
+        -->
+        
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0.03585"/>
+            <geometry>
+                <cylinder radius="${radius}" length="${height}"/>
+            </geometry>
+            <material name="light_grey"/>
         </visual>
         
         <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.03585"/>
             <geometry>
-                <cylinder radius="${lidar_rad}" length="${lidar_len}"/>
+                <cylinder radius="${radius}" length="${height}"/>
             </geometry>
-            <material name="orange"/>
         </collision>
-        
-        <xacro:inertial_cylinder mass="1" radius="${lidar_rad}" length="${lidar_len}">
-            <origin xyz="0 0 0" rpy="0 0 0"/>
-        </xacro:inertial_cylinder>
-    
     </link>
-    
-    <joint name="velodyne_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="velodyne"/>
-        <origin xyz="0 0 0.5" rpy="0 0 0"/>
+
+    <joint name="${name}_base_scan_joint" type="fixed" >
+        <origin xyz="0 0 0.0377" rpy="0 0 0" />
+        <parent link="${name}_base_link" />
+        <child link="${name}"/>
     </joint>
-    
+        
+    <link name="${name}">
+	    <inertial>
+	        <mass value="0.01"/>
+	        <origin xyz="0 0 0"/>
+	        <inertia ixx="1e-7" ixy="0" ixz="0" iyy="1e-7" iyz="0" izz="1e-7"/>
+	    </inertial>
+	    
+	    <!--
+	    <visual>
+	        <origin xyz="0 0 -0.0377" />
+	        <geometry>
+	            <mesh filename="package://velodyne_description/meshes/VLP16_scan.dae" />
+	        </geometry>
+	    </visual>
+	    -->
+    </link>
+
     <gazebo reference="velodyne">
         <material>Gazebo/Grey</material>
 
@@ -67,5 +115,5 @@
             </plugin>
         </sensor>
     </gazebo>
- 
+
 </robot>

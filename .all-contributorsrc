@@ -82,7 +82,17 @@
       "contributions": [
         "projectManagement"
       ]
-    }    
+    },
+    {
+      "login": "jang0029",
+      "name": "Jason Angus",
+      "avatar_url": "https://avatars.githubusercontent.com/u/141693960?v=4",
+      "profile": "https://github.com/jang0029",
+      "contributions": [
+        "code",
+        "data"
+      ]
+    }      
   ],
   "contributorsPerLine": 5,
   "linkToUsage": false

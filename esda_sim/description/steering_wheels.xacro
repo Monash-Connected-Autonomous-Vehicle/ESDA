@@ -132,7 +132,9 @@
         <axis xyz="0 0 1"/>
     </joint>
 
+
     <!-- Define an arbitrary steering wheel as it's required for the AckermannControl plugin to work -->
+    <!--
     <link name="steering_wheel">
         <visual>
             <geometry>
@@ -159,5 +161,6 @@
         <origin xyz="0.5 0 0.5" rpy="${pi/2} 0 ${pi/2}"/>
         <axis xyz="0 0 1"/>
     </joint>
+    -->
 
 </robot>
