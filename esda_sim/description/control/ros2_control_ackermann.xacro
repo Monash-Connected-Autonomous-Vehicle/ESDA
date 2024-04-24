@@ -1,5 +1,62 @@
 
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- TODO: determine min/max steer -->
+    <xacro:property name="steer_min" value="-45"/>
+    <xacro:property name="steer_max" value="45"/>
+    <!-- TODO: determine min/max vel -->
+    <xacro:property name="vel_min" value="0"/>
+    <xacro:property name="vel_max" value="10"/>    
 
+    <ros2_control>
+        <hardware>
+            <plugin>
+                <!-- TODO -->
+            </plugin>
+        </hardware>
+
+        <!-- JOINT CONFIGURATIONS
+                <command_inteface> configures the commands we send
+                <state_interface> indicates what readings we want to get
+        -->
+        <!-- STEER WHEELS -->
+        <joint name="right_steer_joint">
+            <command_interface name="position">
+                <param name="min">${steer_min}</param>
+                <param name="max">${steer_max}</param>
+            </command_interface>
+
+            <state_interface name="position"/>
+        </joint>
+
+        <joint name="left_steer_joint">
+            <command_interface name="position">
+                <param name="min">${steer_min}</param>
+                <param name="max">${steer_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+        </joint>
+
+        <!-- DRIVE WHEELS -->
+        <joint name="right_drive_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">${vel_min}</param>
+                <param name="max">${vel_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>            
+        </joint>
+
+        <joint name="left_drive_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">${vel_min}</param>
+                <param name="max">${vel_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>            
+        </joint>
+    </ros2_control>
 </robot>

@@ -1,0 +1,35 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 30
+    use_sim_time: true
+
+    # I think this defines the name of the controller
+    # and the type, and then the params on line 17 must
+    # match the name. So here we name it 'controller'.
+    controller: 
+      type: ackermann_steering_controller/AckermannSteeringController
+
+    joint_broad:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+# https://control.ros.org/humble/doc/ros2_controllers/steering_controllers_library/doc/userdoc.html#parameters
+# https://control.ros.org/humble/doc/ros2_controllers/ackermann_steering_controller/doc/userdoc.html
+controller:
+  ros__parameters:
+
+    reference_timeout: 2.0
+    front_steering: true
+    open_loop: false
+    velocity_rolling_window_size: 10
+    position_feedback: false
+    use_stamped_vel: true
+    rear_wheels_names: [right_drive_wheel_joint, left_drive_wheel_joint]
+    front_wheels_names: [right_steer_joint, left_steer_joint]
+
+    wheelbase: 3.24644 # todo
+    front_wheel_track: 2.12321 # todo
+    rear_wheel_track: 1.76868 # todo
+    front_wheels_radius: 0.45 # todo
+    rear_wheels_radius: 0.45 # todo
+
+    # todo: consider odom and tf params after testing
