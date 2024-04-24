@@ -61,7 +61,8 @@
         </joint>
     </ros2_control>
 
-    <!-- Supply params. Taken from  the following link
+    <!-- Tell Gazebo to ue R2C. This also has its own control manager. 
+        Need to tell its manager where the config for the controllers is. Taken from  the following link
         https://github.com/joshnewans/articubot_one/blob/0085689ee023baac604268cdf7a9ce85a0ed7bae/description/ros2_control.xacro    
     -->
     <gazebo>

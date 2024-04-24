@@ -32,4 +32,4 @@ controller:
     front_wheels_radius: 0.45 # todo
     rear_wheels_radius: 0.45 # todo
 
-    # todo: consider odom and tf params after testing
+    # todo: consider odom, other and tf params after testing
