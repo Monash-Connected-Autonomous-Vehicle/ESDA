@@ -9,10 +9,11 @@
     <xacro:property name="vel_max" value="10"/>    
 
     <ros2_control>
+        <!-- Refer to the following link for more details on setting up R2C for gazebo sims
+            https://github.com/ros-controls/ros2_control_demos/blob/humble/example_9/description/ros2_control/rrbot.ros2_control.xacro 
+        -->
         <hardware>
-            <plugin>
-                <!-- TODO -->
-            </plugin>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
         </hardware>
 
         <!-- JOINT CONFIGURATIONS
@@ -59,4 +60,13 @@
             <state_interface name="velocity"/>            
         </joint>
     </ros2_control>
+
+    <!-- Supply params. Taken from  the following link
+        https://github.com/joshnewans/articubot_one/blob/0085689ee023baac604268cdf7a9ce85a0ed7bae/description/ros2_control.xacro    
+    -->
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
+        </plugin>
+    </gazebo>
 </robot>
