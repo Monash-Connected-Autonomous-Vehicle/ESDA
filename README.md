@@ -29,7 +29,7 @@ other dependencies have been met
 ```bash
 mkdir esda_ws;
 cd esda_ws;
-git clone -b esda_sim https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
+git clone https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA.git;
 
 # import dependencies that cannot be rosdep installed or apt installed
 vcs import ESDA < ESDA/esda.repos; 
