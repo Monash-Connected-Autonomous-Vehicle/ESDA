@@ -20,8 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'camera_interface = esda_zed_cam.camera_interface:main',
-            'lane_detection = esda_zed_cam.lane_detection:main'
+            'lane_detect = esda_zed_cam.detection:main'
         ],
     },
 )

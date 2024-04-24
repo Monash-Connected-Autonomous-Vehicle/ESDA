@@ -133,7 +133,7 @@ def draw_lane_lines(image, lines, color=[255, 255, 255], thickness=5):
 	# Draw lines onto the image.
 	line_image = np.zeros_like(image, dtype=np.uint8)
 	for line in lines:
-		if len(line) > 0:
+		if line:
 			cv2.line(line_image, *line, color, thickness)
 
 	image_with_lines = cv2.addWeighted(image, 1.0, line_image, 1.0, 0.0)
