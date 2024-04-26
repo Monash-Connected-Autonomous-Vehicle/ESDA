@@ -1,4 +1,3 @@
-
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     <!-- TODO: determine min/max steer -->
@@ -70,4 +69,10 @@
             <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
         </plugin>
     </gazebo>
+    
 </robot>
+
+
+
+
+
