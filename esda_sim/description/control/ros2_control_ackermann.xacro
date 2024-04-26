@@ -64,11 +64,13 @@
         Need to tell its manager where the config for the controllers is. Taken from  the following link
         https://github.com/joshnewans/articubot_one/blob/0085689ee023baac604268cdf7a9ce85a0ed7bae/description/ros2_control.xacro    
     -->
-    <gazebo>
-        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
-            <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
-        </plugin>
-    </gazebo>
+	<gazebo>
+	    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+	      <robot_param>robot_description</robot_param>
+	      <robot_param_node>robot_state_publisher</robot_param_node>
+	      <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
+	    </plugin>
+	</gazebo>
     
 </robot>
 

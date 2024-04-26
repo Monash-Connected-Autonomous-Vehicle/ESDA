@@ -34,7 +34,7 @@ def generate_launch_description():
     ackermann_spawner = Node(
         package="controller_manager",
         executable="spawner",
-        arguments=["controller"],
+        arguments=["ack_cont"],
     )
 
     joint_broad_spawner = Node(

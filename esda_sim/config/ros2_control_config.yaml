@@ -6,7 +6,7 @@ controller_manager:
     # I think this defines the name of the controller
     # and the type, and then the params on line 17 must
     # match the name. So here we name it 'controller'.
-    controller: 
+    ack_cont: 
       type: ackermann_steering_controller/AckermannSteeringController
 
     joint_broad:
@@ -14,7 +14,7 @@ controller_manager:
 
 # https://control.ros.org/humble/doc/ros2_controllers/steering_controllers_library/doc/userdoc.html#parameters
 # https://control.ros.org/humble/doc/ros2_controllers/ackermann_steering_controller/doc/userdoc.html
-controller:
+ack_cont:
   ros__parameters:
 
     reference_timeout: 2.0
