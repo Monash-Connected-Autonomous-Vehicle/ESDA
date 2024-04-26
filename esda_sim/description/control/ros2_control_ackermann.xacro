@@ -7,7 +7,7 @@
     <xacro:property name="vel_min" value="0"/>
     <xacro:property name="vel_max" value="10"/>    
 
-    <ros2_control>
+    <ros2_control type="system" name="GazeboSystem">
         <!-- Refer to the following link for more details on setting up R2C for gazebo sims
             https://github.com/ros-controls/ros2_control_demos/blob/humble/example_9/description/ros2_control/rrbot.ros2_control.xacro 
         -->
@@ -65,13 +65,11 @@
         https://github.com/joshnewans/articubot_one/blob/0085689ee023baac604268cdf7a9ce85a0ed7bae/description/ros2_control.xacro    
     -->
 	<gazebo>
-	    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
-	      <robot_param>robot_description</robot_param>
-	      <robot_param_node>robot_state_publisher</robot_param_node>
+	    <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
 	      <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
 	    </plugin>
 	</gazebo>
-    
+
 </robot>
 
 
