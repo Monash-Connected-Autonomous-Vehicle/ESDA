@@ -31,23 +31,10 @@ def generate_launch_description():
                                    '-entity', 'esda'],
                         output='screen')
 
-    ackermann_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["ack_cont"],
-    )
-
-    joint_broad_spawner = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_broad"],
-    )
 
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
-        spawn_entity,
-        ackermann_spawner,
-        joint_broad_spawner
+        spawn_entity
     ])
