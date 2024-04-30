@@ -13,6 +13,9 @@
     <test_depend>python3-pytest</test_depend>
     
     <depend>xacro</depend>
+    <depend>ros2_control</depend>
+    <depend>ros2_controllers</depend>
+    <depend>gazebo_ros2_control</depend>
   
     <export>
         <build_type>ament_python</build_type>

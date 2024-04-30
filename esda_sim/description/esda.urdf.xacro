@@ -15,6 +15,6 @@
     
     <xacro:include filename="sensors/camera.xacro"/>
     
-    <xacro:include filename="control/gazebo_ackermann_control.xacro"/> 
+    <xacro:include filename="control/ros2_control.xacro"/> 
 
 </robot>
