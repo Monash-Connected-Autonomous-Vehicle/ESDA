@@ -46,8 +46,10 @@ class OccupancyGridPublisher(Node):
         msg.info.height = occupancy_grid.shape[0]
         msg.data = Array('b', occupancy_grid.ravel().astype(np.int8))
         ### This defines the center position to be in the center of the RVIZ grid
-        msg.info.origin.position.x = (occupancy_grid.shape[0]) * msg.info.resolution
-        msg.info.origin.position.y = (occupancy_grid.shape[1]/2) * msg.info.resolution
+        msg.info.origin.position.x = 3.28
+        msg.info.origin.position.y = 2.36
+        ### 0.49, 2.46
+
         ### Quaternion defines a 90 degree rotation about z axis here which aligns the forwards
         ### of the occupancy grid with the positive x axis direction
         q = Quaternion()
@@ -62,12 +64,14 @@ class OccupancyGridPublisher(Node):
         ### Obtaining Image from ZED ROS Node
         frame = self.br.imgmsg_to_cv2(data)
 
+        cv2.imwrite('default.png', frame)
+
         ## Convert image into HSV
         frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         ## Creating a mask to detect white (lane-lines and potholes)
         lower_white = np.array([0, 0, 150])
-        upper_white = np.array([180, 30, 255]) 
+        upper_white = np.array([180, 30, 255])
 
         mask_white = cv2.inRange((frame_hsv), lower_white, upper_white)
 
@@ -91,11 +95,11 @@ class OccupancyGridPublisher(Node):
         # Defining the array of scanning
         src = np.float32([top_left, top_right, bottom_left, bottom_right])
 
-        ### Defining 1 pixel on occupancy grid as 5cm
+        ### Defining 1 pixel on occupancy grid as 1cm
         ## Defining the distortion matrix
-        BASE_WIDTH = 400
-        WIDTH = 700
-        LENGTH = 1000
+        BASE_WIDTH = 124
+        WIDTH = 463
+        LENGTH = 279
         dst = np.float32([[0, 0], [WIDTH, 0], [(WIDTH - BASE_WIDTH)//2, LENGTH], [(WIDTH + BASE_WIDTH)//2, LENGTH]])
 
         ## Generating matrix for warping ROI
@@ -107,10 +111,10 @@ class OccupancyGridPublisher(Node):
 
         ## The image generated will show some smudges where the obstacle, road and unknown objects blend
         # The script below sets the "smudges" as either obstacles or unknowns
-        obstacle_indices = np.any(birdseye_view[:, :, :2] != 0, axis=2)
+        obstacle_indices = np.any(birdseye_view[:, :, :3] != 0, axis=2)
         birdseye_view[obstacle_indices] = OBSTACLE_COLOUR
 
-        unknown_indices = birdseye_view[:, :, 2] != 255
+        unknown_indices = birdseye_view[:, :, 3] != 255
         birdseye_view[unknown_indices] = UNKNOWN_COLOUR
 
         ## Generating image after post-processing smudges
@@ -122,8 +126,14 @@ class OccupancyGridPublisher(Node):
 
         ## Resize the image so that each pixel is 5cm x 5cm
         resized = cv2.resize(birdseye_view, (OCCUPANCY_WIDTH, OCCUPANCY_LENGTH))
+        obstacle_indices = np.any(resized[:, :, :3] != 0, axis=2)
+        resized[obstacle_indices] = OBSTACLE_COLOUR
+
+        unknown_indices = resized[:, :, 3] != 255
+        resized[unknown_indices] = UNKNOWN_COLOUR
 
         # Creating array for occupancy grid
+        # resized_array = np.full_like(resized[:, :, 0], -1, dtype=int)
         resized_array = np.full_like(resized[:, :, 0], -1, dtype=int)
 
         # Scan through image to determine pixel color in occupancy grid
