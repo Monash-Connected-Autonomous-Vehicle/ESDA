@@ -9,38 +9,37 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
 Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
-Run the following in any directory (same director as workspace to keep it simple)
-```bash
-  git clone https://github.com/swift-nav/libsbp.git
-  cd libsbp
-  git checkout v4.11.0
-  cd c
-  git submodule update --init --recursive
-  mkdir build
-  cd build
-  cmake DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_CXX_EXTENSIONS=OFF ../ 
-  make
-  sudo make install
-```
-
-And then, run the following to finalise installation of Piksi deps (plus vcstool)
+Install vcstool to help set up the ros2 workspace when cloning and buildings
 ```bash
 sudo apt-get update
 sudo apt install python3-vcstool
+```
+
+Run the following in any directory for swiftnav driver deps (same director as workspace to keep it simple)
+```bash
+git clone https://github.com/swift-nav/libsbp.git
+cd libsbp
+git checkout v4.11.0
+cd c
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_CXX_EXTENSIONS=OFF ../ 
+make
+sudo make install
+
+sudo apt-get update
 sudo apt-get install libserialport-dev
+cd ../../../
 ```
 
-Run the following to install the ZED SDK
+Run the following to install zed driver dependencies
 ```bash
-# TODO
-# wget ZSDK url
-# go to dir
-chmod +x ZED...
-./ZED.../ (y to all, read and q the license somehow)
-```
+# install zed_sdk
+wget -O zed_sdk https://download.stereolabs.com/zedsdk/4.1/cu121/ubuntu22
+chmod +x zed_sdk
+./zed_sdk
 
-And the following for the CUDA dependency for zed ros2 wrapper
-```bash
 # base installer for cuda toolkit
 wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
 sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
