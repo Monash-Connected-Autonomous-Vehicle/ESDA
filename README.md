@@ -11,6 +11,19 @@ Refer to the following links for further instructions on setting up these depend
 
 [Swiftnav piksi driver dependencies](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
 
+```bash
+  git clone https://github.com/swift-nav/libsbp.git
+  cd libsbp
+  git checkout v4.11.0
+  cd c
+  git submodule update --init --recursive
+  mkdir build
+  cd build
+  cmake DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_CXX_EXTENSIONS=OFF ../ 
+  make
+  sudo make install
+```
+
 [Zed ROS2 wrapper dependencies](https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper/tree/esda?tab=readme-ov-file#installation)
 
 And finally, run the following
