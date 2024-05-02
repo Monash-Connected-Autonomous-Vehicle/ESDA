@@ -7,9 +7,8 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 ### Dependencies
 
 This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
-Refer to the following links for further instructions on setting up these dependencies:
+Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
-[Swiftnav piksi driver dependencies (use the commands below)](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
 Run the following in any directory (same director as workspace to keep it simple)
 ```bash
   git clone https://github.com/swift-nav/libsbp.git
@@ -24,14 +23,36 @@ Run the following in any directory (same director as workspace to keep it simple
   sudo make install
 ```
 
-[Zed ROS2 wrapper dependencies](https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper/tree/esda?tab=readme-ov-file#installation)
-
-And finally, run the following
-
+And then, run the following to finalise installation of Piksi deps (plus vcstool)
 ```bash
 sudo apt-get update
 sudo apt install python3-vcstool
 sudo apt-get install libserialport-dev
+```
+
+Run the following to install the ZED SDK
+```bash
+# TODO
+# wget ZSDK url
+# go to dir
+chmod +x ZED...
+./ZED.../ (y to all, read and q the license somehow)
+```
+
+And the following for the CUDA dependency for zed ros2 wrapper
+```bash
+# base installer for cuda toolkit
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.4.1/local_installers/cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-4-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-4
+
+# install driver
+sudo apt-get install -y nvidia-driver-550-open
+sudo apt-get install -y cuda-drivers-550
 ```
 
 ### Building and sourcing
