@@ -9,8 +9,8 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
 Refer to the following links for further instructions on setting up these dependencies:
 
-[Swiftnav piksi driver dependencies](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
-
+[Swiftnav piksi driver dependencies (use the commands below)](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
+Run the following in any directory (same director as workspace to keep it simple)
 ```bash
   git clone https://github.com/swift-nav/libsbp.git
   cd libsbp
