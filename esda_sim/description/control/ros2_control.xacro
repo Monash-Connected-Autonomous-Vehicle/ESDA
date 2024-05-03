@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- TODO: determine min/max steer -->
+    <xacro:property name="steer_min" value="-45"/>
+    <xacro:property name="steer_max" value="45"/>
+    <!-- TODO: determine min/max vel -->
+    <xacro:property name="vel_min" value="0"/>
+    <xacro:property name="vel_max" value="10"/>    
+
+    <ros2_control name="GazeboSystem" type="system">
+        <!-- Refer to the following link for more details on setting up R2C for gazebo sims
+            https://github.com/ros-controls/ros2_control_demos/blob/humble/example_9/description/ros2_control/rrbot.ros2_control.xacro 
+        -->
+        <hardware>
+            <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+        </hardware>
+
+        <!-- JOINT CONFIGURATIONS
+                <command_inteface> configures the commands we send
+                <state_interface> indicates what readings we want to get
+        -->
+        <!-- STEER WHEELS -->
+        <joint name="right_steer_joint">
+            <command_interface name="position">
+                <param name="min">${steer_min}</param>
+                <param name="max">${steer_max}</param>
+            </command_interface>
+
+            <state_interface name="position"/>
+        </joint>
+
+        <joint name="left_steer_joint">
+            <command_interface name="position">
+                <param name="min">${steer_min}</param>
+                <param name="max">${steer_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+        </joint>
+
+        <!-- DRIVE WHEELS -->
+        <joint name="right_drive_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">${vel_min}</param>
+                <param name="max">${vel_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>            
+        </joint>
+
+        <joint name="left_drive_wheel_joint">
+            <command_interface name="velocity">
+                <param name="min">${vel_min}</param>
+                <param name="max">${vel_max}</param>
+            </command_interface>
+            
+            <state_interface name="position"/>
+            <state_interface name="velocity"/>            
+        </joint>
+    </ros2_control>
+
+    <!-- Tell Gazebo to ue R2C. This also has its own control manager. 
+        Need to tell its manager where the config for the controllers is. Taken from  the following link
+        https://github.com/joshnewans/articubot_one/blob/0085689ee023baac604268cdf7a9ce85a0ed7bae/description/ros2_control.xacro    
+    -->
+    <gazebo>
+        <plugin name="gazebo_ros2_control" filename="libgazebo_ros2_control.so">
+            <parameters>$(find esda_sim)/config/ros2_control_config.yaml</parameters>
+        </plugin>
+    </gazebo>
+</robot>

@@ -1,6 +1,6 @@
 controller_manager:
   ros__parameters:
-    update_rate: 100
+    update_rate: 1000
     use_sim_time: true
 
     # I think this defines the name of the controller
@@ -22,7 +22,7 @@ ack_cont:
     open_loop: false
     velocity_rolling_window_size: 10
     position_feedback: false
-    use_stamped_vel: true
+    use_stamped_vel: false
     rear_wheels_names: [right_drive_wheel_joint, left_drive_wheel_joint]
     front_wheels_names: [right_steer_joint, left_steer_joint]
 
