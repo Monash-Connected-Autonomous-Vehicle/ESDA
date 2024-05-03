@@ -4,8 +4,8 @@
     <gazebo>
         <plugin name="ackermann_drive" filename="libgazebo_ros_ackermann_drive.so">
             <ros>
-                <namespace>demo</namespace>
-                <remapping>cmd_vel:=cmd_demo</remapping>
+                <namespace></namespace>
+                <remapping>cmd_vel:=cmd_vel</remapping>
                 <remapping>odom:=odom_demo</remapping>
                 <remapping>distance:=distance_demo</remapping>
             </ros>
