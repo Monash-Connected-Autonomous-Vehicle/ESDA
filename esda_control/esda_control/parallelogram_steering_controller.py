@@ -1,6 +1,5 @@
 import rclpy
 from rclpy.node import Node
-
 from geometry_msgs.msg import Twist
 from dynamixel_sdk_custom_interfaces.msg import SetPosition
 
@@ -36,13 +35,13 @@ class ParallelogramSteeringController(Node):
             steering_angle = math.atan(self.wheel_base_length / radius) * 180 / math.pi
 
         # convert degrees to pwm
-        pwm = round(steering_angle * 4000 / 360) + min_pwm
+        pwm = round(steering_angle * 4000 / 360) + self.min_pwm
 
         # limit pwm
-        if pwm < min_pwm:
-            pwm = min_pwm
-        elif pwm > max_pwm:
-            pwm = max_pwm
+        if pwm < self.min_pwm:
+            pwm = self.min_pwm
+        elif pwm > self.max_pwm:
+            pwm = self.max_pwm
         
         servo_position.position = pwm
 
