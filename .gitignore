@@ -1,4 +1,9 @@
-esda_control/build/
-esda_control/install/
-esda_control/log/
-esda_control/esda_control/__pycache__/
+node_modules/
+package*
+*/build/
+*/install/
+*/log/
+*/__pycache__/
+swiftnav_ros2/
+zed-ros-2-wrapper/
+frames*

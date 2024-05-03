@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <xacro:property name="width" value="0.11"/>
+    <xacro:property name="height" value="0.017"/>
+    
+    <xacro:property name="x" value="-0.0223"/>
+    <xacro:property name="y" value="0.0563"/>
+    <xacro:property name="z" value="-0.0804"/>
+
+    <!-- verify that the X and Y dimensions are placed in the right axis
+    -->
+    <link name="swiftnav-gnss">
+        <visual>
+            <geometry>
+                <box size="${width} ${width} ${height}"/>
+            </geometry>
+            <material name="orange"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <box size="${width} ${width} ${height}"/>
+            </geometry>
+            <material name="orange"/>
+        </collision>
+        
+        <xacro:inertial_box mass="0" x="${width}" y="${width}" z="${height}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_box>
+    </link>
+    
+    <joint name="swiftnav_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="swiftnav-gnss"/>
+        <origin xyz="${x} ${y} ${z}" rpy="0 0 0"/>
+    </joint>
+</robot>

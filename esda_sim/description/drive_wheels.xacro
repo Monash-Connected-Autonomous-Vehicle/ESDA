@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- DRIVE WHEELS 
+         Defines the 2 rear drive wheels that provide motion in the x-axis (forward motion).
+    -->
+    <xacro:property name="drive_wheel_x_off" value="0.38724"/>
+    <xacro:property name="drive_wheel_y_off" value="0.48166"/>
+    <xacro:property name="drive_wheel_z_off" value="0.22"/>
+    
+    <link name="right_drive_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <joint name="right_drive_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="right_drive_wheel"/>
+        <origin xyz="-${drive_wheel_x_off} -${drive_wheel_y_off} -${drive_wheel_z_off}" rpy="${pi/2} 0 0 "/>
+        <axis xyz="0 0 -1"/>
+    </joint>
+    
+    <link name="left_drive_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <cylinder radius="${wheel_rad}" length="${wheel_len}"/>
+            </geometry>
+            <material name="black"/>
+        </collision>
+        
+        <xacro:inertial_cylinder mass="${wheel_mass}" length="${wheel_len}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
+    
+    <joint name="left_drive_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="left_drive_wheel"/>
+        <origin xyz="-${drive_wheel_x_off} ${drive_wheel_y_off} -${drive_wheel_z_off}" rpy="-${pi/2} 0 0 "/>
+        <axis xyz="0 0 1"/>
+    </joint>
+
+</robot>
