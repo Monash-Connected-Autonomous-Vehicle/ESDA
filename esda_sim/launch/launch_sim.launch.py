@@ -10,7 +10,7 @@ from launch.conditions import UnlessCondition
 
 
 def generate_launch_description():
-    # obtained from https://github.com/joshnewans/articubot_one
+    # Obtained from https://github.com/joshnewans/articubot_one
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     package_name='esda_sim'
@@ -34,45 +34,17 @@ def generate_launch_description():
                                    '-entity', 'esda'],
                         output='screen')
                         
-    controllers = LaunchConfiguration('controllers')
                         
-    controllers_arg = DeclareLaunchArgument(
-        name="controllers",
-        default_value=PathJoinSubstitution([
-            FindPackageShare('esda_sim'), 
-            "config", 
-            "ros2_control_config.yaml"
-        ]),
-        description="Path of the controller params file"
-    )
-
-    control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[controllers],
-        remappings=[('/controller_manager/robot_description', '/robot_description')],
-    )
-
-    ackermann = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["ack_cont"]
-    )
-
-    joint_broad = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_broad"]
-    )
-
+    sim_control = IncludeLaunchDescription(
+                PythonLaunchDescriptionSource([os.path.join(
+                    get_package_share_directory(package_name),'launch','sim_control.launch.py'
+                )]))
+    
 
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
         spawn_entity,
-        controllers_arg,
-        control_node,
-        ackermann,
-        joint_broad
+        sim_control
     ])
