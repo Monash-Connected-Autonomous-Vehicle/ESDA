@@ -7,18 +7,51 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 ### Dependencies
 
 This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
-Refer to the following links for further instructions on setting up these dependencies:
+Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
-[Swiftnav piksi driver dependencies](https://github.com/swift-nav/swiftnav-ros2?tab=readme-ov-file#step-2-install-libspb)
-
-[Zed ROS2 wrapper dependencies](https://github.com/Monash-Connected-Autonomous-Vehicle/zed-ros2-wrapper/tree/esda?tab=readme-ov-file#installation)
-
-And finally, run the following
-
+Install vcstool to help set up the ros2 workspace when cloning and buildings
 ```bash
 sudo apt-get update
 sudo apt install python3-vcstool
+```
+
+Run the following in any directory for swiftnav driver deps (same director as workspace to keep it simple)
+```bash
+git clone https://github.com/swift-nav/libsbp.git
+cd libsbp
+git checkout v4.11.0
+cd c
+git submodule update --init --recursive
+mkdir build
+cd build
+cmake DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_CXX_EXTENSIONS=OFF ../ 
+make
+sudo make install
+
+sudo apt-get update
 sudo apt-get install libserialport-dev
+cd ../../../
+```
+
+Run the following to install zed driver dependencies
+```bash
+# install zed_sdk
+wget -O zed_sdk https://download.stereolabs.com/zedsdk/4.1/cu121/ubuntu22
+chmod +x zed_sdk
+./zed_sdk
+
+# base installer for cuda toolkit
+wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-ubuntu2204.pin
+sudo mv cuda-ubuntu2204.pin /etc/apt/preferences.d/cuda-repository-pin-600
+wget https://developer.download.nvidia.com/compute/cuda/12.4.1/local_installers/cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu2204-12-4-local_12.4.1-550.54.15-1_amd64.deb
+sudo cp /var/cuda-repo-ubuntu2204-12-4-local/cuda-*-keyring.gpg /usr/share/keyrings/
+sudo apt-get update
+sudo apt-get -y install cuda-toolkit-12-4
+
+# install driver
+sudo apt-get install -y nvidia-driver-550-open
+sudo apt-get install -y cuda-drivers-550
 ```
 
 ### Building and sourcing
@@ -51,6 +84,9 @@ source install/setup.bash
 The following can be used to launch the ESDA (once implemented)
 
 `ros2 launch esda_launch esda_launch.py`
+
+Or launch the sim
+`ros2 launch esda_sim launch_sim.launch.py`
 
 Note that as of now, until a working URDF is implemented, the following static transforms should be run
 
