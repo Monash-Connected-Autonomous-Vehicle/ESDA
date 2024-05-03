@@ -5,8 +5,9 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 ## Setup and launch
 
 ### Dependencies
+Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) is installed
 
-This repository uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
+This repository also uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
 Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
 Install vcstool to help set up the ros2 workspace when cloning and buildings
