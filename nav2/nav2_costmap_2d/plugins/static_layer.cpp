@@ -130,6 +130,7 @@ StaticLayer::getParameters()
   declareParameter("enabled", rclcpp::ParameterValue(true));
   declareParameter("subscribe_to_updates", rclcpp::ParameterValue(false));
   declareParameter("map_subscribe_transient_local", rclcpp::ParameterValue(true));
+  declareParameter("use_maximum", rclcpp::ParameterValue(true));
   declareParameter("transform_tolerance", rclcpp::ParameterValue(0.0));
   declareParameter("map_topic", rclcpp::ParameterValue(""));
 
@@ -389,11 +390,14 @@ StaticLayer::updateCosts(
 
   if (!layered_costmap_->isRolling()) {
     // if not rolling, the layered costmap (master_grid) has same coordinates as this layer
+    updateWithMax(master_grid, min_i, min_j, max_i, max_j);
+    /* 
     if (!use_maximum_) {
       updateWithTrueOverwrite(master_grid, min_i, min_j, max_i, max_j);
     } else {
       updateWithMax(master_grid, min_i, min_j, max_i, max_j);
     }
+    */
   } else {
     // If rolling window, the master_grid is unlikely to have same coordinates as this layer
     unsigned int mx, my;
@@ -421,11 +425,14 @@ StaticLayer::updateCosts(
         p = tf2_transform * p;
         // Set master_grid with cell from map
         if (worldToMap(p.x(), p.y(), mx, my)) {
+          master_grid.setCost(i, j, std::max(getCost(mx, my), master_grid.getCost(i, j)));
+          /*
           if (!use_maximum_) {
             master_grid.setCost(i, j, getCost(mx, my));
           } else {
             master_grid.setCost(i, j, std::max(getCost(mx, my), master_grid.getCost(i, j)));
           }
+          */
         }
       }
     }
