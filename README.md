@@ -10,7 +10,7 @@ Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubunt
 This repository also uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
 Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
-Install vcstool to help set up the ros2 workspace when cloning and buildings
+Install vcstool to help set up the ros2 workspace when cloning and building
 ```bash
 sudo apt-get update
 sudo apt install python3-vcstool
