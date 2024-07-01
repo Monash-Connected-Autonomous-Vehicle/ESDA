@@ -113,7 +113,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     </tr>
     <tr>
       <td align="center" valign="top" width="20%"><a href="https://github.com/Akul-Saigal"><img src="https://avatars.githubusercontent.com/u/108743138?v=4?s=100" width="100px;" alt="Akul Saigal"/><br /><sub><b>Akul Saigal</b></sub></a><br /><a href="#projectManagement-Akul-Saigal" title="Project Management">📆</a></td>
-      <td align="center" valign="top" width="20%"><a href="https://github.com/Christina1508"><img src="https://avatars.githubusercontent.com/u/108743138?v=4?s=100" width="100px;" alt="Christina Prakash"/><br /><sub><b>Christina Prakash</b></sub></a><br /><a href="#projectManagement-Christina1508" title="Project Management">📆</a></td>
+      <td align="center" valign="top" width="20%"><a href="https://github.com/Christina1508"><img src="https://avatars.githubusercontent.com/u/101304772?v=4?s=100" width="100px;" alt="Christina Prakash"/><br /><sub><b>Christina Prakash</b></sub></a><br /><a href="#projectManagement-Christina1508" title="Project Management">📆</a></td>
       <td align="center" valign="top" width="20%"><a href="https://github.com/jang0029"><img src="https://avatars.githubusercontent.com/u/141693960?v=4?s=100" width="100px;" alt="Jason Angus"/><br /><sub><b>Jason Angus</b></sub></a><br /><a href="https://github.com/MOnash-Connected-Autonomous-Vehicle/ESDA/commits?author=jang0029" title="Code">💻</a> <a href="#data-jang0029" title="Data">🔣</a></td>
     </tr>
   </tbody>
