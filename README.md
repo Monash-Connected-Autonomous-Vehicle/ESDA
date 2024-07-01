@@ -20,7 +20,7 @@ Power the piksi multi and connect it using a USB to serial cable with the serial
 
 Open the Swiftnav console and configure the device to send all SBP message types by providing the default entry under the setting shown below (i.e. a blank entry for uart0 and 1) and saving this configuration.
 
-<img src="https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA/assets/95030427/81fa61b8-cd54-43f5-920d-01fb0c87cede" width="300"/>
+<img src="https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA/assets/95030427/81fa61b8-cd54-43f5-920d-01fb0c87cede" width="600"/>
 
 #### VLP16
 TODO
