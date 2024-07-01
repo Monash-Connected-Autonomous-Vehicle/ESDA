@@ -18,8 +18,12 @@ sudo dpkg -i ./swift-console_v4.0.19_linux.deb
 
 Power the piksi multi and connect it using a USB to serial cable with the serial end connected to the piksi's RS2321 port and additionally connect the GPS antenna.
 
-Open the Swiftnav console and configure the device to send all SBP message types by providing the default entry under the setting shown below (i.e. a blank entry) and saving this configuration.
+Open the Swiftnav console and configure the device to send all SBP message types by providing the default entry under the setting shown below (i.e. a blank entry for uart0 and 1) and saving this configuration.
 
+<img src="https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA/assets/95030427/81fa61b8-cd54-43f5-920d-01fb0c87cede" width="300"/>
+
+#### VLP16
+TODO
 
 ### Dependencies
 Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) is installed
