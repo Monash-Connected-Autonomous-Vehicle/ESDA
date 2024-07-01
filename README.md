@@ -16,7 +16,7 @@ sudo apt-get update
 sudo apt install python3-vcstool
 ```
 
-Run the following in any directory for swiftnav driver deps (same director as workspace to keep it simple)
+Run the following in any directory for swiftnav driver deps
 ```bash
 git clone https://github.com/swift-nav/libsbp.git
 cd libsbp
