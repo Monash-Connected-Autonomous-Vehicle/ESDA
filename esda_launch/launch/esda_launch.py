@@ -15,13 +15,6 @@ def generate_launch_description():
          get_package_share_directory('esda_launch'), 'launch'),
          '/sensors_launch.py'])
       )
-      
-   datum_setter = servo_interface = Node(
-         package='esda_launch',
-         executable='datum_setter_node',
-         name='datum_setter_node',
-         output='screen'
-      )
    
    localization_launch = IncludeLaunchDescription(
       PythonLaunchDescriptionSource([os.path.join(
