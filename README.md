@@ -23,7 +23,8 @@ Open the Swiftnav console and configure the device to send all SBP message types
 <img src="https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA/assets/95030427/81fa61b8-cd54-43f5-920d-01fb0c87cede" width="600"/>
 
 #### VLP16
-TODO
+
+Refer to the (Velodyne LiDAR User Manual)[https://velodynelidar.com/wp-content/uploads/2019/12/63-9243-Rev-E-VLP-16-User-Manual.pdf] and/or (YouTube setup guide)[https://www.youtube.com/watch?v=Pa-q5elS_nE] on further instructions on configuring the LiDAR
 
 ### Dependencies
 Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) is installed
