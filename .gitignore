@@ -6,4 +6,6 @@ package*
 */__pycache__/
 swiftnav_ros2/
 zed-ros-2-wrapper/
+robot_localization/
+velodyne/
 frames*

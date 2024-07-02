@@ -1,7 +1,7 @@
 repositories:
   swiftnav_ros2:
     type: git
-    url: https://github.com/Monash-Connected-Autonomous-Vehicle/swiftnav-ros2/tree/master
+    url: https://github.com/Monash-Connected-Autonomous-Vehicle/swiftnav-ros2.git
     version: master
   zed-ros-2-wrapper:
     type: git
@@ -9,9 +9,9 @@ repositories:
     version: esda
   velodyne:
     type: git
-    url: https://github.com/Monash-Connected-Autonomous-Vehicle/velodyne/tree/humble-devel
-    version: humble
+    url: https://github.com/Monash-Connected-Autonomous-Vehicle/velodyne.git
+    version: humble-devel
   robot_localization:
     type: git
-    url: https://github.com/Monash-Connected-Autonomous-Vehicle/robot_localization
+    url: https://github.com/Monash-Connected-Autonomous-Vehicle/robot_localization.git
     version: humble-devel
