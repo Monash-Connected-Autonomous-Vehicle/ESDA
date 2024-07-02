@@ -22,13 +22,18 @@ def generate_launch_description():
          '/localization_launch.py'])
       )
    
-   # perception launch = ...
-   
+   perception_launch = IncludeLaunchDescription(
+      PythonLaunchDescriptionSource([os.path.join(
+         get_package_share_directory('esda_launch'), 'launch'),
+         '/perception_launch.py'])
+      )
+
    # planning launch = ...
    
    # control launch = ...
    
    return LaunchDescription([
       sensors_launch,
-      localization_launch
+      localization_launch,
+      perception_launch
    ])
