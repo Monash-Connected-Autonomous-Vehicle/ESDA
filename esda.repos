@@ -11,3 +11,7 @@ repositories:
     type: git
     url: https://github.com/Monash-Connected-Autonomous-Vehicle/velodyne/tree/humble-devel
     version: humble
+  robot_localization:
+    type: git
+    url: https://github.com/Monash-Connected-Autonomous-Vehicle/robot_localization
+    version: humble-devel
