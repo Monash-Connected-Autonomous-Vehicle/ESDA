@@ -64,16 +64,21 @@ class OccupancyGridPublisher(Node):
         ### Obtaining Image from ZED ROS Node
         frame = self.br.imgmsg_to_cv2(data)
 
-        cv2.imwrite('default.png', frame)
+        cv2.imwrite('1-camera.png', frame)
 
         ## Convert image into HSV
         frame_hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+        frame_blur = cv2.GaussianBlur(frame, (15, 15), 0)
+
+        cv2.imwrite('2-blur.png', frame_blur)
 
         ## Creating a mask to detect white (lane-lines and potholes)
-        lower_white = np.array([0, 0, 150])
-        upper_white = np.array([180, 30, 255])
+        lower_white = np.array([190, 190, 190, 255])
+        upper_white = np.array([255, 255, 255, 255])
 
-        mask_white = cv2.inRange((frame_hsv), lower_white, upper_white)
+        mask_white = cv2.inRange((frame_blur), lower_white, upper_white)
+
+        cv2.imwrite('3-mask.png', mask_white)
 
         # Defining colors for road or obstacles
         ROAD_COLOUR = [0, 0, 0, 255]
@@ -107,7 +112,7 @@ class OccupancyGridPublisher(Node):
 
         ## Generating image of birds eye view
         birdseye_view = cv2.warpPerspective(masked_image, matrix, (WIDTH, LENGTH))
-        cv2.imwrite('birdseye.png', birdseye_view)
+        cv2.imwrite('4-birdseye.png', birdseye_view)
 
         ## The image generated will show some smudges where the obstacle, road and unknown objects blend
         # The script below sets the "smudges" as either obstacles or unknowns
@@ -118,7 +123,7 @@ class OccupancyGridPublisher(Node):
         birdseye_view[unknown_indices] = UNKNOWN_COLOUR
 
         ## Generating image after post-processing smudges
-        cv2.imwrite('birdseye_postfix.png', birdseye_view)
+        cv2.imwrite('5-birdseye_postfix.png', birdseye_view)
 
         ### Creating the occupancy grid
         OCCUPANCY_WIDTH = WIDTH//5
