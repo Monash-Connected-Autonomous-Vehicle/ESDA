@@ -28,6 +28,14 @@ class OccupancyGridPublisher(Node):
             durability = QoSDurabilityPolicy.VOLATILE
         )
 
+        ### For use when running with images
+        '''
+        image = cv2.imread('6.jpg')
+        a = np.ones(image.shape[:2], dtype=image.dtype) * 255
+        image = cv2.merge((image, a))
+        self.publish_grid(image)
+        '''
+
         self.camera_subscription = self.create_subscription(Image, '/zed/zed_node/left/image_rect_color', self.publish_grid, qos_profile = video_qos)
 
     def publish_grid(self, data):
@@ -77,6 +85,7 @@ class OccupancyGridPublisher(Node):
         upper_white = np.array([255, 255, 255, 255])
 
         mask_white = cv2.inRange((frame_blur), lower_white, upper_white)
+        mask_white = cv2.medianBlur(mask_white, 25)
 
         cv2.imwrite('3-mask.png', mask_white)
 
