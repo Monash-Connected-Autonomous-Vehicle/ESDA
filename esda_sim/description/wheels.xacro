@@ -12,7 +12,7 @@
 
     <xacro:include filename="drive_wheels.xacro"/>
     
-    <xacro:include filename="steering_wheels.xacro"/>
+    <xacro:include filename="caster_wheels.xacro"/>
     
     <!-- Adding colours to wheels for gazebo -->
     <gazebo reference="left_drive_wheel">
@@ -21,10 +21,10 @@
     <gazebo reference="right_drive_wheel">
         <material>Gazebo/Black</material>
     </gazebo>
-    <gazebo reference="left_steering_wheel">
+    <gazebo reference="left_caster_wheel">
         <material>Gazebo/Black</material>
     </gazebo>
-    <gazebo reference="right_steering_wheel">
+    <gazebo reference="right_caster_wheel">
         <material>Gazebo/Black</material>
     </gazebo>
 
