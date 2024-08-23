@@ -15,4 +15,6 @@
     
     <xacro:include filename="sensors/camera.xacro"/>
 
+    <xacro:include filename="control/gazebo_diff_control.xacro">
+
 </robot>
