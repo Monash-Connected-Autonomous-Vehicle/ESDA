@@ -273,8 +273,8 @@ class MCU_Interface(Node):
     
     def cmd_vel_callback(self, msg):
         linear_vel = msg.linear.x
-        self.send_can_msg(linear_vel, 3)
-        self.send_can_msg(linear_vel, 4)
+        self.send_can_msg(linear_vel, ESDACANMessage.CurrentVelLeft)
+        self.send_can_msg(linear_vel, ESDACANMessage.CurrentVelRight)
 
     
 
