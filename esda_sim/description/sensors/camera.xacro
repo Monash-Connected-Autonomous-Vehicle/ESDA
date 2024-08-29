@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <robot name="esda" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="zed_camera_link">
+  
+  </link>
+
   <joint name="zed_to_baselink" type="fixed">
       <parent link="base_link"/>
       <child link="zed_camera_link"/>
