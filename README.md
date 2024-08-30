@@ -26,6 +26,10 @@ Open the Swiftnav console and configure the device to send all SBP message types
 
 Refer to the (Velodyne LiDAR User Manual)[https://velodynelidar.com/wp-content/uploads/2019/12/63-9243-Rev-E-VLP-16-User-Manual.pdf] and/or (YouTube setup guide)[https://www.youtube.com/watch?v=Pa-q5elS_nE] on further instructions on configuring the LiDAR
 
+### Sim setup
+
+The sim requires gazebo ros packages installed. Rrun `sudo apt update; sudo apt install ros-humble-gazebo-ros-pkgs` to do this
+
 ### Dependencies
 Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) is installed
 
