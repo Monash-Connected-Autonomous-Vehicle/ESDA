@@ -18,7 +18,7 @@ class ESDACANMessage(Enum):
     ESTOP = 8
 
 class MCU_Interface(Node):
-    def __init__(self, use_serial=False):
+    def __init__(self, use_serial=True):
         super().__init__('mcu_interface')
         self.use_serial = use_serial
         self.subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
@@ -39,14 +39,14 @@ class MCU_Interface(Node):
             self.get_logger().info("No serial ports found.")
 
     def connect_to_usb_to_can_device(self):
-        serial_port = '/dev/ttyACM0'
+        serial_port = '/dev/ttyACM1'
         baud_rate = 115200
         self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1, bytesize=8)
     
     def cmd_vel_callback(self, msg):
         linear_vel = msg.linear.x
-        self.send_can_msg(linear_vel, ESDACANMessage.CurrentVelLeft)
-        self.send_can_msg(linear_vel, ESDACANMessage.CurrentVelRight)
+        self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelLeft)
+        self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelRight)
 
     
 
@@ -56,15 +56,20 @@ class MCU_Interface(Node):
 
         if self.use_serial:
             packet = bytearray()
-            packet.append(ID.value)  # First byte: ID
-            data = bytearray(struct.pack('<f', msg))  # Sending float as little-endian
+            # packet.append(ID.value)  # First byte: ID
+            # data = bytearray(struct.pack('<f', msg))  # Sending float as little-endian
+
+            packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(data)
+            packet.extend(struct.pack('<I', 255))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
-            while len(packet) < 8:
-                packet.append(0)  # Pad with zeros
+            # while len(packet) < 8:
+            #     packet.append(0)  # Pad with zeros
+            packet.append(0x0D)
+            packet.append(0x0A)
+                
 
             try:
                 self.serial_connection.write(packet)
