@@ -14,8 +14,6 @@
     <xacro:include filename="sensors/piksi.xacro"/>
     
     <xacro:include filename="sensors/camera.xacro"/>
-
-    <!--<xacro:include filename="control/gazebo_diff_control.xacro"/>-->
     
     <gazebo>
         <plugin name="diff_drive" filename="libgazebo_ros_diff_drive.so">

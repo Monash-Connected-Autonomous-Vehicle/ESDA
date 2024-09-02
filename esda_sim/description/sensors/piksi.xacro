@@ -37,8 +37,8 @@
     </joint>
 
     <!-- Obtained from https://medium.com/@bytesrobotics/a-review-of-the-ros2-urdf-gazebo-sensor-91e947c633d7 -->
-    <gazebo reference="gps_link">
-        <sensor name="gps_sensor" type="gps">
+    <gazebo reference="swiftnav-gnss">
+        <sensor name="gps" type="gps">
             <always_on>true</always_on>
             <update_rate>1.0</update_rate>
             <plugin name="gps_controller" filename="libgazebo_ros_gps_sensor.so">
@@ -52,8 +52,8 @@
         <material>Gazebo/Grey</material>
     </gazebo>
 
-    <gazebo reference="imu_link">
-        <sensor name="br_imu" type="imu">
+    <gazebo reference="swiftnav-gnss">
+        <sensor name="imu" type="imu">
             <always_on>true</always_on>
             <update_rate>100</update_rate>
             <imu>
@@ -100,12 +100,10 @@
             </imu>
             <plugin name="bytes_imu" filename="libgazebo_ros_imu_sensor.so">
                 <ros>
-                    <namespace>imu</namespace>
-                    <remapping>~/out:=data</remapping>
+                    <remapping>~/out:=imu</remapping>
                 </ros>
                 <initial_orientation_as_reference>false</initial_orientation_as_reference>
             </plugin>
         </sensor>
     </gazebo>
-
 </robot>
