@@ -23,6 +23,7 @@ class MCU_Interface(Node):
         self.use_serial = use_serial
         self.subscription = self.create_subscription(Twist, '/cmd_vel', self.cmd_vel_callback, 10)
 
+        self.current_value = 0  # Initialize your data value
         # Log available USB ports
         self.list_serial_ports()
 
@@ -39,7 +40,7 @@ class MCU_Interface(Node):
             self.get_logger().info("No serial ports found.")
 
     def connect_to_usb_to_can_device(self):
-        serial_port = '/dev/ttyACM1'
+        serial_port = '/dev/ttyUSB1'
         baud_rate = 115200
         self.serial_connection = serial.Serial(serial_port, baud_rate, timeout=1, bytesize=8)
     
@@ -62,7 +63,7 @@ class MCU_Interface(Node):
             packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(struct.pack('<I', 255))  # Pack 255 as 4-byte unsigned integer (little-endian)
+            packet.extend(struct.pack('<I', self.current_value))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
             # while len(packet) < 8:
@@ -76,7 +77,7 @@ class MCU_Interface(Node):
                 self.get_logger().info(f"Sent packet: {list(packet)}")  # Log the sent packet for debugging
             except serial.SerialException as e:
                 self.get_logger().error(f"Error writing to serial connection: {e}")
-
+            self.current_value += 1
 
     def spin(self):
         while rclpy.ok():
