@@ -7,6 +7,13 @@ class TestPublisher(Node):
     def __init__(self):
         super().__init__('test_publisher')
         self.publisher = self.create_publisher(Twist, '/cmd_vel', 10)
+
+        # self.subscription = self.create_subscription(
+        #     Twist,
+        #     '/teleop_cmd_vel',
+        #     self.teleop_callback,
+        #     10)
+
         self.timer = self.create_timer(1.0, self.publish_cmd_vel)
         self.linear_velocity = 0.0
         self.angular_velocity = 0.0

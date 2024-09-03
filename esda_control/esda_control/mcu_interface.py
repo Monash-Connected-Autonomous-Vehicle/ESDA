@@ -63,7 +63,7 @@ class MCU_Interface(Node):
             packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(struct.pack('<I', self.current_value))  # Pack 255 as 4-byte unsigned integer (little-endian)
+            packet.extend(struct.pack('<I', 1500))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
             # while len(packet) < 8:
