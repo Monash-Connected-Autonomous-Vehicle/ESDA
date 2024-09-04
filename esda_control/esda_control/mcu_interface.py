@@ -46,15 +46,25 @@ class MCU_Interface(Node):
     
     def cmd_vel_callback(self, msg):
         linear_vel = msg.linear.x
+        angular_vel = msg.angular.z
+        # self.get_logger().info(f"Received Twist message: Linear.x = {linear_vel}, Angular.z = {angular_vel}")
         self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelLeft)
         self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelRight)
 
     
-
     def send_can_msg(self, msg, ID):
         # Log the received message instead of sending it via serial
-        self.get_logger().info("Received Twist message: Linear.x = %f" % msg)
+        
+        self.get_logger().info(f"Received Twist message: Linear.x = {msg}")
 
+        old_min, old_max = 0.000000, 5.000000
+        new_min, new_max = 1500, 1570
+
+        mapped_value = (msg - old_min) / (old_max - old_min) * (new_max - new_min) + new_min
+        mapped_value = int(mapped_value)  # Convert to integer if necessary
+
+        self.get_logger().info(f"New mapped value: PWM = {mapped_value}")
+        
         if self.use_serial:
             packet = bytearray()
             # packet.append(ID.value)  # First byte: ID
@@ -63,7 +73,7 @@ class MCU_Interface(Node):
             packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(struct.pack('<I', 1500))  # Pack 255 as 4-byte unsigned integer (little-endian)
+            packet.extend(struct.pack('<I', mapped_value))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
             # while len(packet) < 8:
@@ -105,7 +115,7 @@ class MCU_Interface(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    mcu_interface = MCU_Interface(use_serial=True)  # Set use_serial=False for testing without serial
+    mcu_interface = MCU_Interface(use_serial=False)  # Set use_serial=False for testing without serial
     mcu_interface.spin()
     mcu_interface.destroy_node()
     rclpy.shutdown()
