@@ -1,0 +1,5 @@
+<library path="nav2_zed_costmap_plugin_core">
+  <class name="nav2_zed_costmap_plugin/ZedLayer" type="nav2_zed_costmap_plugin::ZedLayer" base_class_type="nav2_costmap_2d::Layer">
+    <description>Custom nav2 costmap2d plugin for zed camera input</description>
+  </class>
+</library>
