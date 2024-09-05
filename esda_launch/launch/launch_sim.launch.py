@@ -13,7 +13,7 @@ def generate_launch_description():
     # obtained from https://github.com/joshnewans/articubot_one
 
     # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
-    package_name='esda_sim'
+    package_name='esda_launch'
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
