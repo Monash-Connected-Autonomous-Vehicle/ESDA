@@ -4,13 +4,39 @@ This repository holds the software stack for the Monash-Connected-Autonomous-Veh
 
 ## Setup and launch
 
+### Hardware setup
+Some of the hardware used such as sensors require some configuration and setup prior to use as detailed below
+
+#### Swiftnav Piksi multi
+
+Install the swift console from the (Swiftnav Resource Library)[https://www.swiftnav.com/resource-library?filters=no&title=Swift+Console&search=Swift+Console&product=Swift+Console&category=Installer&release=Latest] and then run `dpkg -i /<path_to_deb>` or alternatively run the following command (note the version ad url may have updated since the writing of these instructions)
+
+```bash
+wget https://www.swiftnav.com/resource-files/Swift%20Console/v4.0.19/Installer/swift-console_v4.0.19_linux.deb
+sudo dpkg -i ./swift-console_v4.0.19_linux.deb
+```
+
+Power the piksi multi and connect it using a USB to serial cable with the serial end connected to the piksi's RS2321 port and additionally connect the GPS antenna.
+
+Open the Swiftnav console and configure the device to send all SBP message types by providing the default entry under the setting shown below (i.e. a blank entry for uart0 and 1) and saving this configuration.
+
+<img src="https://github.com/Monash-Connected-Autonomous-Vehicle/ESDA/assets/95030427/81fa61b8-cd54-43f5-920d-01fb0c87cede" width="600"/>
+
+#### VLP16
+
+Refer to the (Velodyne LiDAR User Manual)[https://velodynelidar.com/wp-content/uploads/2019/12/63-9243-Rev-E-VLP-16-User-Manual.pdf] and/or (YouTube setup guide)[https://www.youtube.com/watch?v=Pa-q5elS_nE] on further instructions on configuring the LiDAR
+
+### Sim setup
+
+The sim requires gazebo ros packages installed. Rrun `sudo apt update; sudo apt install ros-humble-gazebo-ros-pkgs` to do this
+
 ### Dependencies
 Ensure [ROS2 Humble Hawksbill](https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html) is installed
 
 This repository also uses various third party drivers to run for example SDKs for the zed camera & piksi multi.
 Run the following commands to install these (or refer to their respective ROS2 driver repositories for further instructions):
 
-Install vcstool to help set up the ros2 workspace when cloning and buildings
+Install vcstool to help set up the ros2 workspace when cloning and building
 ```bash
 sudo apt-get update
 sudo apt install python3-vcstool

@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    <!-- STEERING WHEELS 
+         Define the 2 front steering wheels that will turn the ESDA.
+    -->
+    <xacro:property name="caster_x" value="0.235"/>
+    <xacro:property name="caster_y" value="0.52297"/>
+    <xacro:property name="caster_x_off" value="0.3"/> <!-- offset on top of original x -->
+    <xacro:property name="caster_z" value="0.208"/>
+    <xacro:property name="caster_m" value="0.05"/>
+    
+    <!-- Define the component that will turn around z-axis which the wheels will attach to -->
+    <link name="right_caster">
+        <visual>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_sphere mass="${caster_m}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
+    </link>
+    
+    <link name="left_caster">
+        <visual>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_sphere mass="${caster_m}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
+    </link>
+    
+    <link name="back_caster">
+        <visual>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </visual>
+        
+        <collision>
+            <geometry>
+                <sphere radius="${wheel_rad}"/>
+            </geometry>
+            <material name="light_grey"/>
+        </collision>
+        
+        <xacro:inertial_sphere mass="${caster_m}" radius="${wheel_rad}">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_sphere>
+    </link>
+    
+    <!-- -->
+    <joint name="right_caster_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="right_caster"/>
+        <origin xyz="${caster_x + caster_x_off} -${caster_y} -${caster_z}" rpy="0 0 0 "/>
+    </joint>
+    
+    <joint name="left_caster_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="left_caster"/>
+        <origin xyz="${caster_x + caster_x_off} ${caster_y} -${caster_z}" rpy="0 0 0 "/>
+    </joint>    
+    
+    
+    <joint name="back_caster_joint" type="fixed">
+        <parent link="base_link"/>
+        <child link="back_caster"/>
+        <origin xyz="-${caster_x/0.33} 0 -${caster_z}" rpy="0 0 0 "/>
+    </joint>    
+</robot>

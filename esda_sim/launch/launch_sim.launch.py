@@ -34,7 +34,7 @@ def generate_launch_description():
                                    '-entity', 'esda'],
                         output='screen')
                         
-    controllers = LaunchConfiguration('controllers')
+    '''controllers = LaunchConfiguration('controllers')
                         
     controllers_arg = DeclareLaunchArgument(
         name="controllers",
@@ -63,16 +63,12 @@ def generate_launch_description():
         package="controller_manager",
         executable="spawner",
         arguments=["joint_broad"]
-    )
+    )'''
 
 
     # Launch them all!
     return LaunchDescription([
         rsp,
         gazebo,
-        spawn_entity,
-        controllers_arg,
-        control_node,
-        ackermann,
-        joint_broad
+        spawn_entity
     ])
