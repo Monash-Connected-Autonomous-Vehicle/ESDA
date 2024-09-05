@@ -48,7 +48,7 @@ class MCU_Interface(Node):
         linear_vel = msg.linear.x
         angular_vel = msg.angular.z
         # self.get_logger().info(f"Received Twist message: Linear.x = {linear_vel}, Angular.z = {angular_vel}")
-        self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelLeft)
+        self.send_can_msg(linear_vel + 1, ESDACANMessage.SetTargetVelLeft)
         self.send_can_msg(linear_vel, ESDACANMessage.SetTargetVelRight)
 
     
@@ -73,7 +73,7 @@ class MCU_Interface(Node):
             packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(struct.pack('<I', mapped_value))  # Pack 255 as 4-byte unsigned integer (little-endian)
+            packet.extend(struct.pack('<I', msg))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
             # while len(packet) < 8:
@@ -115,7 +115,7 @@ class MCU_Interface(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    mcu_interface = MCU_Interface(use_serial=False)  # Set use_serial=False for testing without serial
+    mcu_interface = MCU_Interface(use_serial=True)  # Set use_serial=False for testing without serial
     mcu_interface.spin()
     mcu_interface.destroy_node()
     rclpy.shutdown()
