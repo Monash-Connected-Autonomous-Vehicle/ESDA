@@ -5,6 +5,10 @@
     -->
     <xacro:property name="caster_x" value="0.235"/>
     <xacro:property name="caster_y" value="0.52297"/>
+    <!-- this x_off var moves the caster wheels forward
+         for running on hardware, remove it either using a conditional and launch arg
+         or by simply commenting it out but the former is preferred as it is best practice/clean
+     -->
     <xacro:property name="caster_x_off" value="0.3"/> <!-- offset on top of original x -->
     <xacro:property name="caster_z" value="0.208"/>
     <xacro:property name="caster_m" value="0.05"/>
