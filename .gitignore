@@ -1,3 +1,6 @@
 /build
 /install
 /log
+/nav2_zed_costmap_plugin/build
+/nav2_zed_costmap_plugin/install
+/nav2_zed_costmap_plugin/log
