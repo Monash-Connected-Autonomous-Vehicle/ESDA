@@ -50,7 +50,7 @@
         </xacro:inertial_sphere>
     </link>
     
-    <link name="back_caster">
+    <!--<link name="back_caster">
         <visual>
             <geometry>
                 <sphere radius="${wheel_rad}"/>
@@ -68,7 +68,7 @@
         <xacro:inertial_sphere mass="${caster_m}" radius="${wheel_rad}">
             <origin xyz="0 0 0" rpy="0 0 0"/>
         </xacro:inertial_sphere>
-    </link>
+    </link>-->
     
     <!-- -->
     <joint name="right_caster_joint" type="fixed">
@@ -84,9 +84,9 @@
     </joint>    
     
     
-    <joint name="back_caster_joint" type="fixed">
+    <!--<joint name="back_caster_joint" type="fixed">
         <parent link="base_link"/>
         <child link="back_caster"/>
         <origin xyz="-${caster_x/0.33} 0 -${caster_z}" rpy="0 0 0 "/>
-    </joint>    
+    </joint>-->    
 </robot>
