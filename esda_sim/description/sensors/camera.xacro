@@ -1,18 +1,12 @@
 <?xml version="1.0"?>
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="robot">
-    <xacro:arg name="camera_name"   default="zed2" />
-    <xacro:arg name="camera_model"  default="zed2" />
-    
-    <xacro:property name="cam_p" value="0.646"/> 
-    
-    
-    <xacro:include filename="$(find zed_wrapper)/urdf/zed_macro.urdf.xacro"/>
-    <xacro:zed_camera name="$(arg camera_name)" model="$(arg camera_model)"/>
+<robot name="esda" xmlns:xacro="http://ros.org/wiki/xacro">
+  <link name="zed_camera_link">
+  
+  </link>
 
-    <joint name="$(arg camera_name)_joint" type="fixed">
-        <parent link="base_link"/>
-        <child link="$(arg camera_name)_camera_link"/>
-        <origin xyz="0.271364 0.0 0.243727" rpy="0 ${cam_p} 0" />
-    </joint>
-    
+  <joint name="zed_to_baselink" type="fixed">
+      <parent link="base_link"/>
+      <child link="zed_camera_link"/>
+      <origin xyz="0.271364 0.0 0.243727" rpy="0 0.646 0" />
+  </joint>
 </robot>
