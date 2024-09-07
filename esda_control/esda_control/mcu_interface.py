@@ -62,12 +62,12 @@ class MCU_Interface(Node):
         self.get_logger().info(f"Received Twist message: Linear.x = {msg}")
         
 
-        old_min, old_max = 0.000000, 5.000000
-        new_min, new_max = 1535, 1580
+        old_min, old_max = 0.000000, 0.300000
+        new_min, new_max = 1520, 1550
 
         mapped_value = (msg - old_min) / (old_max - old_min) * (new_max - new_min) + new_min
         mapped_value = int(mapped_value)  # Convert to integer if necessary
-
+        mapped_value = min(mapped_value, new_max)
         self.get_logger().info(f"Package ID: {ID}. New mapped value: PWM = {mapped_value}")
         
         if self.use_serial:
@@ -120,7 +120,7 @@ class MCU_Interface(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    mcu_interface = MCU_Interface(use_serial=False)  # Set use_serial=False for testing without serial
+    mcu_interface = MCU_Interface(use_serial=True)  # Set use_serial=False for testing without serial
     mcu_interface.spin()
     mcu_interface.destroy_node()
     rclpy.shutdown()
