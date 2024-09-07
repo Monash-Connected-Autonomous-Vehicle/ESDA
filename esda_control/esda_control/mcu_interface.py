@@ -63,7 +63,7 @@ class MCU_Interface(Node):
         
 
         old_min, old_max = 0.000000, 5.000000
-        new_min, new_max = 1535, 1580
+        new_min, new_max = 1530, 1580
 
         mapped_value = (msg - old_min) / (old_max - old_min) * (new_max - new_min) + new_min
         mapped_value = int(mapped_value)  # Convert to integer if necessary
@@ -78,7 +78,7 @@ class MCU_Interface(Node):
             packet.extend(struct.pack('<I', ID.value))  # Pack ID as 4-byte unsigned integer (little-endian)
 
             # Add the float data to the packet (bytes 2 to 5)
-            packet.extend(struct.pack('<I', mapped_value))  # Pack 255 as 4-byte unsigned integer (little-endian)
+            packet.extend(struct.pack('<I', 1500))  # Pack 255 as 4-byte unsigned integer (little-endian)
 
             # Add 3 padding bytes (or any other values) to make the total length 8 bytes
             # while len(packet) < 8:
@@ -120,7 +120,7 @@ class MCU_Interface(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    mcu_interface = MCU_Interface(use_serial=False)  # Set use_serial=False for testing without serial
+    mcu_interface = MCU_Interface(use_serial=True)  # Set use_serial=False for testing without serial
     mcu_interface.spin()
     mcu_interface.destroy_node()
     rclpy.shutdown()
