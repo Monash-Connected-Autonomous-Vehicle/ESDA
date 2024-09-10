@@ -43,63 +43,36 @@ def generate_launch_description():
                         output='screen')
 
     # Launch localisation nodes obtained from https://github.com/cra-ros-pkg/robot_localization/tree/humble-devel
-    localization_nodes = [
-        launch.actions.DeclareLaunchArgument(
-            'output_final_position',
-            default_value='false'
-        ),
-            
-        launch.actions.DeclareLaunchArgument(
-            'output_location',
-	        default_value='~/dual_ekf_navsat_example_debug.txt'
-	    ),
-	    
-        launch_ros.actions.Node(
-            package='robot_localization', 
-            executable='ekf_node', 
-            name='ekf_filter_node_odom',
-	        output='screen',
-            parameters=[loc_parameters_file_path],
-            remappings=[('imu/data', 'imu'),
-                        ('odometry/filtered', 'odometry/local')
-        ]),
-               
-        launch_ros.actions.Node(
-            package='robot_localization', 
-            executable='ekf_node', 
-            name='ekf_filter_node_map',
-	        output='screen',
-            parameters=[loc_parameters_file_path],
-            remappings=[('imu/data', 'imu'),
-                        ('gps/fix', 'navsatfix'), 
-                        ('gps/filtered', 'gps/filtered'),
-                        ('odometry/gps', 'odometry/gps'),
-                        ('odometry/filtered', 'odometry/global')
-        ]),    
-                      
-        launch_ros.actions.Node(
-            package='robot_localization', 
-            executable='navsat_transform_node', 
-            name='navsat_transform',
-	        output='screen',
-            parameters=[loc_parameters_file_path],
-            remappings=[('imu/data', 'imu'),
-                        ('gps/fix', 'navsatfix'), 
-                        ('gps/filtered', 'gps/filtered'),
-                        ('odometry/gps', 'odometry/gps'),
-                        ('odometry/filtered', 'odometry/global')
-        ])           
-    ]
+    localization_node = launch_ros.actions.Node(
+           package='robot_localization',
+           executable='ekf_node',
+           name='ekf_filter_node',
+           output='screen',
+           parameters=[loc_parameters_file_path, {'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    )
+
+    launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
+                                            description='Flag to enable use_sim_time'),
     
     # launch PCL2 to laserscan converter node
-    cloud_to_scan = IncludeLaunchDescription(
+    '''cloud_to_scan = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
             get_package_share_directory('velodyne_laserscan'), 'launch'),
             '/velodyne_laserscan_node-launch.py']
         )
+    )'''
+    
+    # obstacle detection nodes
+    slam_toolbox_params_file = PathJoinSubstitution([FindPackageShare(package_name), 'config', 'sim_slam.yaml'])
+    
+    slam_toolbox_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('slam_toolbox'), 'launch',
+            'online_async_launch.py')]),
+        launch_arguments={'use_sim_time': 'true', 'params_file': slam_toolbox_params_file}.items()
     )
        
-    ld = [rsp, gazebo, spawn_entity, cloud_to_scan] + localization_nodes
+    ld = [rsp, gazebo, spawn_entity, localization_node, slam_toolbox_launch]
 
     # Launch them all!
     return LaunchDescription(ld)
