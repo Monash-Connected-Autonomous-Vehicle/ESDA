@@ -16,7 +16,7 @@ import launch.actions
 def generate_launch_description():
     package_name='esda_launch'
     launch_configs_dir = os.path.join(package_name, 'config')
-    loc_parameters_file_path = os.path.join(launch_configs_dir, 'robot_loc_dual_efk_config.yaml')
+    loc_parameters_file_path = PathJoinSubstitution([FindPackageShare(package_name), 'config', 'robot_loc_sim.yaml'])
     os.environ['FILE_PATH'] = str(launch_configs_dir) 
     
     # obtained from https://github.com/joshnewans/articubot_one
@@ -91,7 +91,15 @@ def generate_launch_description():
         ])           
     ]
     
-    ld = [rsp, gazebo, spawn_entity] + localization_nodes
+    # launch PCL2 to laserscan converter node
+    cloud_to_scan = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('velodyne_laserscan'), 'launch'),
+            '/velodyne_laserscan_node-launch.py']
+        )
+    )
+       
+    ld = [rsp, gazebo, spawn_entity, cloud_to_scan] + localization_nodes
 
     # Launch them all!
     return LaunchDescription(ld)
