@@ -4,16 +4,24 @@ from launch import LaunchDescription
 from launch.actions import IncludeLaunchDescription, DeclareLaunchArgument
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
-from launch.substitutions import LaunchConfiguration, PathJoinSubstitution
+from launch.substitutions import LaunchConfiguration, PathJoinSubstitution, EnvironmentVariable
 from launch_ros.substitutions import FindPackageShare
 from launch.conditions import UnlessCondition
+import launch_ros.actions
+import yaml
+import pathlib
+import launch.actions
 
 
 def generate_launch_description():
-    # obtained from https://github.com/joshnewans/articubot_one
-
-    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
     package_name='esda_launch'
+    launch_configs_dir = os.path.join(package_name, 'config')
+    loc_parameters_file_path = os.path.join(launch_configs_dir, 'robot_loc_dual_efk_config.yaml')
+    os.environ['FILE_PATH'] = str(launch_configs_dir) 
+    
+    # obtained from https://github.com/joshnewans/articubot_one
+    # Include the robot_state_publisher launch file, provided by our own package. Force sim time to be enabled
+
 
     rsp = IncludeLaunchDescription(
                 PythonLaunchDescriptionSource([os.path.join(
@@ -33,42 +41,58 @@ def generate_launch_description():
                         arguments=['-topic', 'robot_description',
                                    '-entity', 'esda'],
                         output='screen')
-                        
-    '''controllers = LaunchConfiguration('controllers')
-                        
-    controllers_arg = DeclareLaunchArgument(
-        name="controllers",
-        default_value=PathJoinSubstitution([
-            FindPackageShare('esda_sim'), 
-            "config", 
-            "ros2_control_config.yaml"
+
+    # Launch localisation nodes obtained from https://github.com/cra-ros-pkg/robot_localization/tree/humble-devel
+    localization_nodes = [
+        launch.actions.DeclareLaunchArgument(
+            'output_final_position',
+            default_value='false'
+        ),
+            
+        launch.actions.DeclareLaunchArgument(
+            'output_location',
+	        default_value='~/dual_ekf_navsat_example_debug.txt'
+	    ),
+	    
+        launch_ros.actions.Node(
+            package='robot_localization', 
+            executable='ekf_node', 
+            name='ekf_filter_node_odom',
+	        output='screen',
+            parameters=[loc_parameters_file_path],
+            remappings=[('imu/data', 'imu'),
+                        ('odometry/filtered', 'odometry/local')
         ]),
-        description="Path of the controller params file"
-    )
-
-    control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[controllers],
-        remappings=[('/controller_manager/robot_description', '/robot_description')],
-    )
-
-    ackermann = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["ack_cont"]
-    )
-
-    joint_broad = Node(
-        package="controller_manager",
-        executable="spawner",
-        arguments=["joint_broad"]
-    )'''
-
+               
+        launch_ros.actions.Node(
+            package='robot_localization', 
+            executable='ekf_node', 
+            name='ekf_filter_node_map',
+	        output='screen',
+            parameters=[loc_parameters_file_path],
+            remappings=[('imu/data', 'imu'),
+                        ('gps/fix', 'navsatfix'), 
+                        ('gps/filtered', 'gps/filtered'),
+                        ('odometry/gps', 'odometry/gps'),
+                        ('odometry/filtered', 'odometry/global')
+        ]),    
+                      
+        launch_ros.actions.Node(
+            package='robot_localization', 
+            executable='navsat_transform_node', 
+            name='navsat_transform',
+	        output='screen',
+            parameters=[loc_parameters_file_path],
+            remappings=[('imu/data', 'imu'),
+                        ('gps/fix', 'navsatfix'), 
+                        ('gps/filtered', 'gps/filtered'),
+                        ('odometry/gps', 'odometry/gps'),
+                        ('odometry/filtered', 'odometry/global')
+        ])           
+    ]
+    
+    ld = [rsp, gazebo, spawn_entity] + localization_nodes
 
     # Launch them all!
-    return LaunchDescription([
-        rsp,
-        gazebo,
-        spawn_entity
-    ])
+    return LaunchDescription(ld)
+
