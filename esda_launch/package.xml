@@ -14,6 +14,13 @@
 
   <depend>slam_toolbox</depend>
   <depend>sensor_msgs</depend>
+  <depend>xacro</depend>
+  <depend>ros2_control</depend>
+  <depend>ros2_controllers</depend>
+  <depend>gazebo_ros2_control</depend>
+  <depend>navigation2</depend>
+  <depend>nav2_bringup</depend>
+  <depend>robot_localization</depend>  
 
   <export>
     <build_type>ament_python</build_type>
