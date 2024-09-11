@@ -74,7 +74,7 @@ def generate_launch_description():
     
     # launch planning systems
     nav2_params = PathJoinSubstitution([FindPackageShare(package_name), 'config', 'nav2_sim.yaml'])
-    map_file_path = PathJoinSubstitution([FindPackageShare(package_name), 'worlds', 'lino_map.world'])
+    map_file_path = PathJoinSubstitution([FindPackageShare(package_name), 'maps', 'map_config.yaml'])
     
     nav2 = IncludeLaunchDescription(
         PythonLaunchDescriptionSource([os.path.join(
@@ -82,7 +82,8 @@ def generate_launch_description():
             'bringup_launch.py')]),
         launch_arguments={
         	'params_file': nav2_params,
-        	'use_sim_time': 'true'
+        	'use_sim_time': 'true',
+        	'map': map_file_path
         }.items()
     )
        

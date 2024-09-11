@@ -33,7 +33,7 @@ setup(
     name=package_name,
     version='0.0.0',
     packages=find_packages(exclude=['test']),
-    data_files=package_files(data_files, ['config/', 'launch/', 'description/']),
+    data_files=package_files(data_files, ['config/', 'launch/', 'description/', 'maps']),
     install_requires=['setuptools'],
     zip_safe=True,
     maintainer='mcav',
