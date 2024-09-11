@@ -71,8 +71,22 @@ def generate_launch_description():
             'online_async_launch.py')]),
         launch_arguments={'use_sim_time': 'true', 'params_file': slam_toolbox_params_file}.items()
     )
+    
+    # launch planning systems
+    nav2_params = PathJoinSubstitution([FindPackageShare(package_name), 'config', 'nav2_sim.yaml'])
+    map_file_path = PathJoinSubstitution([FindPackageShare(package_name), 'worlds', 'lino_map.world'])
+    
+    nav2 = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(
+            get_package_share_directory('nav2_bringup'), 'launch',
+            'bringup_launch.py')]),
+        launch_arguments={
+        	'params_file': nav2_params,
+        	'use_sim_time': 'true'
+        }.items()
+    )
        
-    ld = [rsp, gazebo, spawn_entity, localization_node, slam_toolbox_launch]
+    ld = [rsp, gazebo, spawn_entity, localization_node, slam_toolbox_launch, nav2]
 
     # Launch them all!
     return LaunchDescription(ld)
