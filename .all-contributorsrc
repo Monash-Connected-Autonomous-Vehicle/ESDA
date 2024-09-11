@@ -32,7 +32,8 @@
         "design",
         "ideas",
         "mentoring",
-        "question"
+        "question",
+        "code"
       ]
     },
     {
@@ -92,7 +93,16 @@
         "code",
         "data"
       ]
-    }      
+    },
+    {
+      "login": "Credit3",
+      "name": "Samuel Tri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/142369108?v=4",
+      "profile": "https://github.com/Credit3",
+      "contributions": [
+        "code",
+      ]
+    }  
   ],
   "contributorsPerLine": 5,
   "linkToUsage": false
