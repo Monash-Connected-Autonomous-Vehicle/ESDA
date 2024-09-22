@@ -1,0 +1,54 @@
+running egg_info
+creating ../build/esda_sim/esda_sim.egg-info
+writing ../build/esda_sim/esda_sim.egg-info/PKG-INFO
+writing dependency_links to ../build/esda_sim/esda_sim.egg-info/dependency_links.txt
+writing entry points to ../build/esda_sim/esda_sim.egg-info/entry_points.txt
+writing requirements to ../build/esda_sim/esda_sim.egg-info/requires.txt
+writing top-level names to ../build/esda_sim/esda_sim.egg-info/top_level.txt
+writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+reading manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+adding license file 'LICENSE'
+writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/samue/GitHub/ESDA/build/esda_sim/build
+creating /home/samue/GitHub/ESDA/build/esda_sim/build/lib
+creating /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim
+copying esda_sim/__init__.py -> /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim
+running install
+running install_lib
+creating /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim
+copying /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim/__init__.py -> /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim
+byte-compiling /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+copying resource/esda_sim -> /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+copying package.xml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description
+copying description/esda.urdf.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+copying description/wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+copying description/drive_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+copying description/esda_core.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+copying description/steering_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+copying description/util/inertial_macros.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+copying description/util/materials.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+copying description/control/ros2_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+copying description/control/gazebo_diff_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+copying description/control/gazebo_ackermann_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+copying description/sensors/camera.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+copying description/sensors/lidar.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+copying description/sensors/piksi.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch
+copying launch/rsp.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+copying launch/launch_sim.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config
+copying config/ros2_control_config.yaml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config/
+running install_egg_info
+Copying ../build/esda_sim/esda_sim.egg-info to /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_sim/install.log'

@@ -1,0 +1,279 @@
+[0.474s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[0.474s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=20, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7fe72c1da1d0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fe72c1d9c90>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fe72c1d9c90>>, mixin_verb=('build',))
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.684s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.684s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/samue/GitHub/ESDA'
+[0.684s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.685s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.702s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extensions ['ignore', 'ignore_ament_install']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extension 'ignore'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extension 'ignore_ament_install'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extensions ['colcon_pkg']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extension 'colcon_pkg'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extensions ['colcon_meta']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extension 'colcon_meta'
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extensions ['ros']
+[0.703s] Level 1:colcon.colcon_core.package_identification:_identify(esda_control) by extension 'ros'
+[0.707s] DEBUG:colcon.colcon_core.package_identification:Package 'esda_control' with type 'ros.ament_python' and name 'esda_control'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extensions ['ignore', 'ignore_ament_install']
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extension 'ignore'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extension 'ignore_ament_install'
+[0.707s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extensions ['colcon_pkg']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extension 'colcon_pkg'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extensions ['colcon_meta']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extension 'colcon_meta'
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extensions ['ros']
+[0.708s] Level 1:colcon.colcon_core.package_identification:_identify(esda_launch) by extension 'ros'
+[0.709s] DEBUG:colcon.colcon_core.package_identification:Package 'esda_launch' with type 'ros.ament_python' and name 'esda_launch'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extensions ['ignore', 'ignore_ament_install']
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extension 'ignore'
+[0.709s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extension 'ignore_ament_install'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extensions ['colcon_pkg']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extension 'colcon_pkg'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extensions ['colcon_meta']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extension 'colcon_meta'
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extensions ['ros']
+[0.710s] Level 1:colcon.colcon_core.package_identification:_identify(esda_sim) by extension 'ros'
+[0.710s] DEBUG:colcon.colcon_core.package_identification:Package 'esda_sim' with type 'ros.ament_python' and name 'esda_sim'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extensions ['ignore', 'ignore_ament_install']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extension 'ignore'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extension 'ignore_ament_install'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extensions ['colcon_pkg']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extension 'colcon_pkg'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extensions ['colcon_meta']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extension 'colcon_meta'
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extensions ['ros']
+[0.711s] Level 1:colcon.colcon_core.package_identification:_identify(esda_zed_cam) by extension 'ros'
+[0.712s] DEBUG:colcon.colcon_core.package_identification:Package 'esda_zed_cam' with type 'ros.ament_python' and name 'esda_zed_cam'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['ignore', 'ignore_ament_install']
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'ignore'
+[0.712s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'ignore_ament_install'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['colcon_pkg']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'colcon_pkg'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['colcon_meta']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'colcon_meta'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['ros']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'ros'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['cmake', 'python']
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'cmake'
+[0.713s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'python'
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extensions ['python_setup_py']
+[0.714s] Level 1:colcon.colcon_core.package_identification:_identify(zed-ros-2-wrapper) by extension 'python_setup_py'
+[0.714s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.714s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.714s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.714s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.714s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.747s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.750s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 4 installed packages in /home/samue/GitHub/ESDA/install
+[0.752s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 361 installed packages in /opt/ros/humble
+[0.774s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_args' from command line to 'None'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_target' from command line to 'None'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_clean_cache' from command line to 'False'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_clean_first' from command line to 'False'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'cmake_force_configure' from command line to 'False'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'ament_cmake_args' from command line to 'None'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'catkin_cmake_args' from command line to 'None'
+[0.838s] Level 5:colcon.colcon_core.verb:set package 'esda_control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.838s] DEBUG:colcon.colcon_core.verb:Building package 'esda_control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samue/GitHub/ESDA/build/esda_control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samue/GitHub/ESDA/install/esda_control', 'merge_install': False, 'path': '/home/samue/GitHub/ESDA/esda_control', 'symlink_install': False, 'test_result_base': None}
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_args' from command line to 'None'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_target' from command line to 'None'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_clean_cache' from command line to 'False'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_clean_first' from command line to 'False'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'cmake_force_configure' from command line to 'False'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'ament_cmake_args' from command line to 'None'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'catkin_cmake_args' from command line to 'None'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_launch' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.839s] DEBUG:colcon.colcon_core.verb:Building package 'esda_launch' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samue/GitHub/ESDA/build/esda_launch', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samue/GitHub/ESDA/install/esda_launch', 'merge_install': False, 'path': '/home/samue/GitHub/ESDA/esda_launch', 'symlink_install': False, 'test_result_base': None}
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_args' from command line to 'None'
+[0.839s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_target' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_clean_cache' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_clean_first' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'cmake_force_configure' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'ament_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'catkin_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_sim' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.840s] DEBUG:colcon.colcon_core.verb:Building package 'esda_sim' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samue/GitHub/ESDA/build/esda_sim', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samue/GitHub/ESDA/install/esda_sim', 'merge_install': False, 'path': '/home/samue/GitHub/ESDA/esda_sim', 'symlink_install': False, 'test_result_base': None}
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_target' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_clean_cache' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_clean_first' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'cmake_force_configure' from command line to 'False'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'ament_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'catkin_cmake_args' from command line to 'None'
+[0.840s] Level 5:colcon.colcon_core.verb:set package 'esda_zed_cam' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.840s] DEBUG:colcon.colcon_core.verb:Building package 'esda_zed_cam' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/samue/GitHub/ESDA/build/esda_zed_cam', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/samue/GitHub/ESDA/install/esda_zed_cam', 'merge_install': False, 'path': '/home/samue/GitHub/ESDA/esda_zed_cam', 'symlink_install': False, 'test_result_base': None}
+[0.840s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.842s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.843s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samue/GitHub/ESDA/esda_control' with build type 'ament_python'
+[0.843s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_control', 'ament_prefix_path')
+[0.848s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.849s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/ament_prefix_path.ps1'
+[0.850s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/ament_prefix_path.dsv'
+[0.851s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/ament_prefix_path.sh'
+[0.853s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.853s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.860s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samue/GitHub/ESDA/esda_launch' with build type 'ament_python'
+[0.860s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_launch', 'ament_prefix_path')
+[0.861s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/ament_prefix_path.ps1'
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/ament_prefix_path.dsv'
+[0.862s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/ament_prefix_path.sh'
+[0.863s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.863s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.868s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samue/GitHub/ESDA/esda_sim' with build type 'ament_python'
+[0.868s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_sim', 'ament_prefix_path')
+[0.869s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/ament_prefix_path.ps1'
+[0.870s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/ament_prefix_path.dsv'
+[0.870s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/ament_prefix_path.sh'
+[0.871s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.871s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.878s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/samue/GitHub/ESDA/esda_zed_cam' with build type 'ament_python'
+[0.879s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_zed_cam', 'ament_prefix_path')
+[0.880s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/ament_prefix_path.ps1'
+[0.881s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/ament_prefix_path.dsv'
+[0.882s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/ament_prefix_path.sh'
+[0.883s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.883s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.283s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samue/GitHub/ESDA/esda_control'
+[1.284s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.284s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.629s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samue/GitHub/ESDA/esda_launch'
+[1.630s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.630s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.012s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samue/GitHub/ESDA/esda_sim'
+[2.012s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.013s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.363s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/samue/GitHub/ESDA/esda_zed_cam'
+[2.364s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.364s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.950s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samue/GitHub/ESDA/esda_control': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_control build --build-base /home/samue/GitHub/ESDA/build/esda_control/build install --record /home/samue/GitHub/ESDA/build/esda_control/install.log --single-version-externally-managed install_data
+[2.978s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samue/GitHub/ESDA/esda_zed_cam': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_zed_cam build --build-base /home/samue/GitHub/ESDA/build/esda_zed_cam/build install --record /home/samue/GitHub/ESDA/build/esda_zed_cam/install.log --single-version-externally-managed install_data
+[2.988s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samue/GitHub/ESDA/esda_launch': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_launch build --build-base /home/samue/GitHub/ESDA/build/esda_launch/build install --record /home/samue/GitHub/ESDA/build/esda_launch/install.log --single-version-externally-managed install_data
+[2.989s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/samue/GitHub/ESDA/esda_sim': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data
+[3.462s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samue/GitHub/ESDA/esda_zed_cam' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_zed_cam build --build-base /home/samue/GitHub/ESDA/build/esda_zed_cam/build install --record /home/samue/GitHub/ESDA/build/esda_zed_cam/install.log --single-version-externally-managed install_data
+[3.465s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam' for CMake module files
+[3.465s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam' for CMake config files
+[3.466s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam/lib'
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam/bin'
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/pkgconfig/esda_zed_cam.pc'
+[3.467s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages'
+[3.467s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_zed_cam', 'pythonpath')
+[3.468s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/pythonpath.ps1'
+[3.469s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/pythonpath.dsv'
+[3.470s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/hook/pythonpath.sh'
+[3.471s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_zed_cam/bin'
+[3.471s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(esda_zed_cam)
+[3.471s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/package.ps1'
+[3.473s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/package.dsv'
+[3.475s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/package.sh'
+[3.476s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/package.bash'
+[3.477s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam/package.zsh'
+[3.478s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samue/GitHub/ESDA/install/esda_zed_cam/share/colcon-core/packages/esda_zed_cam)
+[3.482s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control' for CMake module files
+[3.483s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samue/GitHub/ESDA/esda_control' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_control build --build-base /home/samue/GitHub/ESDA/build/esda_control/build install --record /home/samue/GitHub/ESDA/build/esda_control/install.log --single-version-externally-managed install_data
+[3.484s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control' for CMake config files
+[3.485s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control/lib'
+[3.485s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control/bin'
+[3.485s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control/lib/pkgconfig/esda_control.pc'
+[3.486s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages'
+[3.486s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_control', 'pythonpath')
+[3.487s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/pythonpath.ps1'
+[3.488s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/pythonpath.dsv'
+[3.488s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/hook/pythonpath.sh'
+[3.490s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_control/bin'
+[3.490s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(esda_control)
+[3.490s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/package.ps1'
+[3.493s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/package.dsv'
+[3.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/package.sh'
+[3.494s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/package.bash'
+[3.495s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_control/share/esda_control/package.zsh'
+[3.495s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samue/GitHub/ESDA/install/esda_control/share/colcon-core/packages/esda_control)
+[3.499s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim' for CMake module files
+[3.502s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samue/GitHub/ESDA/esda_sim' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data
+[3.503s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim' for CMake config files
+[3.504s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim/lib'
+[3.505s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim/bin'
+[3.505s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim/lib/pkgconfig/esda_sim.pc'
+[3.505s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages'
+[3.505s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_sim', 'pythonpath')
+[3.506s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/pythonpath.ps1'
+[3.507s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/pythonpath.dsv'
+[3.507s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/hook/pythonpath.sh'
+[3.508s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_sim/bin'
+[3.508s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(esda_sim)
+[3.509s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/package.ps1'
+[3.510s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/package.dsv'
+[3.511s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/package.sh'
+[3.511s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/package.bash'
+[3.512s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/package.zsh'
+[3.513s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samue/GitHub/ESDA/install/esda_sim/share/colcon-core/packages/esda_sim)
+[3.514s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch' for CMake module files
+[3.518s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/samue/GitHub/ESDA/esda_launch' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_launch build --build-base /home/samue/GitHub/ESDA/build/esda_launch/build install --record /home/samue/GitHub/ESDA/build/esda_launch/install.log --single-version-externally-managed install_data
+[3.519s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch' for CMake config files
+[3.520s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch/lib'
+[3.520s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch/bin'
+[3.521s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch/lib/pkgconfig/esda_launch.pc'
+[3.521s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages'
+[3.521s] Level 1:colcon.colcon_core.shell:create_environment_hook('esda_launch', 'pythonpath')
+[3.521s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/pythonpath.ps1'
+[3.522s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/pythonpath.dsv'
+[3.522s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/hook/pythonpath.sh'
+[3.523s] Level 1:colcon.colcon_core.environment:checking '/home/samue/GitHub/ESDA/install/esda_launch/bin'
+[3.523s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(esda_launch)
+[3.524s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/package.ps1'
+[3.524s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/package.dsv'
+[3.525s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/package.sh'
+[3.526s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/package.bash'
+[3.526s] INFO:colcon.colcon_core.shell:Creating package script '/home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/package.zsh'
+[3.526s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/samue/GitHub/ESDA/install/esda_launch/share/colcon-core/packages/esda_launch)
+[3.527s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.527s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.528s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.528s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.663s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[3.663s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.663s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.663s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[3.666s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[3.667s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[3.667s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samue/GitHub/ESDA/install/local_setup.ps1'
+[3.669s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/samue/GitHub/ESDA/install/_local_setup_util_ps1.py'
+[3.670s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samue/GitHub/ESDA/install/setup.ps1'
+[3.671s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samue/GitHub/ESDA/install/local_setup.sh'
+[3.672s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/samue/GitHub/ESDA/install/_local_setup_util_sh.py'
+[3.673s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samue/GitHub/ESDA/install/setup.sh'
+[3.675s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samue/GitHub/ESDA/install/local_setup.bash'
+[3.676s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samue/GitHub/ESDA/install/setup.bash'
+[3.677s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/samue/GitHub/ESDA/install/local_setup.zsh'
+[3.678s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/samue/GitHub/ESDA/install/setup.zsh'

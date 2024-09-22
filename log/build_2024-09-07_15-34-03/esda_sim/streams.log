@@ -1,0 +1,28 @@
+[1.662s] Invoking command in '/home/samue/GitHub/ESDA/esda_sim': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data
+[1.923s] running egg_info
+[1.924s] writing ../build/esda_sim/esda_sim.egg-info/PKG-INFO
+[1.925s] writing dependency_links to ../build/esda_sim/esda_sim.egg-info/dependency_links.txt
+[1.925s] writing entry points to ../build/esda_sim/esda_sim.egg-info/entry_points.txt
+[1.925s] writing requirements to ../build/esda_sim/esda_sim.egg-info/requires.txt
+[1.925s] writing top-level names to ../build/esda_sim/esda_sim.egg-info/top_level.txt
+[1.929s] reading manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.929s] adding license file 'LICENSE'
+[1.930s] writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.930s] running build
+[1.930s] running build_py
+[1.931s] running install
+[1.931s] running install_lib
+[1.934s] running install_data
+[1.934s] copying description/esda.urdf.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.934s] copying description/wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.934s] copying description/caster_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.934s] copying description/sensors/camera.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.934s] copying description/sensors/lidar.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.935s] copying description/sensors/piksi.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.935s] copying launch/launch_sim.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[1.935s] running install_egg_info
+[1.939s] removing '/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info' (and everything under it)
+[1.939s] Copying ../build/esda_sim/esda_sim.egg-info to /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info
+[1.941s] running install_scripts
+[1.962s] writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_sim/install.log'
+[1.997s] Invoked command in '/home/samue/GitHub/ESDA/esda_sim' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data

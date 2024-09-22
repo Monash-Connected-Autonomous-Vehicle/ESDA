@@ -1,0 +1,27 @@
+[2.489s] Invoking command in '/home/samue/GitHub/ESDA/esda_control': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_control build --build-base /home/samue/GitHub/ESDA/build/esda_control/build install --record /home/samue/GitHub/ESDA/build/esda_control/install.log --single-version-externally-managed install_data
+[2.956s] running egg_info
+[2.958s] writing ../build/esda_control/esda_control.egg-info/PKG-INFO
+[2.959s] writing dependency_links to ../build/esda_control/esda_control.egg-info/dependency_links.txt
+[2.960s] writing entry points to ../build/esda_control/esda_control.egg-info/entry_points.txt
+[2.960s] writing requirements to ../build/esda_control/esda_control.egg-info/requires.txt
+[2.960s] writing top-level names to ../build/esda_control/esda_control.egg-info/top_level.txt
+[2.964s] reading manifest file '../build/esda_control/esda_control.egg-info/SOURCES.txt'
+[2.966s] writing manifest file '../build/esda_control/esda_control.egg-info/SOURCES.txt'
+[2.968s] running build
+[2.968s] running build_py
+[2.969s] copying esda_control/mcu_interface.py -> /home/samue/GitHub/ESDA/build/esda_control/build/lib/esda_control
+[2.969s] running install
+[2.970s] running install_lib
+[2.970s] copying /home/samue/GitHub/ESDA/build/esda_control/build/lib/esda_control/mcu_interface.py -> /home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages/esda_control
+[2.971s] byte-compiling /home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages/esda_control/mcu_interface.py to mcu_interface.cpython-310.pyc
+[2.976s] running install_data
+[2.976s] running install_egg_info
+[2.980s] removing '/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages/esda_control-0.0.0-py3.10.egg-info' (and everything under it)
+[2.981s] Copying ../build/esda_control/esda_control.egg-info to /home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages/esda_control-0.0.0-py3.10.egg-info
+[2.982s] running install_scripts
+[3.020s] Installing dynamixel_sdk_node script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[3.021s] Installing mcu_interface script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[3.022s] Installing parallelogram_steering_controller script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[3.022s] Installing test_mcu_interface script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[3.023s] writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_control/install.log'
+[3.150s] Invoked command in '/home/samue/GitHub/ESDA/esda_control' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_control build --build-base /home/samue/GitHub/ESDA/build/esda_control/build install --record /home/samue/GitHub/ESDA/build/esda_control/install.log --single-version-externally-managed install_data

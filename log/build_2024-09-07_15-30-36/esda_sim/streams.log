@@ -1,0 +1,56 @@
+[1.603s] Invoking command in '/home/samue/GitHub/ESDA/esda_sim': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data
+[1.817s] running egg_info
+[1.819s] creating ../build/esda_sim/esda_sim.egg-info
+[1.820s] writing ../build/esda_sim/esda_sim.egg-info/PKG-INFO
+[1.820s] writing dependency_links to ../build/esda_sim/esda_sim.egg-info/dependency_links.txt
+[1.820s] writing entry points to ../build/esda_sim/esda_sim.egg-info/entry_points.txt
+[1.821s] writing requirements to ../build/esda_sim/esda_sim.egg-info/requires.txt
+[1.821s] writing top-level names to ../build/esda_sim/esda_sim.egg-info/top_level.txt
+[1.822s] writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.824s] reading manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.825s] adding license file 'LICENSE'
+[1.825s] writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.831s] running build
+[1.831s] running build_py
+[1.833s] creating /home/samue/GitHub/ESDA/build/esda_sim/build
+[1.835s] creating /home/samue/GitHub/ESDA/build/esda_sim/build/lib
+[1.836s] creating /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim
+[1.836s] copying esda_sim/__init__.py -> /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim
+[1.836s] running install
+[1.836s] running install_lib
+[1.836s] creating /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim
+[1.836s] copying /home/samue/GitHub/ESDA/build/esda_sim/build/lib/esda_sim/__init__.py -> /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim
+[1.837s] byte-compiling /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim/__init__.py to __init__.cpython-310.pyc
+[1.842s] running install_data
+[1.842s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index
+[1.843s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index
+[1.843s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+[1.843s] copying resource/esda_sim -> /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+[1.844s] copying package.xml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim
+[1.844s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description
+[1.844s] copying description/esda.urdf.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.845s] copying description/wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.846s] copying description/drive_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.850s] copying description/esda_core.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.850s] copying description/steering_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[1.850s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+[1.850s] copying description/util/inertial_macros.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+[1.850s] copying description/util/materials.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+[1.850s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[1.850s] copying description/control/ros2_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[1.850s] copying description/control/gazebo_diff_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[1.850s] copying description/control/gazebo_ackermann_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[1.850s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.850s] copying description/sensors/camera.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.851s] copying description/sensors/lidar.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.851s] copying description/sensors/piksi.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[1.851s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch
+[1.851s] copying launch/rsp.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[1.851s] copying launch/launch_sim.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[1.851s] creating /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config
+[1.851s] copying config/ros2_control_config.yaml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config/
+[1.851s] running install_egg_info
+[1.852s] Copying ../build/esda_sim/esda_sim.egg-info to /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info
+[1.852s] running install_scripts
+[1.870s] writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_sim/install.log'
+[1.922s] Invoked command in '/home/samue/GitHub/ESDA/esda_sim' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data

@@ -1,0 +1,52 @@
+[1.597s] Invoking command in '/home/samue/GitHub/ESDA/esda_zed_cam': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_zed_cam build --build-base /home/samue/GitHub/ESDA/build/esda_zed_cam/build install --record /home/samue/GitHub/ESDA/build/esda_zed_cam/install.log --single-version-externally-managed install_data
+[1.814s] running egg_info
+[1.815s] creating ../build/esda_zed_cam/esda_zed_cam.egg-info
+[1.818s] writing ../build/esda_zed_cam/esda_zed_cam.egg-info/PKG-INFO
+[1.818s] writing dependency_links to ../build/esda_zed_cam/esda_zed_cam.egg-info/dependency_links.txt
+[1.818s] writing entry points to ../build/esda_zed_cam/esda_zed_cam.egg-info/entry_points.txt
+[1.818s] writing requirements to ../build/esda_zed_cam/esda_zed_cam.egg-info/requires.txt
+[1.819s] writing top-level names to ../build/esda_zed_cam/esda_zed_cam.egg-info/top_level.txt
+[1.820s] writing manifest file '../build/esda_zed_cam/esda_zed_cam.egg-info/SOURCES.txt'
+[1.828s] reading manifest file '../build/esda_zed_cam/esda_zed_cam.egg-info/SOURCES.txt'
+[1.829s] writing manifest file '../build/esda_zed_cam/esda_zed_cam.egg-info/SOURCES.txt'
+[1.829s] running build
+[1.829s] running build_py
+[1.830s] creating /home/samue/GitHub/ESDA/build/esda_zed_cam/build
+[1.830s] creating /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib
+[1.830s] creating /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.831s] copying esda_zed_cam/camera_interface.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.837s] copying esda_zed_cam/detection.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.837s] copying esda_zed_cam/distance_test.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.838s] copying esda_zed_cam/zed_cam_detect.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.838s] copying esda_zed_cam/point_cloud_test.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.838s] copying esda_zed_cam/lane_detection.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.838s] copying esda_zed_cam/__init__.py -> /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam
+[1.840s] running install
+[1.840s] running install_lib
+[1.840s] creating /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.840s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/camera_interface.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.840s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/detection.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.840s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/distance_test.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.840s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/zed_cam_detect.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.841s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/point_cloud_test.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.841s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/lane_detection.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.841s] copying /home/samue/GitHub/ESDA/build/esda_zed_cam/build/lib/esda_zed_cam/__init__.py -> /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam
+[1.841s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/camera_interface.py to camera_interface.cpython-310.pyc
+[1.841s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/detection.py to detection.cpython-310.pyc
+[1.842s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/distance_test.py to distance_test.cpython-310.pyc
+[1.842s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/zed_cam_detect.py to zed_cam_detect.cpython-310.pyc
+[1.842s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/point_cloud_test.py to point_cloud_test.cpython-310.pyc
+[1.842s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/lane_detection.py to lane_detection.cpython-310.pyc
+[1.842s] byte-compiling /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam/__init__.py to __init__.cpython-310.pyc
+[1.842s] running install_data
+[1.843s] creating /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index
+[1.843s] creating /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index/resource_index
+[1.843s] creating /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index/resource_index/packages
+[1.843s] copying resource/esda_zed_cam -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index/resource_index/packages
+[1.843s] copying package.xml -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam
+[1.843s] running install_egg_info
+[1.843s] Copying ../build/esda_zed_cam/esda_zed_cam.egg-info to /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda_zed_cam-0.0.0-py3.10.egg-info
+[1.843s] running install_scripts
+[1.861s] Installing lane_detect script to /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/esda_zed_cam
+[1.862s] writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_zed_cam/install.log'
+[1.920s] Invoked command in '/home/samue/GitHub/ESDA/esda_zed_cam' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_zed_cam build --build-base /home/samue/GitHub/ESDA/build/esda_zed_cam/build install --record /home/samue/GitHub/ESDA/build/esda_zed_cam/install.log --single-version-externally-managed install_data

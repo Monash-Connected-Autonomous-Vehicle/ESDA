@@ -1,0 +1,22 @@
+[1.624s] Invoking command in '/home/samue/GitHub/ESDA/esda_sim': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data
+[1.868s] running egg_info
+[1.869s] writing ../build/esda_sim/esda_sim.egg-info/PKG-INFO
+[1.870s] writing dependency_links to ../build/esda_sim/esda_sim.egg-info/dependency_links.txt
+[1.870s] writing entry points to ../build/esda_sim/esda_sim.egg-info/entry_points.txt
+[1.870s] writing requirements to ../build/esda_sim/esda_sim.egg-info/requires.txt
+[1.871s] writing top-level names to ../build/esda_sim/esda_sim.egg-info/top_level.txt
+[1.872s] reading manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.873s] adding license file 'LICENSE'
+[1.874s] writing manifest file '../build/esda_sim/esda_sim.egg-info/SOURCES.txt'
+[1.874s] running build
+[1.874s] running build_py
+[1.874s] running install
+[1.875s] running install_lib
+[1.876s] running install_data
+[1.876s] copying launch/esda_simulation_launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[1.877s] running install_egg_info
+[1.878s] removing '/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info' (and everything under it)
+[1.879s] Copying ../build/esda_sim/esda_sim.egg-info to /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda_sim-0.0.0-py3.10.egg-info
+[1.881s] running install_scripts
+[1.907s] writing list of installed files to '/home/samue/GitHub/ESDA/build/esda_sim/install.log'
+[1.946s] Invoked command in '/home/samue/GitHub/ESDA/esda_sim' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../build/esda_sim build --build-base /home/samue/GitHub/ESDA/build/esda_sim/build install --record /home/samue/GitHub/ESDA/build/esda_sim/install.log --single-version-externally-managed install_data

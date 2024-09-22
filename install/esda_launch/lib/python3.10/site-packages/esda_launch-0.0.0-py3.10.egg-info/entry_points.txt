@@ -1,0 +1,3 @@
+[console_scripts]
+datum_setter_node = esda_launch.initial_datum_setter:main
+
