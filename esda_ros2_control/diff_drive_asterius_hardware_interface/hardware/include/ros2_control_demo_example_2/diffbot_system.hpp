@@ -30,6 +30,10 @@
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 
+#include "ros2_control_demo_example_2/visibility_control.h"
+
+#include "ros2_control_demo_example_2/serial_comms.hpp"
+
 namespace ros2_control_demo_example_2
 {
 class DiffBotSystemHardware : public hardware_interface::SystemInterface
@@ -57,14 +61,17 @@ public:
     const rclcpp::Time & time, const rclcpp::Duration & period) override;
 
 private:
-  // Parameters for the DiffBot simulation
-  double hw_start_sec_;
-  double hw_stop_sec_;
+  // // Parameters for the DiffBot simulation
+  // double hw_start_sec_;
+  // double hw_stop_sec_;
 
-  // Store the command for the simulated robot
-  std::vector<double> hw_commands_;
-  std::vector<double> hw_positions_;
-  std::vector<double> hw_velocities_;
+  // // Store the command for the simulated robot
+  // std::vector<double> hw_commands_;
+  // std::vector<double> hw_positions_;
+  // std::vector<double> hw_velocities_;
+
+  SerialComms comms_;
+
 };
 
 }  // namespace ros2_control_demo_example_2
