@@ -38,6 +38,12 @@ namespace ros2_control_demo_example_2
 {
 class DiffBotSystemHardware : public hardware_interface::SystemInterface
 {
+
+struct Config{
+  std::string left_wheel_name = "";
+}
+
+
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DiffBotSystemHardware);
 
