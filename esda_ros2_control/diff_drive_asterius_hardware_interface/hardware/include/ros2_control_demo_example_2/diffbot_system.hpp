@@ -47,7 +47,7 @@ struct Config{
   int baud_rate = 0;
   int timeout_ms = 0;
   int enc_counts_per_rev = 0;
-}
+};
 
 
 public:
@@ -83,7 +83,7 @@ private:
   // std::vector<double> hw_velocities_;
 
   SerialComms comms_;
-
+  Config cfg_;
 };
 
 }  // namespace ros2_control_demo_example_2
