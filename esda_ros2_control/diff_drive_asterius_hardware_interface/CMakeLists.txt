@@ -51,14 +51,14 @@ install(
 )
 install(
   DIRECTORY description/launch description/ros2_control description/urdf
-  DESTINATION share/ros2_control_demo_example_2
+  DESTINATION share/diff_drive_asterius_hardware_interface
 )
 install(
   DIRECTORY bringup/launch bringup/config
   DESTINATION share/diff_drive_asterius_hardware_interface
 )
 install(TARGETS ros2_control_demo_example_2
-  EXPORT ros2_control_demo_example_2
+  EXPORT export_diff_drive_asterius_hardware_interface
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
