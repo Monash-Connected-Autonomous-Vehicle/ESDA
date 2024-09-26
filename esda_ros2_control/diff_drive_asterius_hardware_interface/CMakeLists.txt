@@ -55,10 +55,10 @@ install(
 )
 install(
   DIRECTORY bringup/launch bringup/config
-  DESTINATION share/ros2_control_demo_example_2
+  DESTINATION share/diff_drive_asterius_hardware_interface
 )
 install(TARGETS ros2_control_demo_example_2
-  EXPORT export_ros2_control_demo_example_2
+  EXPORT ros2_control_demo_example_2
   ARCHIVE DESTINATION lib
   LIBRARY DESTINATION lib
   RUNTIME DESTINATION bin
@@ -73,6 +73,6 @@ if(BUILD_TESTING)
 endif()
 
 ## EXPORTS
-ament_export_targets(export_ros2_control_demo_example_2 HAS_LIBRARY_TARGET)
+ament_export_targets(export_diff_drive_asterius_hardware_interface HAS_LIBRARY_TARGET)
 ament_export_dependencies(${THIS_PACKAGE_INCLUDE_DEPENDS})
 ament_package()
