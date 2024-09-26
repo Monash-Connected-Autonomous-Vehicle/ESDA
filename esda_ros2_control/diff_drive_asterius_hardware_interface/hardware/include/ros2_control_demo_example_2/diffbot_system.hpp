@@ -31,8 +31,8 @@
 #include "rclcpp_lifecycle/state.hpp"
 
 #include "ros2_control_demo_example_2/visibility_control.h"
-
 #include "ros2_control_demo_example_2/serial_comms.hpp"
+#include "ros2_control_demo_example_2/wheel.hpp"
 
 namespace ros2_control_demo_example_2
 {
@@ -84,6 +84,8 @@ private:
 
   SerialComms comms_;
   Config cfg_;
+  Wheel wheel_l_;
+  Wheel wheel_r_;
 };
 
 }  // namespace ros2_control_demo_example_2
