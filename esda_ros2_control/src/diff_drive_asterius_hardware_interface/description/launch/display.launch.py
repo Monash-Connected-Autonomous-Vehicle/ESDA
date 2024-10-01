@@ -14,5 +14,19 @@ def generate_launch_description():
             name='robot_state_publisher',
             output='screen',
             parameters=[{'robot_description': urdf}],
-        )
+        ),
+
+        Node(
+            package='diff_drive_asterius_hardware_interface',
+            executable='diffbot_system',
+            name='diff_drive_hardware_interface',
+            output='screen',
+        ),
+
+        Node(
+            package='diff_drive_asterius_controller',
+            executable='diff_drive_asterius_controller',  # Name of your controller executable
+            name='diff_drive_controller',
+            output='screen',
+        ),
     ])

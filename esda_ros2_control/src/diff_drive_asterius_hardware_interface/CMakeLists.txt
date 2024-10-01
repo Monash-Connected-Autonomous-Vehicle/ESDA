@@ -29,6 +29,7 @@ add_library(
   SHARED
   hardware/diffbot_system.cpp
 )
+
 target_compile_features(ros2_control_demo_example_2 PUBLIC cxx_std_17)
 target_include_directories(ros2_control_demo_example_2 PUBLIC
 $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/hardware/include>
@@ -51,7 +52,7 @@ install(
 )
 install(
   DIRECTORY description/launch description/ros2_control description/urdf
-  DESTINATION share/diff_drive_asterius_hardware_interface
+  DESTINATION share/diff_drive_asterius_hardware_interface/description
 )
 install(
   DIRECTORY bringup/launch bringup/config

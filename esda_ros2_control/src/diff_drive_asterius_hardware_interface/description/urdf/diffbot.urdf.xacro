@@ -4,10 +4,10 @@
   <xacro:arg name="prefix" default="" />
   <xacro:arg name="use_mock_hardware" default="false" />
 
-  <xacro:include filename="$(find diff_drive_asterius_hardware_interface)/description/urdf/diffbot_description.urdf.xacro" />
+  <xacro:include filename="diffbot_description.urdf.xacro" />
 
   <!-- Import Rviz colors -->
-  <xacro:include filename="$(find diff_drive_asterius_hardware_interface)/description/urdf/diffbot.materials.xacro" />
+  <xacro:include filename="diffbot.materials.xacro" />
 
   <!-- Import diffbot ros2_control description -->
   <xacro:include filename="$(find diff_drive_asterius_hardware_interface)/description/ros2_control/diffbot.ros2_control.xacro" />
