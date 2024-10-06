@@ -82,6 +82,8 @@ private:
   // std::vector<double> hw_positions_;
   // std::vector<double> hw_velocities_;
 
+  bool serial_enabled = false;
+
   SerialComms comms_;
   Config cfg_;
   Wheel wheel_l_;

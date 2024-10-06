@@ -43,7 +43,7 @@ ament_target_dependencies(
 target_link_libraries(ros2_control_demo_example_2 PUBLIC serial)
 
 # Export hardware plugins
-pluginlib_export_plugin_description_file(hardware_interface ros2_control_demo_example_2.xml)
+pluginlib_export_plugin_description_file(hardware_interface diff_drive_asterius_hardware_interface.xml)
 
 # INSTALL
 install(
@@ -54,6 +54,11 @@ install(
   DIRECTORY description/launch description/ros2_control description/urdf
   DESTINATION share/diff_drive_asterius_hardware_interface/description
 )
+install(
+  FILES description/ros2_control/diffbot.ros2_control.xacro
+  DESTINATION share/diff_drive_asterius_hardware_interface/description/ros2_control
+)
+
 install(
   DIRECTORY bringup/launch bringup/config
   DESTINATION share/diff_drive_asterius_hardware_interface

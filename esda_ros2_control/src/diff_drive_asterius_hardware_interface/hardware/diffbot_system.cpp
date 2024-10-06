@@ -136,7 +136,13 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
 {
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Activating ...please wait...");
-  comms_.connect(cfg_.device, cfg_.baud_rate, cfg_.timeout_ms); // Connecting to device when hardware interface is activated
+
+
+  if (serial_enabled) {
+    comms_.connect(cfg_.device, cfg_.baud_rate, cfg_.timeout_ms); // Connect only if serial is enabled
+  }
+  
+  
   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully activated!");
 
   return hardware_interface::CallbackReturn::SUCCESS;
