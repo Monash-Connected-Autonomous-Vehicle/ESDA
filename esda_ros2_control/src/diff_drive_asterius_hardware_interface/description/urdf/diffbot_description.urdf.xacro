@@ -16,6 +16,18 @@
   <xacro:property name="caster_wheel_radius" value="0.015" />
   <xacro:property name="z_offset" value="-${base_height/2}" /> <!-- Space btw top of beam and the each joint -->
 
+  <!-- Dummy Base Link to hold inertia -->
+  <link name="${prefix}dummy_base_link">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${base_mass}"/>
+      <inertia
+        ixx="${base_mass / 12.0 * (base_length*base_length + base_height*base_height)}" ixy="0.0" ixz="0.0"
+        iyy="${base_mass / 12.0 * (base_height*base_height + base_width*base_width)}" iyz="0.0"
+        izz="${base_mass / 12.0 * (base_width*base_width + base_length*base_length)}"/>
+    </inertial>
+  </link>
+
   <!-- Base Link -->
   <link name="${prefix}base_link">
     <collision>
