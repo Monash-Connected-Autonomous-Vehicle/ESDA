@@ -354,10 +354,40 @@ def generate_launch_description():
         condition=IfCondition(gui),
     )
 
+    # controller_manager_node = Node(
+    #     package="controller_manager",
+    #     executable="ros2_control_node",
+    #     output="both",
+    #     parameters=[robot_description, {"use_sim_time": False}],  # You can change sim_time based on your needs
+    # )
+
+    controller_manager_node = Node(
+        package="controller_manager",
+        executable="ros2_control_node",
+        parameters=[robot_description],
+        output="both"
+    )
+
+    diff_drive_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["diff_drive_controller"],
+        output="screen",
+    )
+    joint_broadcaster_spawner = Node(
+        package="controller_manager",
+        executable="spawner",
+        arguments=["joint_state_broadcaster"],
+        output="screen",
+    )
+
     nodes = [
         joint_state_publisher_node,
         robot_state_publisher_node,
         rviz_node,
+        controller_manager_node,
+        diff_drive_spawner,
+        joint_broadcaster_spawner,
     ]
 
     return LaunchDescription(declared_arguments + nodes)
