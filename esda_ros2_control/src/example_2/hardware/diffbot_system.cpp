@@ -38,6 +38,11 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   {
     return hardware_interface::CallbackReturn::ERROR;
   }
+
+  base_x_ = 0.0;
+  base_y_ = 0.0;
+  base_theta_ = 0.0;
+
   logger_ = std::make_shared<rclcpp::Logger>(
     rclcpp::get_logger("controller_manager.resource_manager.hardware_component.system.DiffBot"));
   clock_ = std::make_shared<rclcpp::Clock>(rclcpp::Clock());
@@ -55,7 +60,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   for (const hardware_interface::ComponentInfo & joint : info_.joints)
   {
     // DiffBotSystem has exactly two states and one command interface on each joint
-    if (joint.command_interfaces.size() != 1)
+    if (joint.command_interfaces.size() != 1) // Checks to see if there is only 1 command interface for each joint (velocity)
     {
       RCLCPP_FATAL(
         get_logger(), "Joint '%s' has %zu command interfaces found. 1 expected.",
