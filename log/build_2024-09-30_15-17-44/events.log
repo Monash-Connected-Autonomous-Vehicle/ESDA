@@ -1,0 +1,27 @@
+[0.000000] (-) TimerEvent: {}
+[0.000214] (-) JobUnselected: {'identifier': 'diff_drive_asterius_controller'}
+[0.000245] (-) JobUnselected: {'identifier': 'diff_drive_asterius_hardware_interface'}
+[0.000290] (-) JobUnselected: {'identifier': 'esda_control'}
+[0.000307] (-) JobUnselected: {'identifier': 'esda_launch'}
+[0.000320] (-) JobUnselected: {'identifier': 'esda_sim'}
+[0.000333] (-) JobUnselected: {'identifier': 'esda_zed_cam'}
+[0.000345] (-) JobUnselected: {'identifier': 'ros2_control_demo_description'}
+[0.000357] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_1'}
+[0.000368] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_10'}
+[0.000380] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_11'}
+[0.000418] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_12'}
+[0.000462] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_14'}
+[0.000478] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_15'}
+[0.000490] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_2'}
+[0.000502] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_3'}
+[0.000514] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_4'}
+[0.000526] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_5'}
+[0.000538] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_6'}
+[0.000820] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_7'}
+[0.000865] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_8'}
+[0.000882] (-) JobUnselected: {'identifier': 'ros2_control_demo_example_9'}
+[0.000894] (-) JobUnselected: {'identifier': 'ros2_control_demo_testing'}
+[0.000909] (ros2_control_demos) JobQueued: {'identifier': 'ros2_control_demos', 'dependencies': OrderedDict([('ros2_control_demo_description', '/home/samue/GitHub/ESDA/install/ros2_control_demo_description'), ('ros2_control_demo_testing', '/home/samue/GitHub/ESDA/install/ros2_control_demo_testing'), ('ros2_control_demo_example_1', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_1'), ('ros2_control_demo_example_10', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_10'), ('ros2_control_demo_example_11', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_11'), ('ros2_control_demo_example_12', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_12'), ('ros2_control_demo_example_14', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_14'), ('ros2_control_demo_example_2', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_2'), ('ros2_control_demo_example_3', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_3'), ('ros2_control_demo_example_4', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_4'), ('ros2_control_demo_example_5', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_5'), ('ros2_control_demo_example_6', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_6'), ('ros2_control_demo_example_7', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_7'), ('ros2_control_demo_example_8', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_8'), ('ros2_control_demo_example_9', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_9'), ('ros2_control_demo_example_15', '/home/samue/GitHub/ESDA/install/ros2_control_demo_example_15')])}
+[0.001825] (ros2_control_demos) JobStarted: {'identifier': 'ros2_control_demos'}
+[0.013670] (ros2_control_demos) JobEnded: {'identifier': 'ros2_control_demos', 'rc': 1}
+[0.024878] (-) EventReactorShutdown: {}

@@ -1,0 +1,21 @@
+[1.984s] Invoking command in '/home/samue/GitHub/ESDA/build/esda_zed_cam': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_zed_cam/build --no-deps symlink_data --force
+[2.199s] running develop
+[2.200s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.200s]   warnings.warn(
+[2.320s] running egg_info
+[2.321s] writing esda_zed_cam.egg-info/PKG-INFO
+[2.321s] writing dependency_links to esda_zed_cam.egg-info/dependency_links.txt
+[2.321s] writing entry points to esda_zed_cam.egg-info/entry_points.txt
+[2.322s] writing requirements to esda_zed_cam.egg-info/requires.txt
+[2.322s] writing top-level names to esda_zed_cam.egg-info/top_level.txt
+[2.322s] reading manifest file 'esda_zed_cam.egg-info/SOURCES.txt'
+[2.323s] writing manifest file 'esda_zed_cam.egg-info/SOURCES.txt'
+[2.324s] running build_ext
+[2.325s] Creating /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda-zed-cam.egg-link (link to .)
+[2.326s] Installing lane_detect script to /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/esda_zed_cam
+[2.326s] 
+[2.326s] Installed /home/samue/GitHub/ESDA/build/esda_zed_cam
+[2.326s] running symlink_data
+[2.326s] symbolically linking /home/samue/GitHub/ESDA/build/esda_zed_cam/resource/esda_zed_cam -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index/resource_index/packages
+[2.326s] symbolically linking /home/samue/GitHub/ESDA/build/esda_zed_cam/package.xml -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam
+[2.351s] Invoked command in '/home/samue/GitHub/ESDA/build/esda_zed_cam' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_zed_cam/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_zed_cam/build --no-deps symlink_data --force

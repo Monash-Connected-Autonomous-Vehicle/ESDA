@@ -1,0 +1,30 @@
+[1.993s] Invoking command in '/home/samue/GitHub/ESDA/build/esda_launch': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_launch/build --no-deps symlink_data --force
+[2.219s] running develop
+[2.219s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.219s]   warnings.warn(
+[2.407s] running egg_info
+[2.407s] writing esda_launch.egg-info/PKG-INFO
+[2.408s] writing dependency_links to esda_launch.egg-info/dependency_links.txt
+[2.408s] writing entry points to esda_launch.egg-info/entry_points.txt
+[2.409s] writing requirements to esda_launch.egg-info/requires.txt
+[2.409s] writing top-level names to esda_launch.egg-info/top_level.txt
+[2.410s] reading manifest file 'esda_launch.egg-info/SOURCES.txt'
+[2.411s] writing manifest file 'esda_launch.egg-info/SOURCES.txt'
+[2.412s] running build_ext
+[2.413s] Creating /home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages/esda-launch.egg-link (link to .)
+[2.415s] Installing datum_setter_node script to /home/samue/GitHub/ESDA/install/esda_launch/lib/esda_launch
+[2.416s] 
+[2.416s] Installed /home/samue/GitHub/ESDA/build/esda_launch
+[2.416s] running symlink_data
+[2.417s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/resource/esda_launch -> /home/samue/GitHub/ESDA/install/esda_launch/share/ament_index/resource_index/packages
+[2.417s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/package.xml -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch
+[2.417s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/config/VLP16-driver-config.yaml -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/config/
+[2.418s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/config/robot_loc_dual_efk_config.yaml -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/config/
+[2.418s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/config/swiftnav-config.yaml -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/config/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/piksi_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/sensors_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/localization_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/perception_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/lidar_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.419s] symbolically linking /home/samue/GitHub/ESDA/build/esda_launch/launch/esda_launch.py -> /home/samue/GitHub/ESDA/install/esda_launch/share/esda_launch/launch/
+[2.448s] Invoked command in '/home/samue/GitHub/ESDA/build/esda_launch' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_launch/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_launch/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_launch/build --no-deps symlink_data --force

@@ -1,0 +1,45 @@
+[0.464s] Invoking command in '/home/samue/GitHub/ESDA/build/diff_drive_asterius_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/samue/GitHub/ESDA/esda_ros2_control/diff_drive_asterius_controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samue/GitHub/ESDA/install/diff_drive_asterius_controller
+[1.217s] -- The CXX compiler identification is GNU 11.4.0
+[1.309s] -- Detecting CXX compiler ABI info
+[1.589s] -- Detecting CXX compiler ABI info - done
+[1.599s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.600s] -- Detecting CXX compile features
+[1.601s] -- Detecting CXX compile features - done
+[1.624s] -- Found ament_cmake: 1.3.9 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.783s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.847s] -- Override CMake install command with custom implementation using symlinks instead of copying resources
+[1.892s] -- Found controller_interface: 2.43.1 (/opt/ros/humble/share/controller_interface/cmake)
+[2.331s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[2.340s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[2.356s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[2.379s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.409s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[9.454s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[9.459s] -- Found rmw_cyclonedds_cpp: 1.3.4 (/opt/ros/humble/share/rmw_cyclonedds_cpp/cmake)
+[9.558s] -- Using RMW implementation 'rmw_cyclonedds_cpp' as default
+[9.589s] -- Looking for C++ include pthread.h
+[10.008s] -- Looking for C++ include pthread.h - found
+[10.008s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[10.454s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[10.457s] -- Found Threads: TRUE  
+[10.944s] -- Found generate_parameter_library: 0.3.8 (/opt/ros/humble/share/generate_parameter_library/cmake)
+[10.947s] -- Found parameter_traits: 0.3.8 (/opt/ros/humble/share/parameter_traits/cmake)
+[10.987s] -- Found nav_msgs: 4.2.4 (/opt/ros/humble/share/nav_msgs/cmake)
+[11.121s] -- Found realtime_tools: 2.6.0 (/opt/ros/humble/share/realtime_tools/cmake)
+[11.197s] -- Found tf2: 0.25.8 (/opt/ros/humble/share/tf2/cmake)
+[11.237s] -- Found tf2_msgs: 0.25.8 (/opt/ros/humble/share/tf2_msgs/cmake)
+[11.760s] -- Found ament_cmake_gmock: 1.3.9 (/opt/ros/humble/share/ament_cmake_gmock/cmake)
+[11.764s] -- Found controller_manager: 2.41.0 (/opt/ros/humble/share/controller_manager/cmake)
+[12.228s] -- Found ros2_control_test_assets: 2.41.0 (/opt/ros/humble/share/ros2_control_test_assets/cmake)
+[12.232s] -- Found gmock sources under '/opt/ros/humble/src/gmock_vendor': C++ tests using 'Google Mock' will be built
+[12.566s] -- The C compiler identification is GNU 11.4.0
+[13.772s] -- Detecting C compiler ABI info
+[14.215s] -- Detecting C compiler ABI info - done
+[14.228s] -- Check for working C compiler: /usr/bin/cc - skipped
+[14.229s] -- Detecting C compile features
+[14.230s] -- Detecting C compile features - done
+[14.241s] -- Found ament_cmake_gtest: 1.3.9 (/opt/ros/humble/share/ament_cmake_gtest/cmake)
+[14.247s] -- Found gtest sources under '/opt/ros/humble/src/gtest_vendor': C++ tests using 'Google Test' will be built
+[15.038s] -- Configuring done
+[15.258s] -- Generating done
+[15.261s] -- Build files have been written to: /home/samue/GitHub/ESDA/build/diff_drive_asterius_controller

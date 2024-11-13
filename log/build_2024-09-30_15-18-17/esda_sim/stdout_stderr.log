@@ -1,0 +1,34 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing esda_sim.egg-info/PKG-INFO
+writing dependency_links to esda_sim.egg-info/dependency_links.txt
+writing entry points to esda_sim.egg-info/entry_points.txt
+writing requirements to esda_sim.egg-info/requires.txt
+writing top-level names to esda_sim.egg-info/top_level.txt
+reading manifest file 'esda_sim.egg-info/SOURCES.txt'
+writing manifest file 'esda_sim.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda-sim.egg-link (link to .)
+
+Installed /home/samue/GitHub/ESDA/build/esda_sim
+running symlink_data
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/resource/esda_sim -> /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/package.xml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/esda.urdf.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/drive_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/esda_core.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/steering_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/util/inertial_macros.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/util/materials.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/ros2_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/gazebo_diff_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/gazebo_ackermann_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/camera.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/lidar.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/piksi.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/launch/rsp.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/launch/launch_sim.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/config/ros2_control_config.yaml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config/

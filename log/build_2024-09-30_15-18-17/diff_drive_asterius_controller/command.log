@@ -1,0 +1,1 @@
+Invoking command in '/home/samue/GitHub/ESDA/build/diff_drive_asterius_controller': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/humble /usr/bin/cmake /home/samue/GitHub/ESDA/esda_ros2_control/diff_drive_asterius_controller -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samue/GitHub/ESDA/install/diff_drive_asterius_controller

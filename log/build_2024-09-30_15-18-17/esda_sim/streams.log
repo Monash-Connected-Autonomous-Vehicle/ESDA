@@ -1,0 +1,36 @@
+[2.003s] Invoking command in '/home/samue/GitHub/ESDA/build/esda_sim': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_sim/build --no-deps symlink_data --force
+[2.235s] running develop
+[2.236s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.236s]   warnings.warn(
+[2.349s] running egg_info
+[2.350s] writing esda_sim.egg-info/PKG-INFO
+[2.351s] writing dependency_links to esda_sim.egg-info/dependency_links.txt
+[2.351s] writing entry points to esda_sim.egg-info/entry_points.txt
+[2.351s] writing requirements to esda_sim.egg-info/requires.txt
+[2.351s] writing top-level names to esda_sim.egg-info/top_level.txt
+[2.352s] reading manifest file 'esda_sim.egg-info/SOURCES.txt'
+[2.353s] writing manifest file 'esda_sim.egg-info/SOURCES.txt'
+[2.354s] running build_ext
+[2.354s] Creating /home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages/esda-sim.egg-link (link to .)
+[2.355s] 
+[2.355s] Installed /home/samue/GitHub/ESDA/build/esda_sim
+[2.356s] running symlink_data
+[2.356s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/resource/esda_sim -> /home/samue/GitHub/ESDA/install/esda_sim/share/ament_index/resource_index/packages
+[2.356s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/package.xml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim
+[2.358s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/esda.urdf.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[2.358s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/drive_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/esda_core.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/steering_wheels.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/util/inertial_macros.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/util/materials.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/util
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/ros2_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/gazebo_diff_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[2.359s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/control/gazebo_ackermann_control.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/control
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/camera.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/lidar.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/description/sensors/piksi.xacro -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/description/sensors
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/launch/rsp.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/launch/launch_sim.launch.py -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/launch/
+[2.360s] symbolically linking /home/samue/GitHub/ESDA/build/esda_sim/config/ros2_control_config.yaml -> /home/samue/GitHub/ESDA/install/esda_sim/share/esda_sim/config/
+[2.392s] Invoked command in '/home/samue/GitHub/ESDA/build/esda_sim' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_sim/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_sim/build --no-deps symlink_data --force

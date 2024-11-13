@@ -1,0 +1,24 @@
+[0.651s] Invoking command in '/home/samue/GitHub/ESDA/build/ros2_control_demo_example_2': AMENT_PREFIX_PATH=/home/samue/GitHub/ESDA/install/ros2_control_demo_testing:/home/samue/GitHub/ESDA/install/ros2_control_demo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/samue/GitHub/ESDA/install/ros2_control_demo_description:/home/samue/GitHub/ESDA/esda_ros2_control/install/diff_drive_asterius_hardware_interface:/home/samue/GitHub/ESDA/esda_ros2_control/install/diff_drive_asterius_controller:/opt/ros/humble PYTHONPATH=/home/samue/GitHub/ESDA/build/ros2_control_demo_testing:/home/samue/GitHub/ESDA/install/ros2_control_demo_testing/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/samue/GitHub/ESDA/ros2_control_demos/example_2 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samue/GitHub/ESDA/install/ros2_control_demo_example_2
+[0.963s] -- The CXX compiler identification is GNU 11.4.0
+[2.718s] -- Detecting CXX compiler ABI info
+[3.088s] -- Detecting CXX compiler ABI info - done
+[3.100s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[3.100s] -- Detecting CXX compile features
+[3.101s] -- Detecting CXX compile features - done
+[7.910s] [33mCMake Warning at CMakeLists.txt:20 (find_package):
+[7.910s]   Could not find a configuration file for package "controller_manager" that
+[7.911s]   is compatible with requested version "4.0.0".
+[7.911s] 
+[7.911s]   The following configuration files were considered but not accepted:
+[7.911s] 
+[7.911s]     /opt/ros/humble/share/controller_manager/cmake/controller_managerConfig.cmake, version: 2.41.0
+[7.911s] 
+[7.911s] 
+[7.911s] [0m
+[7.911s] -- Configuring incomplete, errors occurred!
+[7.911s] See also "/home/samue/GitHub/ESDA/build/ros2_control_demo_example_2/CMakeFiles/CMakeOutput.log".
+[7.911s] [31mCMake Error at CMakeLists.txt:23 (message):
+[7.911s]   ros2_control version 4.0.0 or higher is required.  Are you using the
+[7.911s]   correct branch of the ros2_control_demos repository?
+[7.911s] 
+[7.911s] [0m

@@ -1,0 +1,24 @@
+[0.591s] Invoking command in '/home/samue/GitHub/ESDA/build/ros2_control_demo_example_4': AMENT_PREFIX_PATH=/home/samue/GitHub/ESDA/install/ros2_control_demo_testing:/home/samue/GitHub/ESDA/install/ros2_control_demo_description:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/samue/GitHub/ESDA/install/ros2_control_demo_description:/home/samue/GitHub/ESDA/esda_ros2_control/install/diff_drive_asterius_hardware_interface:/home/samue/GitHub/ESDA/esda_ros2_control/install/diff_drive_asterius_controller:/opt/ros/humble PYTHONPATH=/home/samue/GitHub/ESDA/build/ros2_control_demo_testing:/home/samue/GitHub/ESDA/install/ros2_control_demo_testing/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/cmake /home/samue/GitHub/ESDA/ros2_control_demos/example_4 -DAMENT_CMAKE_SYMLINK_INSTALL=1 -DCMAKE_INSTALL_PREFIX=/home/samue/GitHub/ESDA/install/ros2_control_demo_example_4
+[0.923s] -- The CXX compiler identification is GNU 11.4.0
+[2.446s] -- Detecting CXX compiler ABI info
+[2.878s] -- Detecting CXX compiler ABI info - done
+[2.886s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.887s] -- Detecting CXX compile features
+[2.887s] -- Detecting CXX compile features - done
+[5.603s] [33mCMake Warning at CMakeLists.txt:20 (find_package):
+[5.604s]   Could not find a configuration file for package "controller_manager" that
+[5.604s]   is compatible with requested version "4.0.0".
+[5.605s] 
+[5.605s]   The following configuration files were considered but not accepted:
+[5.605s] 
+[5.605s]     /opt/ros/humble/share/controller_manager/cmake/controller_managerConfig.cmake, version: 2.41.0
+[5.605s] 
+[5.606s] 
+[5.606s] [0m
+[5.607s] [31mCMake Error at CMakeLists.txt:23 (message):
+[5.607s]   ros2_control version 4.0.0 or higher is required.  Are you using the
+[5.609s]   correct branch of the ros2_control_demos repository?
+[5.610s] 
+[5.611s] [0m
+[5.623s] -- Configuring incomplete, errors occurred!
+[5.623s] See also "/home/samue/GitHub/ESDA/build/ros2_control_demo_example_4/CMakeFiles/CMakeOutput.log".

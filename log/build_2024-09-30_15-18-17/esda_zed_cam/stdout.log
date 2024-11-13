@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing esda_zed_cam.egg-info/PKG-INFO
+writing dependency_links to esda_zed_cam.egg-info/dependency_links.txt
+writing entry points to esda_zed_cam.egg-info/entry_points.txt
+writing requirements to esda_zed_cam.egg-info/requires.txt
+writing top-level names to esda_zed_cam.egg-info/top_level.txt
+reading manifest file 'esda_zed_cam.egg-info/SOURCES.txt'
+writing manifest file 'esda_zed_cam.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/python3.10/site-packages/esda-zed-cam.egg-link (link to .)
+Installing lane_detect script to /home/samue/GitHub/ESDA/install/esda_zed_cam/lib/esda_zed_cam
+
+Installed /home/samue/GitHub/ESDA/build/esda_zed_cam
+running symlink_data
+symbolically linking /home/samue/GitHub/ESDA/build/esda_zed_cam/resource/esda_zed_cam -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/ament_index/resource_index/packages
+symbolically linking /home/samue/GitHub/ESDA/build/esda_zed_cam/package.xml -> /home/samue/GitHub/ESDA/install/esda_zed_cam/share/esda_zed_cam

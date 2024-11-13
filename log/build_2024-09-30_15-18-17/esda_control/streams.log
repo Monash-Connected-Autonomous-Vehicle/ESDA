@@ -1,0 +1,25 @@
+[2.020s] Invoking command in '/home/samue/GitHub/ESDA/build/esda_control': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_control/build --no-deps symlink_data --force
+[2.251s] running develop
+[2.251s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[2.251s]   warnings.warn(
+[2.381s] running egg_info
+[2.381s] writing esda_control.egg-info/PKG-INFO
+[2.381s] writing dependency_links to esda_control.egg-info/dependency_links.txt
+[2.381s] writing entry points to esda_control.egg-info/entry_points.txt
+[2.381s] writing requirements to esda_control.egg-info/requires.txt
+[2.381s] writing top-level names to esda_control.egg-info/top_level.txt
+[2.383s] reading manifest file 'esda_control.egg-info/SOURCES.txt'
+[2.384s] writing manifest file 'esda_control.egg-info/SOURCES.txt'
+[2.385s] running build_ext
+[2.385s] Creating /home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages/esda-control.egg-link (link to .)
+[2.387s] Installing dynamixel_sdk_node script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[2.387s] Installing mcu_interface script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[2.387s] Installing parallelogram_steering_controller script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[2.387s] Installing test_mcu_interface script to /home/samue/GitHub/ESDA/install/esda_control/lib/esda_control
+[2.387s] 
+[2.388s] Installed /home/samue/GitHub/ESDA/build/esda_control
+[2.388s] running symlink_data
+[2.388s] symbolically linking /home/samue/GitHub/ESDA/build/esda_control/resource/esda_control -> /home/samue/GitHub/ESDA/install/esda_control/share/ament_index/resource_index/packages
+[2.388s] symbolically linking /home/samue/GitHub/ESDA/build/esda_control/package.xml -> /home/samue/GitHub/ESDA/install/esda_control/share/esda_control
+[2.388s] symbolically linking /home/samue/GitHub/ESDA/build/esda_control/launch/control_launch.py -> /home/samue/GitHub/ESDA/install/esda_control/share/esda_control/launch
+[2.441s] Invoked command in '/home/samue/GitHub/ESDA/build/esda_control' returned '0': PYTHONPATH=/home/samue/GitHub/ESDA/build/esda_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/samue/GitHub/ESDA/install/esda_control/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/samue/GitHub/ESDA/build/esda_control/build --no-deps symlink_data --force
