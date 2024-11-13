@@ -1,1 +1,0 @@
-The hardware interface for Project Asterius Mark 2

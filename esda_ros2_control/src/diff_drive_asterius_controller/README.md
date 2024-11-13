@@ -1,1 +1,0 @@
-Differential drive ros2 controller that will be used for Project Asterius Mk2
