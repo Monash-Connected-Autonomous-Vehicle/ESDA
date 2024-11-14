@@ -38,6 +38,14 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
     return hardware_interface::CallbackReturn::ERROR;
   }
 
+  cfg__.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
+  cfg__.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
+  cfg__.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
+  cfg__.device = info_.hardware_parameters["device"];
+  cfg__.baud_rate = std::stoi(info_.hardware_parameters["baud_rate"]);
+  cfg__.timeout_ms = std::stoi(info_.hardware_parameters["timeout_ms"]);
+  cfg__.enc_counts_per_rev = std::stoi(info_.hardware_parameters["enc_counts_per_rev"]);
+
   base_x_ = 0.0;
   base_y_ = 0.0;
   base_theta_ = 0.0;
@@ -126,6 +134,21 @@ std::vector<hardware_interface::CommandInterface> DiffBotSystemHardware::export_
 
   return command_interfaces;
 }
+
+// hardware_interface::CallbackReturn DiffBotSystemHardware::on_configure(
+//   const rclcpp_lifecycle::State & /*previous_state*/)
+// {
+//   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Configuring ...please wait...");
+//   if (comms_inst__.connected())
+//   {
+//     comms_inst__.disconnect();
+//   }
+//   comms_inst__.connect(cfg__.device, cfg__.baud_rate, cfg__.timeout_ms);
+//   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully configured!");
+
+//   return hardware_interface::CallbackReturn::SUCCESS;
+// }
+
 
 hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
   const rclcpp_lifecycle::State & /*previous_state*/)

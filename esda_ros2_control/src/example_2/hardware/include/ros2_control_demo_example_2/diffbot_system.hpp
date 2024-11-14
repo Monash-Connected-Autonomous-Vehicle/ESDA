@@ -66,6 +66,10 @@ public:
   ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
   std::vector<hardware_interface::CommandInterface> export_command_interfaces() override;
 
+  // ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
+  // hardware_interface::CallbackReturn on_configure(
+  //   const rclcpp_lifecycle::State & previous_state) override;
+
   ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
   hardware_interface::CallbackReturn on_activate(
     const rclcpp_lifecycle::State & previous_state) override;
