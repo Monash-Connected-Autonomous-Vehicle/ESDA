@@ -32,6 +32,8 @@
 #include "rclcpp_lifecycle/state.hpp"
 #include "ros2_control_demo_example_2/visibility_control.h"
 
+#include "ros2_control_demo_example_2/serial_comms.hpp"
+
 namespace ros2_control_demo_example_2
 {
 class DiffBotSystemHardware : public hardware_interface::SystemInterface
@@ -92,6 +94,9 @@ private:
   std::vector<double> hw_velocities_;
 
   double base_x_, base_y_, base_theta_; 
+
+  SerialComms comms_inst__;
+
 };
 
 }  // namespace ros2_control_demo_example_2
