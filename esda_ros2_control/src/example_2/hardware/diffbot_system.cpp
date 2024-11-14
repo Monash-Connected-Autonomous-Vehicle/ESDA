@@ -30,8 +30,7 @@
 namespace ros2_control_demo_example_2
 {
 hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
-  const hardware_interface::HardwareInfo & info)
-{
+  const hardware_interface::HardwareInfo & info) {
   if (
     hardware_interface::SystemInterface::on_init(info) !=
     hardware_interface::CallbackReturn::SUCCESS)
@@ -43,22 +42,19 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   base_y_ = 0.0;
   base_theta_ = 0.0;
 
-  logger_ = std::make_shared<rclcpp::Logger>(
-    rclcpp::get_logger("controller_manager.resource_manager.hardware_component.system.DiffBot"));
+  logger_ = std::make_shared<rclcpp::Logger>(rclcpp::get_logger("controller_manager.resource_manager.hardware_component.system.DiffBot"));
   clock_ = std::make_shared<rclcpp::Clock>(rclcpp::Clock());
 
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
-  hw_start_sec_ =
-    hardware_interface::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
-  hw_stop_sec_ =
-    hardware_interface::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
+  hw_start_sec_ = hardware_interface::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
+  hw_stop_sec_ = hardware_interface::stod(info_.hardware_parameters["example_param_hw_stop_duration_sec"]);
+
   // END: This part here is for exemplary purposes - Please do not copy to your production code
   hw_positions_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
   hw_velocities_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
   hw_commands_.resize(info_.joints.size(), std::numeric_limits<double>::quiet_NaN());
 
-  for (const hardware_interface::ComponentInfo & joint : info_.joints)
-  {
+  for (const hardware_interface::ComponentInfo & joint : info_.joints) {
     // DiffBotSystem has exactly two states and one command interface on each joint
     if (joint.command_interfaces.size() != 1) // Checks to see if there is only 1 command interface for each joint (velocity)
     {
@@ -77,16 +73,14 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
       return hardware_interface::CallbackReturn::ERROR;
     }
 
-    if (joint.state_interfaces.size() != 2)
-    {
+    if (joint.state_interfaces.size() != 2) {
       RCLCPP_FATAL(
         get_logger(), "Joint '%s' has %zu state interface. 2 expected.", joint.name.c_str(),
         joint.state_interfaces.size());
       return hardware_interface::CallbackReturn::ERROR;
     }
 
-    if (joint.state_interfaces[0].name != hardware_interface::HW_IF_POSITION)
-    {
+    if (joint.state_interfaces[0].name != hardware_interface::HW_IF_POSITION) {
       RCLCPP_FATAL(
         get_logger(), "Joint '%s' have '%s' as first state interface. '%s' expected.",
         joint.name.c_str(), joint.state_interfaces[0].name.c_str(),
@@ -114,6 +108,7 @@ std::vector<hardware_interface::StateInterface> DiffBotSystemHardware::export_st
   {
     state_interfaces.emplace_back(hardware_interface::StateInterface(
       info_.joints[i].name, hardware_interface::HW_IF_POSITION, &hw_positions_[i]));
+
     state_interfaces.emplace_back(hardware_interface::StateInterface(
       info_.joints[i].name, hardware_interface::HW_IF_VELOCITY, &hw_velocities_[i]));
   }
@@ -124,8 +119,7 @@ std::vector<hardware_interface::StateInterface> DiffBotSystemHardware::export_st
 std::vector<hardware_interface::CommandInterface> DiffBotSystemHardware::export_command_interfaces()
 {
   std::vector<hardware_interface::CommandInterface> command_interfaces;
-  for (auto i = 0u; i < info_.joints.size(); i++)
-  {
+  for (auto i = 0u; i < info_.joints.size(); i++) {
     command_interfaces.emplace_back(hardware_interface::CommandInterface(
       info_.joints[i].name, hardware_interface::HW_IF_VELOCITY, &hw_commands_[i]));
   }
@@ -139,6 +133,8 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(get_logger(), "Activating ...please wait...");
 
+  // comms_inst__.connect_to_device();
+
   for (auto i = 0; i < hw_start_sec_; i++)
   {
     rclcpp::sleep_for(std::chrono::seconds(1));
@@ -149,8 +145,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_activate(
   // set some default values
   for (auto i = 0u; i < hw_positions_.size(); i++)
   {
-    if (std::isnan(hw_positions_[i]))
-    {
+    if (std::isnan(hw_positions_[i])) {
       hw_positions_[i] = 0;
       hw_velocities_[i] = 0;
       hw_commands_[i] = 0;
@@ -168,8 +163,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_deactivate(
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   RCLCPP_INFO(get_logger(), "Deactivating ...please wait...");
 
-  for (auto i = 0; i < hw_stop_sec_; i++)
-  {
+  for (auto i = 0; i < hw_stop_sec_; i++) {
     rclcpp::sleep_for(std::chrono::seconds(1));
     RCLCPP_INFO(get_logger(), "%.1f seconds left...", hw_stop_sec_ - i);
   }
@@ -186,8 +180,7 @@ hardware_interface::return_type DiffBotSystemHardware::read(
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   std::stringstream ss;
   ss << "Reading states:";
-  for (std::size_t i = 0; i < hw_velocities_.size(); i++)
-  {
+  for (std::size_t i = 0; i < hw_velocities_.size(); i++) {
     // Simulate DiffBot wheels's movement as a first-order system
     // Update the joint status: this is a revolute joint without any limit.
     // Simply integrates

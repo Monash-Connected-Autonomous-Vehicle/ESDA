@@ -34,10 +34,25 @@
 
 #include "ros2_control_demo_example_2/serial_comms.hpp"
 
-namespace ros2_control_demo_example_2
+namespace ros2_control_demo_example_2 {
+
+class DiffBotSystemHardware : public hardware_interface::SystemInterface {
+
+struct Config
 {
-class DiffBotSystemHardware : public hardware_interface::SystemInterface
-{
+  std::string left_wheel_name = "";
+  std::string right_wheel_name = "";
+  float loop_rate = 0.0;
+  std::string device = "";
+  int baud_rate = 0;
+  int timeout_ms = 0;
+  int enc_counts_per_rev = 0;
+  int pid_p = 0;
+  int pid_d = 0;
+  int pid_i = 0;
+  int pid_o = 0;
+};
+
 public:
   RCLCPP_SHARED_PTR_DEFINITIONS(DiffBotSystemHardware);
 
@@ -71,6 +86,7 @@ public:
   /**
    * \return logger of the SystemInterface.
    */
+
   rclcpp::Logger get_logger() const { return *logger_; }
 
   /// Get the clock of the SystemInterface.
@@ -95,7 +111,9 @@ private:
 
   double base_x_, base_y_, base_theta_; 
 
-  SerialComms comms_inst__;
+  SerialComms comms_inst__; // comms_inst__ is an instance of SerialComms
+  Config cfg__; // cfg__ is an instance of Config
+
 
 };
 
