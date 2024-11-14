@@ -141,9 +141,9 @@ std::vector<hardware_interface::CommandInterface> DiffBotSystemHardware::export_
 //   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Configuring ...please wait...");
 //   if (comms_inst__.connected())
 //   {
-//     comms_inst__.disconnect();
+//     comms_inst__.disconnect_from_device();
 //   }
-//   comms_inst__.connect(cfg__.device, cfg__.baud_rate, cfg__.timeout_ms);
+//   comms_inst__.connect_to_device(cfg__.device, cfg__.baud_rate);
 //   RCLCPP_INFO(rclcpp::get_logger("DiffBotSystemHardware"), "Successfully configured!");
 
 //   return hardware_interface::CallbackReturn::SUCCESS;

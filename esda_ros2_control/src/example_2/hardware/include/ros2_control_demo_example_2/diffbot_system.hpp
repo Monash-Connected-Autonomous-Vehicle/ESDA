@@ -68,7 +68,7 @@ public:
 
   // ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
   // hardware_interface::CallbackReturn on_configure(
-  //   const rclcpp_lifecycle::State & previous_state) override;
+  // const rclcpp_lifecycle::State & previous_state) override;
 
   ROS2_CONTROL_DEMO_EXAMPLE_2_PUBLIC
   hardware_interface::CallbackReturn on_activate(
