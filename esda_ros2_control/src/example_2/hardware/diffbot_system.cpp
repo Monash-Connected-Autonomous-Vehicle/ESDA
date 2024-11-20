@@ -26,6 +26,7 @@
 #include "hardware_interface/lexical_casts.hpp"
 #include "hardware_interface/types/hardware_interface_type_values.hpp"
 #include "rclcpp/rclcpp.hpp"
+#include "geometry_msgs/msg/twist.hpp"
 
 namespace ros2_control_demo_example_2
 {
@@ -38,7 +39,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
     return hardware_interface::CallbackReturn::ERROR;
   }
 
-
+  
 
 
   cfg__.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
@@ -57,6 +58,14 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
   clock_ = std::make_shared<rclcpp::Clock>(rclcpp::Clock());
 
 
+  cmd_vel_subscriber_ = rclcpp::Node::make_shared("diffbot_system_node")->create_subscription<geometry_msgs::msg::Twist>(
+  "/cmd_vel", 10,
+  [this](const geometry_msgs::msg::Twist::SharedPtr msg) {
+    linear_velocity_command_ = msg->linear.x;
+    angular_velocity_command_ = msg->angular.z;
+    RCLCPP_INFO(get_logger(), "Received cmd_vel: linear = %.2f, angular = %.2f",
+                linear_velocity_command_, angular_velocity_command_);
+  });
 
   comms_inst__.get_serial_ports();
   RCLCPP_INFO(get_logger(), "<DEBUG> Message to see if get_serial_ports() method has been called or not");

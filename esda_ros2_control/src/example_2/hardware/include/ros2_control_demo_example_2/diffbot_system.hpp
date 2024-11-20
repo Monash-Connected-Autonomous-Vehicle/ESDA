@@ -19,6 +19,8 @@
 #include <string>
 #include <vector>
 
+#include "geometry_msgs/msg/twist.hpp"
+
 #include "hardware_interface/handle.hpp"
 #include "hardware_interface/hardware_info.hpp"
 #include "hardware_interface/system_interface.hpp"
@@ -31,7 +33,6 @@
 #include "rclcpp_lifecycle/node_interfaces/lifecycle_node_interface.hpp"
 #include "rclcpp_lifecycle/state.hpp"
 #include "ros2_control_demo_example_2/visibility_control.h"
-
 #include "ros2_control_demo_example_2/serial_comms.hpp"
 
 namespace ros2_control_demo_example_2 {
@@ -116,7 +117,11 @@ private:
   SerialComms comms_inst__; // comms_inst__ is an instance of SerialComms
   Config cfg__; // cfg__ is an instance of Config
 
-
+  // Creating a subscription node for /cmd_vel
+  rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr cmd_vel_subscriber_;
+  double linear_velocity_command_;
+  double angular_velocity_command_;
+  
 };
 
 }  // namespace ros2_control_demo_example_2
