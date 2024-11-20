@@ -38,6 +38,9 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
     return hardware_interface::CallbackReturn::ERROR;
   }
 
+
+
+
   cfg__.left_wheel_name = info_.hardware_parameters["left_wheel_name"];
   cfg__.right_wheel_name = info_.hardware_parameters["right_wheel_name"];
   cfg__.loop_rate = std::stof(info_.hardware_parameters["loop_rate"]);
@@ -52,6 +55,12 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
 
   logger_ = std::make_shared<rclcpp::Logger>(rclcpp::get_logger("controller_manager.resource_manager.hardware_component.system.DiffBot"));
   clock_ = std::make_shared<rclcpp::Clock>(rclcpp::Clock());
+
+
+
+  comms_inst__.get_serial_ports();
+  RCLCPP_INFO(get_logger(), "<DEBUG> Message to see if get_serial_ports() method has been called or not");
+
 
   // BEGIN: This part here is for exemplary purposes - Please do not copy to your production code
   hw_start_sec_ = hardware_interface::stod(info_.hardware_parameters["example_param_hw_start_duration_sec"]);
@@ -106,6 +115,7 @@ hardware_interface::CallbackReturn DiffBotSystemHardware::on_init(
     }
   }
 
+  (get_logger(), "Successfully initialized!");
   return hardware_interface::CallbackReturn::SUCCESS;
 }
 

@@ -9,6 +9,8 @@
 #include <sstream>
 #include <string>
 
+#include "rclcpp/rclcpp.hpp"
+
 class SerialComms 
 {
 public:
@@ -30,6 +32,7 @@ public:
             }
             catch (const LibSerial::OpenFailed&) {
                 // Port not available
+                RCLCPP_INFO(rclcpp::get_logger("rclcpp"), "No port available. Iteration number: %d", i);
             }
         }
         return serial_ports;
