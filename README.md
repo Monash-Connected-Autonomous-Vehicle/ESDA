@@ -54,10 +54,24 @@ cd build
 cmake DCMAKE_CXX_STANDARD=17 -DCMAKE_CXX_STANDARD_REQUIRED=ON -DCMAKE_CXX_EXTENSIONS=OFF ../ 
 make
 sudo make install
-
-sudo apt-get update
-sudo apt-get install libserialport-dev
 cd ../../../
+```
+
+Install the swiftnav driver updated libserialport 0.1.2 dependency:
+1. Go to the libserialport 0.1.2 [release](https://github.com/sigrokproject/libserialport/releases/tag/libserialport-0.1.2)
+2. Download `libserialport-0.1.2.tar.gz`
+3. Extract the archive:
+```
+tar -xzf libserialport-0.1.2.tar.gz
+cd libserialport-0.1.2
+```
+4. Install the package (NOTE: will be installed under /usr/local/lib , additional install details on the [offficial page](https://sigrok.org/wiki/Linux#Installing_the_requirements) if required):
+```
+./configure
+make
+sudo make install
+sudo ldconfig
+cd ..
 ```
 
 Run the following to install zed driver dependencies
