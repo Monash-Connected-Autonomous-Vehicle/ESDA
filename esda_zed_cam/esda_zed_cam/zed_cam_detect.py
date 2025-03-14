@@ -37,6 +37,8 @@ class OccupancyGridPublisher(Node):
         '''
 
         self.camera_subscription = self.create_subscription(Image, '/zed/zed_node/left/image_rect_color', self.publish_grid, qos_profile = video_qos)
+        ## This is for use with V4L2, a built in linux package. USE AS ALTERNATIVE IF ZEDSDK FAILS
+        #self.camera_subscription = self.create_subscription(Image, '/image_raw', self.publish_grid, qos_profile = video_qos)
 
     def publish_grid(self, data):
         occupancy_grid = self.frame_processor(data)
@@ -81,8 +83,8 @@ class OccupancyGridPublisher(Node):
         cv2.imwrite('2-blur.png', frame_blur)
 
         ## Creating a mask to detect white (lane-lines and potholes)
-        lower_white = np.array([190, 190, 190, 255])
-        upper_white = np.array([255, 255, 255, 255])
+        lower_white = np.array([190, 190, 190])
+        upper_white = np.array([255, 255, 255])
 
         mask_white = cv2.inRange((frame_blur), lower_white, upper_white)
         mask_white = cv2.medianBlur(mask_white, 25)
@@ -91,7 +93,7 @@ class OccupancyGridPublisher(Node):
 
         # Defining colors for road or obstacles
         ROAD_COLOUR = [0, 0, 0, 255]
-        OBSTACLE_COLOUR = [255, 255, 255, 255]
+        OBSTACLE_COLOUR = [255, 255, 255]
         UNKNOWN_COLOUR = [0, 0, 0, 0]
 
         # Initializing mask for only the road
@@ -125,10 +127,10 @@ class OccupancyGridPublisher(Node):
 
         ## The image generated will show some smudges where the obstacle, road and unknown objects blend
         # The script below sets the "smudges" as either obstacles or unknowns
-        obstacle_indices = np.any(birdseye_view[:, :, :3] != 0, axis=2)
+        obstacle_indices = np.any(birdseye_view[:, :, :2] != 0, axis=2)
         birdseye_view[obstacle_indices] = OBSTACLE_COLOUR
 
-        unknown_indices = birdseye_view[:, :, 3] != 255
+        unknown_indices = birdseye_view[:, :, 2] != 255
         birdseye_view[unknown_indices] = UNKNOWN_COLOUR
 
         ## Generating image after post-processing smudges
@@ -140,10 +142,10 @@ class OccupancyGridPublisher(Node):
 
         ## Resize the image so that each pixel is 5cm x 5cm
         resized = cv2.resize(birdseye_view, (OCCUPANCY_WIDTH, OCCUPANCY_LENGTH))
-        obstacle_indices = np.any(resized[:, :, :3] != 0, axis=2)
+        obstacle_indices = np.any(resized[:, :, :2] != 0, axis=2)
         resized[obstacle_indices] = OBSTACLE_COLOUR
 
-        unknown_indices = resized[:, :, 3] != 255
+        unknown_indices = resized[:, :, 2] != 255
         resized[unknown_indices] = UNKNOWN_COLOUR
 
         # Creating array for occupancy grid
