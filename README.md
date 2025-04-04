@@ -9,7 +9,7 @@ Some of the hardware used such as sensors require some configuration and setup p
 
 #### Swiftnav Piksi multi
 
-Install the swift console from the (Swiftnav Resource Library)[https://www.swiftnav.com/resource-library?filters=no&title=Swift+Console&search=Swift+Console&product=Swift+Console&category=Installer&release=Latest] and then run `dpkg -i /<path_to_deb>` or alternatively run the following command (note the version ad url may have updated since the writing of these instructions)
+Install the swift console from the [Swiftnav Resource Library](https://www.swiftnav.com/resource-library?filters=no&title=Swift+Console&search=Swift+Console&product=Swift+Console&category=Installer&release=Latest) and then run `dpkg -i /<path_to_deb>` or alternatively run the following command (note the version ad url may have updated since the writing of these instructions)
 
 ```bash
 wget https://www.swiftnav.com/resource-files/Swift%20Console/v4.0.19/Installer/swift-console_v4.0.19_linux.deb
@@ -24,7 +24,7 @@ Open the Swiftnav console and configure the device to send all SBP message types
 
 #### VLP16
 
-Refer to the (Velodyne LiDAR User Manual)[https://velodynelidar.com/wp-content/uploads/2019/12/63-9243-Rev-E-VLP-16-User-Manual.pdf] and/or (YouTube setup guide)[https://www.youtube.com/watch?v=Pa-q5elS_nE] on further instructions on configuring the LiDAR
+Refer to the [Velodyne LiDAR User Manual](https://velodynelidar.com/wp-content/uploads/2019/12/63-9243-Rev-E-VLP-16-User-Manual.pdf) and/or [YouTube setup guide](https://www.youtube.com/watch?v=Pa-q5elS_nE) on further instructions on configuring the LiDAR
 
 ### Sim setup
 
