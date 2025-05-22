@@ -52,7 +52,7 @@ class ZEDLaneDetection(Node):
             "focalLengthY": 955.065,
             "opticalCenterX": width // 2,
             "opticalCenterY": height // 2,
-            "cameraHeight": 250,
+            "cameraHeight": 48.3,
             "pitch": 0,
             "yaw": 0,
             "roll": 0
@@ -63,7 +63,7 @@ class ZEDLaneDetection(Node):
         ipm_params = {
             "left": 100,
             "right": width - 100,
-            "top": 330,
+            "top": 260,
             "bottom": height
         }
         ipmInfo = Info(ipm_params)
