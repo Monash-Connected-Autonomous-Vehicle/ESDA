@@ -92,23 +92,15 @@
     Servo_l.attach(MOTOR_LEFT);
     Servo_r.attach(MOTOR_RIGHT);
 
-    Servo_l.writeMicroseconds(1500);  // Gearing Left Motor
-    Servo_r.writeMicroseconds(1500);  // Gearing Right Motor
-
     // Cue turning the escs on
     digitalWrite(13, HIGH);
 
-    // Wait 6 seconds for the esc to wake up and tone then blink the led
-    delay(6000);
-    digitalWrite(13, LOW);
-    delay(250);
-    digitalWrite(13, HIGH);
     // Set throttle to full reverse
     Servo_l.writeMicroseconds(1000);
     Servo_r.writeMicroseconds(1000);
 
-    // Wait 5 seconds for the esc to tone then blink the led
-    delay(5000);
+    // Wait 6 seconds for the esc to wake up and tone then blink the led
+    delay(6000);
     digitalWrite(13, LOW);
     delay(250);
     digitalWrite(13, HIGH);
