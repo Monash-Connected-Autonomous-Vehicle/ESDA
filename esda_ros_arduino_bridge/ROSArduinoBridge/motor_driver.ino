@@ -120,9 +120,9 @@
     digitalWrite(13, LOW);
     delay(250);
     digitalWrite(13, HIGH);
-    Servo_l.writeMicroseconds(2000);
-    Servo_r.writeMicroseconds(2000);
-
+    Servo_l.writeMicroseconds(1500);
+    Servo_r.writeMicroseconds(1500);
+    
     delay(3000);
   }
 
