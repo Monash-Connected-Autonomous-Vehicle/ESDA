@@ -84,6 +84,11 @@ def generate_launch_description():
         )
     )
 
+    swiftnav_ros2_spawner = Node(
+        package="swiftnav_ros2_driver",
+        executable="spawner",
+        arguments=[""]
+    )
 
     # Code for delaying a node (I haven't tested how effective it is)
     # 
@@ -108,5 +113,6 @@ def generate_launch_description():
         rsp,
         delayed_controller_manager,
         delayed_diff_drive_spawner,
-        delayed_joint_broad_spawner
+        delayed_joint_broad_spawner,
+
     ])
